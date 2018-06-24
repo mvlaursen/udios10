@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +22,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func displayText(_ sender: Any) {
-        label.text = "Hello"
+    
+    @IBAction func enter(_ sender: Any) {
+        label.text = textField.text
+        self.resignFirstResponder()
     }
     
+    @IBAction func hide(_ sender: Any) {
+        imageView.isHidden = true
+    }
+    
+    @IBAction func show(_ sender: Any) {
+        imageView.isHidden = false
+    }
 }
 
