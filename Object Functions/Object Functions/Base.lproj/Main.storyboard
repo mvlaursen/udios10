@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Object_Functions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Up?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVU-dJ-3Om">
+                                <rect key="frame" x="16" y="20" width="344" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ulX-Xz-jLJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s1E-Ti-peL">
+                                <rect key="frame" x="16" y="49" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Hc6-Gw-jyw"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis ultricies turpis, sit amet scelerisque massa. Mauris ac gravida ante, eget pellentesque felis. Pellentesque vulputate, magna eu auctor hendrerit, sem neque fringilla mauris, et convallis diam nisi non magna. Vestibulum non ultrices arcu, ac euismod odio. Aliquam venenatis, felis vel convallis malesuada, leo lectus volutpat leo, quis euismod lectus tellus nec eros. Nulla venenatis tellus nec dui hendrerit, sit amet rhoncus lectus sollicitudin. Vestibulum sit amet leo suscipit, mattis purus et, commodo lacus. Donec neque erat, gravida eu dapibus eu, dignissim ut erat. Donec pulvinar, nunc non cursus lobortis, risus ipsum congue felis, id convallis enim ex nec tortor. Praesent finibus velit ac nulla varius accumsan. Etiam commodo feugiat convallis. In mi nunc, convallis at leo malesuada, lacinia convallis nunc.
+
+Donec ultricies eleifend sodales. Curabitur tincidunt vehicula faucibus. Suspendisse aliquam ornare augue, vitae consectetur lacus rhoncus at. Proin luctus pretium diam, sit amet rhoncus nulla rutrum sit amet. Etiam nisi lectus, malesuada nec ex ac, vulputate elementum lectus. Nullam tincidunt convallis ipsum vitae volutpat. Phasellus dignissim fermentum leo, eget consectetur enim aliquam et. Fusce vel blandit lorem, mollis tristique tortor. Vivamus dignissim dignissim blandit. Aenean quis nibh in nisi aliquet ultrices et vitae dui. Ut sapien risus, ultricies condimentum feugiat vitae, semper luctus odio. Nullam sagittis arcu tortor, a sodales lorem venenatis at. Curabitur in nisl sit amet libero tempor luctus. Sed nisi dui, semper lacinia tempor at, cursus sit amet augue. Duis ultrices bibendum mauris, nec gravida lorem sagittis at. Mauris aliquet viverra orci, in placerat nulla luctus eu.
+
+Maecenas ultrices mollis pharetra. Quisque id augue sed lorem dignissim interdum. Nunc hendrerit dolor augue, eget luctus justo ultricies eu. Proin mauris ipsum, malesuada nec varius eget, cursus accumsan mauris. Nulla vel eros ipsum. Donec pellentesque sed nibh at laoreet. Aenean ut porttitor orci. Sed egestas, felis nec blandit scelerisque, odio felis tempus lorem, a dictum velit arcu vitae justo. Sed in mauris metus. Donec sodales tortor ac ex tristique, ut pellentesque nulla ultricies. Aliquam neque eros, congue et viverra finibus, aliquet a nisi. Nulla egestas lacus eget maximus lacinia. Morbi convallis tellus et felis placerat aliquam sed vel nisl. Donec vulputate, lacus non sodales venenatis, urna mauris consequat massa, eget egestas nulla mi id neque. Nam laoreet ullamcorper hendrerit.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-4m-w8a">
+                                <rect key="frame" x="130" y="257" width="113" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mwA-lf-j8K"/>
+                                </constraints>
+                                <state key="normal" title="Set Text"/>
+                                <connections>
+                                    <action selector="setText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zPo-KN-MrM"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="few-Hc-t15" userLabel="Text Field">
+                                <rect key="frame" x="16" y="295" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yV3-bw-6g7"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s1E-Ti-peL" secondAttribute="trailing" constant="16" id="65e-95-FU9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVU-dJ-3Om" secondAttribute="trailing" constant="15" id="Bnh-YF-jD3"/>
+                            <constraint firstItem="2WM-4m-w8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="Hlt-3T-xcq"/>
+                            <constraint firstItem="2WM-4m-w8a" firstAttribute="top" secondItem="s1E-Ti-peL" secondAttribute="bottom" constant="8" id="IHK-Wy-FO7"/>
+                            <constraint firstItem="s1E-Ti-peL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="L02-1h-fzI"/>
+                            <constraint firstItem="eVU-dJ-3Om" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L2E-tE-gQL"/>
+                            <constraint firstItem="s1E-Ti-peL" firstAttribute="top" secondItem="eVU-dJ-3Om" secondAttribute="bottom" constant="8" id="SJH-0g-TKr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2WM-4m-w8a" secondAttribute="trailing" constant="132" id="Sfn-1e-eoV"/>
+                            <constraint firstItem="few-Hc-t15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TTB-O2-C4N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="few-Hc-t15" secondAttribute="trailing" constant="16" id="iYO-XV-3pg"/>
+                            <constraint firstItem="eVU-dJ-3Om" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="u1d-n9-4A4"/>
+                            <constraint firstItem="few-Hc-t15" firstAttribute="top" secondItem="2WM-4m-w8a" secondAttribute="bottom" constant="8" id="wVe-fe-XKU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="eVU-dJ-3Om" id="OYP-zI-ShU"/>
+                        <outlet property="textField" destination="few-Hc-t15" id="Nyv-lE-4wx"/>
+                        <outlet property="textView" destination="s1E-Ti-peL" id="4G3-VS-6sz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
