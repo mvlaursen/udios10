@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,66 +40,44 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatImage" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-pT-Cdm">
-                                <rect key="frame" x="16" y="216" width="282" height="207"/>
+                                <rect key="frame" x="16" y="216" width="282" height="183"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i6O-OX-RXG" userLabel="Buttons HStack">
-                                <rect key="frame" x="111" y="431" width="98" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87t-Zd-KVb">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="TNE-mO-p6h"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Show">
-                                            <color key="titleColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="show:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6s-Th-sDk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rX4-k8-ynR">
-                                        <rect key="frame" x="53" y="-0.5" width="45" height="36.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="Eia-LG-QFF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Hide">
-                                            <color key="titleColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="hide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DP1-Ql-6su"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87t-Zd-KVb" userLabel="Image Toggle Button">
+                                <rect key="frame" x="138" y="407" width="45" height="36"/>
                                 <constraints>
-                                    <constraint firstItem="rX4-k8-ynR" firstAttribute="width" secondItem="87t-Zd-KVb" secondAttribute="width" id="3VP-C9-yXy"/>
-                                    <constraint firstAttribute="height" constant="36" id="Px2-b0-aRn"/>
+                                    <constraint firstAttribute="height" constant="36" id="TNE-mO-p6h"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Hide">
+                                    <color key="titleColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vhf-Gx-BKD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.88102218179444458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6rX-E5-1Gg" secondAttribute="trailing" constant="22" id="04h-ee-93u"/>
-                            <constraint firstItem="i6O-OX-RXG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="3pp-87-eSd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i6O-OX-RXG" secondAttribute="bottom" constant="13" id="81i-RS-ycr"/>
-                            <constraint firstItem="i6O-OX-RXG" firstAttribute="top" secondItem="W5z-pT-Cdm" secondAttribute="bottom" constant="8" id="Fk4-08-ZgI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JKl-FA-G60" secondAttribute="trailing" constant="22" id="INi-5J-fir"/>
-                            <constraint firstItem="JKl-FA-G60" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Rs2-1u-Uy4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6O-OX-RXG" secondAttribute="trailing" constant="111" id="TeJ-sX-xH5"/>
-                            <constraint firstItem="W5z-pT-Cdm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WCh-LH-EFH"/>
-                            <constraint firstItem="W5z-pT-Cdm" firstAttribute="top" secondItem="6rX-E5-1Gg" secondAttribute="bottom" constant="8" id="bSk-ge-aOI"/>
-                            <constraint firstItem="i6O-OX-RXG" firstAttribute="top" secondItem="W5z-pT-Cdm" secondAttribute="bottom" constant="8" id="cuR-tX-2yn"/>
-                            <constraint firstItem="JKl-FA-G60" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dqp-pF-xP1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W5z-pT-Cdm" secondAttribute="trailing" constant="22" id="hPJ-YG-tXH"/>
-                            <constraint firstItem="6rX-E5-1Gg" firstAttribute="top" secondItem="JKl-FA-G60" secondAttribute="bottom" constant="8" id="hvn-2O-NJc"/>
-                            <constraint firstItem="6rX-E5-1Gg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="j3u-wE-CRB"/>
+                            <constraint firstItem="87t-Zd-KVb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="0Jn-cL-gDW"/>
+                            <constraint firstItem="W5z-pT-Cdm" firstAttribute="top" secondItem="6rX-E5-1Gg" secondAttribute="bottom" constant="8" id="0jD-Z6-gKz"/>
+                            <constraint firstItem="JKl-FA-G60" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3F1-kN-rNC"/>
+                            <constraint firstItem="6rX-E5-1Gg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="68U-8f-zI6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W5z-pT-Cdm" secondAttribute="trailing" constant="22" id="6zI-xH-Zpk"/>
+                            <constraint firstItem="87t-Zd-KVb" firstAttribute="top" secondItem="W5z-pT-Cdm" secondAttribute="bottom" constant="8" id="9WB-yn-zPK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6rX-E5-1Gg" secondAttribute="trailing" constant="22" id="OU1-Yb-l4M"/>
+                            <constraint firstItem="6rX-E5-1Gg" firstAttribute="top" secondItem="JKl-FA-G60" secondAttribute="bottom" constant="8" id="YCC-ca-6lt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JKl-FA-G60" secondAttribute="trailing" constant="22" id="a4I-aU-25F"/>
+                            <constraint firstItem="W5z-pT-Cdm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bmj-7f-XJS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="87t-Zd-KVb" secondAttribute="trailing" constant="137" id="caI-lq-EcR"/>
+                            <constraint firstItem="JKl-FA-G60" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dqX-yd-Z8E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="87t-Zd-KVb" secondAttribute="bottom" constant="37" id="obK-zv-T3D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="W5z-pT-Cdm" id="CU3-cZ-3k2"/>
                         <outlet property="label" destination="JKl-FA-G60" id="KIg-z3-hK1"/>
+                        <outlet property="showButton" destination="87t-Zd-KVb" id="gWC-QX-nc4"/>
                         <outlet property="textField" destination="6rX-E5-1Gg" id="apt-v3-7jY"/>
                     </connections>
                 </viewController>

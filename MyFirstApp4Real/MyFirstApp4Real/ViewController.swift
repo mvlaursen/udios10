@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var showButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
@@ -28,12 +29,14 @@ class ViewController: UIViewController {
         self.resignFirstResponder()
     }
     
-    @IBAction func hide(_ sender: Any) {
-        imageView.isHidden = true
-    }
-    
-    @IBAction func show(_ sender: Any) {
-        imageView.isHidden = false
+    @IBAction func toggleImage(_ sender: Any) {
+        imageView.isHidden = !imageView.isHidden
+        
+        if imageView.isHidden {
+            showButton.setTitle("Show", for: .normal)
+        } else {
+            showButton.setTitle("Hide", for: .normal)
+        }
     }
 }
 
