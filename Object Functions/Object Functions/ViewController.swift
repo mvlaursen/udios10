@@ -27,6 +27,41 @@ class ViewController: UIViewController, UITextViewDelegate {
         self.resignFirstResponder()
     }
 
+    @IBAction func centerText(_ sender: Any) {
+        label.textAlignment = NSTextAlignment.center
+    }
+    
+    @IBAction func leftText(_ sender: Any) {
+        label.textAlignment = NSTextAlignment.left
+    }
+    
+    @IBAction func rightText(_ sender: Any) {
+        label.textAlignment = NSTextAlignment.right
+    }
+    
+    @IBAction func setBackground(_ sender: Any) {
+        label.backgroundColor = UIColor.lightGray
+    }
+    
+    @IBAction func setFontSize(_ sender: Any) {
+        label.font = UIFont(name: "Verdana", size: 30)
+    }
+    
+    @IBAction func setColor(_ sender: Any) {
+        label.textColor = UIColor.red
+    }
+    
+    @IBAction func setShadow(_ sender: Any) {
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 2, height: 2)
+        label.layer.shadowRadius = 2
+        label.layer.shadowOpacity = 0.25
+    }
+    
+    @IBAction func setShadowColor(_ sender: Any) {
+        label.layer.shadowColor = UIColor.blue.cgColor
+    }
+    
     @IBAction func setText(_ sender: Any) {
         label.text = "I am in the label!"
         
