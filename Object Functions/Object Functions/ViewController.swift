@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -23,10 +23,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.resignFirstResponder()
+    }
+
     @IBAction func setText(_ sender: Any) {
         label.text = "I am in the label!"
         
         textView.text = textField.text
+    }
+    
+    // UITextViewDelegate
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        return true
     }
 }
 

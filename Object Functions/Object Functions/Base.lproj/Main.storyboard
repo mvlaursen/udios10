@@ -39,7 +39,10 @@ Donec ultricies eleifend sodales. Curabitur tincidunt vehicula faucibus. Suspend
 
 Maecenas ultrices mollis pharetra. Quisque id augue sed lorem dignissim interdum. Nunc hendrerit dolor augue, eget luctus justo ultricies eu. Proin mauris ipsum, malesuada nec varius eget, cursus accumsan mauris. Nulla vel eros ipsum. Donec pellentesque sed nibh at laoreet. Aenean ut porttitor orci. Sed egestas, felis nec blandit scelerisque, odio felis tempus lorem, a dictum velit arcu vitae justo. Sed in mauris metus. Donec sodales tortor ac ex tristique, ut pellentesque nulla ultricies. Aliquam neque eros, congue et viverra finibus, aliquet a nisi. Nulla egestas lacus eget maximus lacinia. Morbi convallis tellus et felis placerat aliquam sed vel nisl. Donec vulputate, lacus non sodales venenatis, urna mauris consequat massa, eget egestas nulla mi id neque. Nam laoreet ullamcorper hendrerit.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nxN-dr-OPi"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-4m-w8a">
                                 <rect key="frame" x="130" y="257" width="113" height="30"/>
@@ -58,7 +61,10 @@ Maecenas ultrices mollis pharetra. Quisque id augue sed lorem dignissim interdum
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="v6U-2h-eza"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
