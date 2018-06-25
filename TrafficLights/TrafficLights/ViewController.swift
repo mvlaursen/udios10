@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var trafficLight: UIImageView!
     
+    enum TrafficLightState {
+        case Green
+        case Red
+        case Yellow
+    }
+    
     var countdownTimer:Timer? = nil
     var score:Int = 0
     var scoreTimer:Timer? = nil
@@ -31,9 +37,11 @@ class ViewController: UIViewController {
 
     @IBAction func startStop(_ sender: Any) {
         if score == 0 {
+            trafficLight.image = UIImage(named: "TrafficLight3")
+
             let userInfo = NSMutableDictionary()
-            userInfo["countdown"] = Int(2)
-            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: userInfo, repeats: true)
+            userInfo["state"] = TrafficLightState.Red
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(doTrafficLightCountDown), userInfo: userInfo, repeats: true)
         } else {
             score = 0
             scoreLabel.text = "0"
@@ -41,23 +49,25 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func countDown(timer: Timer) {
+    @objc func doTrafficLightCountDown(timer: Timer) {
         let userInfo = timer.userInfo as! NSMutableDictionary
-        let countdown = userInfo["countdown"] as! Int
+        let state = userInfo["state"] as! TrafficLightState
         
-        switch countdown {
-        case 0: do {
-            countdownTimer?.invalidate()
-            scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
+        switch state {
+        case TrafficLightState.Green: do {
             startStopButton.titleLabel?.text = "Stop"
-            trafficLight.image = UIImage(named: "TrafficLight1")
+            timer.invalidate()
+            scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
             }
-        case 1: trafficLight.image = UIImage(named: "TrafficLight2")
-        case 2: trafficLight.image = UIImage(named: "TrafficLight3")
-        default: fatalError()
+        case TrafficLightState.Red: do {
+            trafficLight.image = UIImage(named: "TrafficLight2")
+            userInfo["state"] = TrafficLightState.Yellow
+            }
+        case TrafficLightState.Yellow: do {
+            trafficLight.image = UIImage(named: "TrafficLight1")
+            userInfo["state"] = TrafficLightState.Green
+            }
         }
-
-        userInfo["countdown"] = countdown - 1
     }
     
     @objc func updateScoreTimer() {
