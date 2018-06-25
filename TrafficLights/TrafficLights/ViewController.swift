@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var trafficLight: UIImageView!
     
-    var countdown:Int = 0
     var countdownTimer:Timer? = nil
     var score:Int = 0
     var scoreTimer:Timer? = nil
@@ -32,8 +31,9 @@ class ViewController: UIViewController {
 
     @IBAction func startStop(_ sender: Any) {
         if score == 0 {
-            countdown = 2
-            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+            let userInfo = NSMutableDictionary()
+            userInfo["countdown"] = Int(2)
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: userInfo, repeats: true)
         } else {
             score = 0
             scoreLabel.text = "0"
@@ -41,7 +41,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func countDown() throws {
+    @objc func countDown(timer: Timer) {
+        let userInfo = timer.userInfo as! NSMutableDictionary
+        let countdown = userInfo["countdown"] as! Int
+        
         switch countdown {
         case 0: do {
             countdownTimer?.invalidate()
@@ -53,8 +56,8 @@ class ViewController: UIViewController {
         case 2: trafficLight.image = UIImage(named: "TrafficLight3")
         default: fatalError()
         }
-        
-        countdown -= 1
+
+        userInfo["countdown"] = countdown - 1
     }
     
     @objc func updateScoreTimer() {
