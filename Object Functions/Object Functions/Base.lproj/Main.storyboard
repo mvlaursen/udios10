@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pink Blue.ttf">
+            <string>PinkBlue</string>
+        </array>
+        <array key="Romantic Beach.ttf">
+            <string>RomanticBeach</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,7 +31,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="XFq-cB-1SW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RomanticBeach" family="Romantic Beach" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,7 +46,7 @@
 Donec ultricies eleifend sodales. Curabitur tincidunt vehicula faucibus. Suspendisse aliquam ornare augue, vitae consectetur lacus rhoncus at. Proin luctus pretium diam, sit amet rhoncus nulla rutrum sit amet. Etiam nisi lectus, malesuada nec ex ac, vulputate elementum lectus. Nullam tincidunt convallis ipsum vitae volutpat. Phasellus dignissim fermentum leo, eget consectetur enim aliquam et. Fusce vel blandit lorem, mollis tristique tortor. Vivamus dignissim dignissim blandit. Aenean quis nibh in nisi aliquet ultrices et vitae dui. Ut sapien risus, ultricies condimentum feugiat vitae, semper luctus odio. Nullam sagittis arcu tortor, a sodales lorem venenatis at. Curabitur in nisl sit amet libero tempor luctus. Sed nisi dui, semper lacinia tempor at, cursus sit amet augue. Duis ultrices bibendum mauris, nec gravida lorem sagittis at. Mauris aliquet viverra orci, in placerat nulla luctus eu.
 
 Maecenas ultrices mollis pharetra. Quisque id augue sed lorem dignissim interdum. Nunc hendrerit dolor augue, eget luctus justo ultricies eu. Proin mauris ipsum, malesuada nec varius eget, cursus accumsan mauris. Nulla vel eros ipsum. Donec pellentesque sed nibh at laoreet. Aenean ut porttitor orci. Sed egestas, felis nec blandit scelerisque, odio felis tempus lorem, a dictum velit arcu vitae justo. Sed in mauris metus. Donec sodales tortor ac ex tristique, ut pellentesque nulla ultricies. Aliquam neque eros, congue et viverra finibus, aliquet a nisi. Nulla egestas lacus eget maximus lacinia. Morbi convallis tellus et felis placerat aliquam sed vel nisl. Donec vulputate, lacus non sodales venenatis, urna mauris consequat massa, eget egestas nulla mi id neque. Nam laoreet ullamcorper hendrerit.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="PinkBlue" family="Pink Blue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nxN-dr-OPi"/>
