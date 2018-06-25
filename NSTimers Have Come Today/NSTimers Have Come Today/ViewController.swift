@@ -9,14 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var counter:Int = 0
     var timer:Timer = Timer()
+    var timer2:Timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +34,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func start(_ sender: Any) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateCounter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     
     @objc func updateCounter() {
         counter += 1
         label.text = String(counter)
+    }
+    
+    @objc func updateTimer() {
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+    
+        dateFormatter.dateStyle = .medium
+        timeFormatter.timeStyle = .medium
+        
+        dateLabel.text = dateFormatter.string(from: NSDate() as Date)
+        timeLabel.text = timeFormatter.string(from: NSDate() as Date)
+        
     }
     
     @IBAction func stop(_ sender: Any) {
