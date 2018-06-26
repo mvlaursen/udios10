@@ -16,17 +16,18 @@ class ViewController: UIViewController {
     enum TrafficLightState {
         case Green
         case Red
+        case Stopped
         case Yellow
     }
     
-    var countdownTimer:Timer? = nil
+ //   var countdownTimer:Timer? = nil
     var score:Int = 0
     var scoreTimer:Timer? = nil
+    var trafficLightState = TrafficLightState.Stopped
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         scoreLabel.text = String(score)
     }
 
@@ -36,36 +37,44 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startStop(_ sender: Any) {
-        if score == 0 {
-            trafficLight.image = UIImage(named: "TrafficLight3")
-
-            let userInfo = NSMutableDictionary()
-            userInfo["state"] = TrafficLightState.Red
-            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(doTrafficLightCountDown), userInfo: userInfo, repeats: true)
-        } else {
+        if trafficLightState == TrafficLightState.Stopped {
             score = 0
-            scoreLabel.text = "0"
+            scoreLabel.text = String(score)
+
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(doTrafficLightCountDown), userInfo: nil, repeats: true)
+            
+            startStopButton.isEnabled = false
+        } else {
             scoreTimer?.invalidate()
+            startStopButton.setTitle("Start", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight")
+            trafficLightState = TrafficLightState.Stopped
         }
     }
     
     @objc func doTrafficLightCountDown(timer: Timer) {
-        let userInfo = timer.userInfo as! NSMutableDictionary
-        let state = userInfo["state"] as! TrafficLightState
-        
-        switch state {
+        switch trafficLightState {
         case TrafficLightState.Green: do {
-            startStopButton.titleLabel?.text = "Stop"
+            startStopButton.isEnabled = true
+            startStopButton.setTitle("Stop", for: .normal)
+
             timer.invalidate()
             scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
             }
         case TrafficLightState.Red: do {
+            startStopButton.setTitle("Steady", for: .normal)
             trafficLight.image = UIImage(named: "TrafficLight2")
-            userInfo["state"] = TrafficLightState.Yellow
+            trafficLightState = TrafficLightState.Yellow
+            }
+        case TrafficLightState.Stopped: do {
+            startStopButton.setTitle("Ready", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight3")
+            trafficLightState = TrafficLightState.Red
             }
         case TrafficLightState.Yellow: do {
+            startStopButton.setTitle("Go", for: .normal)
             trafficLight.image = UIImage(named: "TrafficLight1")
-            userInfo["state"] = TrafficLightState.Green
+            trafficLightState = TrafficLightState.Green
             }
         }
     }
