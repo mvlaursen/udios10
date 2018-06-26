@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ObelixProB.ttf">
+            <string>ObelixPro-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapMeFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-Lj-ioS">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Me Fast!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyG-g0-qiE">
+                                <rect key="frame" x="38" y="40" width="244" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JaP-b2-Eh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ObelixPro-Bold" family="ObelixPro" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.5" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bD-46-h8a">
+                                <rect key="frame" x="16" y="148" width="288" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.70069028253424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H0u-Xa-Stf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ObelixPro-Bold" family="ObelixPro" pointSize="30"/>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umk-hM-hkQ">
+                                <rect key="frame" x="16" y="370" width="288" height="90"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69697131849315064" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="96v-8z-Nyu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ObelixPro-Bold" family="ObelixPro" pointSize="30"/>
+                                <state key="normal" title="START GAME">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNp-7h-P3Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0q-W5-bs3">
+                                <rect key="frame" x="16" y="264" width="288" height="98"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69697131849315064" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ObelixPro-Bold" family="ObelixPro" pointSize="30"/>
+                                <state key="normal" title="TAP ME">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SD8-VY-piF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFX-n8-uz0">
+                                <rect key="frame" x="16" y="206" width="288" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.70069028253424659" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GZK-o6-p4u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ObelixPro-Bold" family="ObelixPro" pointSize="30"/>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a0q-W5-bs3" secondAttribute="trailing" constant="16" id="1FZ-sE-ogY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8bD-46-h8a" secondAttribute="trailing" constant="16" id="2ei-YP-D4f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LFX-n8-uz0" secondAttribute="trailing" constant="16" id="66v-gh-lmC"/>
+                            <constraint firstItem="LFX-n8-uz0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9Xg-Pu-Hhu"/>
+                            <constraint firstItem="Umk-hM-hkQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BR7-SA-QHA"/>
+                            <constraint firstItem="NyG-g0-qiE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Ela-Ov-niM"/>
+                            <constraint firstItem="LFX-n8-uz0" firstAttribute="top" secondItem="8bD-46-h8a" secondAttribute="bottom" constant="8" id="Jb3-xi-uO0"/>
+                            <constraint firstItem="wpn-Lj-ioS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MhL-48-uao"/>
+                            <constraint firstItem="Umk-hM-hkQ" firstAttribute="top" secondItem="a0q-W5-bs3" secondAttribute="bottom" constant="8" id="Q9k-3K-vQ6"/>
+                            <constraint firstItem="wpn-Lj-ioS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RTo-Ax-eQP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Umk-hM-hkQ" secondAttribute="bottom" constant="20" id="Rel-LE-wsa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NyG-g0-qiE" secondAttribute="trailing" constant="38" id="UFg-bT-oOe"/>
+                            <constraint firstItem="a0q-W5-bs3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VSC-41-z4x"/>
+                            <constraint firstItem="8bD-46-h8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Yxd-tm-wsZ"/>
+                            <constraint firstItem="NyG-g0-qiE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="fI0-Bi-7xm"/>
+                            <constraint firstItem="wpn-Lj-ioS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n06-Q6-d5n"/>
+                            <constraint firstItem="wpn-Lj-ioS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nwH-VB-jWo"/>
+                            <constraint firstItem="8bD-46-h8a" firstAttribute="top" secondItem="NyG-g0-qiE" secondAttribute="bottom" constant="8" id="roU-J3-UXe"/>
+                            <constraint firstItem="a0q-W5-bs3" firstAttribute="top" secondItem="LFX-n8-uz0" secondAttribute="bottom" constant="8" id="vgU-kr-aL6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Umk-hM-hkQ" secondAttribute="trailing" constant="16" id="yfB-j8-m4W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="8bD-46-h8a" id="bfp-EI-TTm"/>
+                        <outlet property="scoreLabel" destination="LFX-n8-uz0" id="IB7-sH-aTM"/>
+                        <outlet property="startGameButton" destination="Umk-hM-hkQ" id="2a3-zP-aeD"/>
+                        <outlet property="tapMeButton" destination="a0q-W5-bs3" id="rQF-Do-MDM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="115.59220389805098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1317" height="969"/>
+    </resources>
+</document>
