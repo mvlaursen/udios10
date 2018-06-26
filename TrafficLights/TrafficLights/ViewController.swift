@@ -56,24 +56,23 @@ class ViewController: UIViewController {
         switch trafficLightState {
         case TrafficLightState.Green: do {
             startStopButton.isEnabled = true
-            startStopButton.setTitle("Stop", for: .normal)
+            startStopButton.setTitle("Go", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight1")
 
             timer.invalidate()
             scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
             }
         case TrafficLightState.Red: do {
-            startStopButton.setTitle("Steady", for: .normal)
-            trafficLight.image = UIImage(named: "TrafficLight2")
+            startStopButton.setTitle("Ready", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight3")
             trafficLightState = TrafficLightState.Yellow
             }
         case TrafficLightState.Stopped: do {
-            startStopButton.setTitle("Ready", for: .normal)
-            trafficLight.image = UIImage(named: "TrafficLight3")
             trafficLightState = TrafficLightState.Red
             }
         case TrafficLightState.Yellow: do {
-            startStopButton.setTitle("Go", for: .normal)
-            trafficLight.image = UIImage(named: "TrafficLight1")
+            startStopButton.setTitle("Steady", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight2")
             trafficLightState = TrafficLightState.Green
             }
         }
