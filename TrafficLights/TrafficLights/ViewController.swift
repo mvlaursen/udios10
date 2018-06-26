@@ -63,11 +63,11 @@ class ViewController: UIViewController {
             scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
             }
         case TrafficLightState.Red: do {
-            startStopButton.setTitle("Ready", for: .normal)
-            trafficLight.image = UIImage(named: "TrafficLight3")
             trafficLightState = TrafficLightState.Yellow
             }
         case TrafficLightState.Stopped: do {
+            startStopButton.setTitle("Ready", for: .normal)
+            trafficLight.image = UIImage(named: "TrafficLight3")
             trafficLightState = TrafficLightState.Red
             }
         case TrafficLightState.Yellow: do {
