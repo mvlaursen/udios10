@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var tapMeButton: UIButton!
     
-    let START_COUNTDOWN_SECONDS = 5
-    let TAP_COUNTDOWN_SECONDS = 5
+    let START_COUNTDOWN_SECONDS:UInt = 5
+    let TAP_COUNTDOWN_SECONDS:UInt = 5
     
     var score = 0
     
@@ -31,36 +31,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startGame(_ sender: Any) {
-        var startCountdown = START_COUNTDOWN_SECONDS
-        countdownLabel.text = String(startCountdown)
+        var startCountdown:UInt = START_COUNTDOWN_SECONDS
+        //countdownLabel.text = String(startCountdown)
+        startCountdown = countDown(countdown: startCountdown)
         
         self.score = 0
         self.scoreLabel.text = String(self.score)
         disableButton(button: self.startGameButton)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (startTimer) in
-            if startCountdown <= 0 {
+            if startCountdown == 0 {
                 startTimer.invalidate()
                 
-                var tapCountdown = self.TAP_COUNTDOWN_SECONDS
+                var tapCountdown:UInt = self.TAP_COUNTDOWN_SECONDS
                 self.countdownLabel.text = String(tapCountdown)
                 
                 self.enableButton(button: self.tapMeButton)
                 
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (tapTimer) in
-                    if tapCountdown <= 0 {
+                    if tapCountdown == 0 {
+                        self.countdownLabel.text = String(0)
                         tapTimer.invalidate()
                         
                         self.enableButton(button: self.startGameButton)
                         self.disableButton(button: self.tapMeButton)
                     } else {
-                        tapCountdown -= 1
-                        self.countdownLabel.text = String(tapCountdown)
+                        tapCountdown = self.countDown(countdown: tapCountdown)
                     }
                 })
             } else {
-                startCountdown -= 1
-                self.countdownLabel.text = String(startCountdown)
+                startCountdown = self.countDown(countdown: startCountdown)
             }
         })
     }
@@ -70,6 +70,16 @@ class ViewController: UIViewController {
         scoreLabel.text = String(score)
     }
     
+    func countDown(countdown:UInt) -> UInt {
+        countdownLabel.text = String(countdown)
+        
+        if countdown > 0 {
+            return countdown - 1
+        } else {
+            return 0
+        }
+    }
+
     func disableButton(button:UIButton) {
         button.alpha = 0.5
         button.isEnabled = false
