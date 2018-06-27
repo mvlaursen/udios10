@@ -19,8 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tapMeButton.alpha = 0.5
-        tapMeButton.isEnabled = false
+        disableButton(button: tapMeButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +33,7 @@ class ViewController: UIViewController {
         
         self.score = 0
         self.scoreLabel.text = String(self.score)
-        self.startGameButton.alpha = 0.5
-        self.startGameButton.isEnabled = false
+        disableButton(button: self.startGameButton)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (startTimer) in
             if startCountdown <= 0 {
@@ -44,17 +42,14 @@ class ViewController: UIViewController {
                 var tapCountdown = 5
                 self.countdownLabel.text = String(tapCountdown)
                 
-                self.tapMeButton.alpha = 1
-                self.tapMeButton.isEnabled = true
+                self.enableButton(button: self.tapMeButton)
                 
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (tapTimer) in
                     if tapCountdown <= 0 {
                         tapTimer.invalidate()
                         
-                        self.startGameButton.alpha = 1
-                        self.startGameButton.isEnabled = true
-                        self.tapMeButton.alpha = 0.5
-                        self.tapMeButton.isEnabled = false
+                        self.enableButton(button: self.startGameButton)
+                        self.disableButton(button: self.tapMeButton)
                     } else {
                         tapCountdown -= 1
                         self.countdownLabel.text = String(tapCountdown)
@@ -70,6 +65,16 @@ class ViewController: UIViewController {
     @IBAction func tapMe(_ sender: Any) {
         score += 1
         scoreLabel.text = String(score)
+    }
+    
+    func disableButton(button:UIButton) {
+        button.alpha = 0.5
+        button.isEnabled = false
+    }
+    
+    func enableButton(button:UIButton) {
+        button.alpha = 1
+        button.isEnabled = true
     }
 }
 
