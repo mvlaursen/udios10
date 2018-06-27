@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var tapMeButton: UIButton!
     
+    let START_COUNTDOWN_SECONDS = 5
+    let TAP_COUNTDOWN_SECONDS = 5
+    
     var score = 0
     
     override func viewDidLoad() {
@@ -28,7 +31,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startGame(_ sender: Any) {
-        var startCountdown = 5
+        var startCountdown = START_COUNTDOWN_SECONDS
         countdownLabel.text = String(startCountdown)
         
         self.score = 0
@@ -39,7 +42,7 @@ class ViewController: UIViewController {
             if startCountdown <= 0 {
                 startTimer.invalidate()
                 
-                var tapCountdown = 5
+                var tapCountdown = self.TAP_COUNTDOWN_SECONDS
                 self.countdownLabel.text = String(tapCountdown)
                 
                 self.enableButton(button: self.tapMeButton)
