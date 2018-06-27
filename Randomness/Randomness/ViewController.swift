@@ -25,13 +25,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rollDice(_ sender: Any) {
-        let n = rollDie() + rollDie()
-        stats[n] = max(0, stats[n]!) + 1
-        result.text = String(n)
+        let u = rollDie() + rollDie()
+        stats[u] = max(0, stats[u]!) + 1
+        result.text = String(u)
         
         var statsReport = String()
-        var index:UInt32 = 2
-        while index <= 12 {
+        for index:UInt32 in 2...12 {
             statsReport.append("\(index): ")
             var column:uint = 0
             while column < stats[index]! {
@@ -39,7 +38,6 @@ class ViewController: UIViewController {
                 column += 1
             }
             statsReport.append("\n")
-            index += 1
         }
         statsView.text = statsReport
     }
