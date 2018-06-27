@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tapMeButton.alpha = 0.5
+        tapMeButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
 
     @IBAction func startGame(_ sender: Any) {
         var startCountdown = 5
+        countdownLabel.text = String(startCountdown)
         
         self.score = 0
         self.scoreLabel.text = String(self.score)
@@ -40,6 +42,7 @@ class ViewController: UIViewController {
                 startTimer.invalidate()
                 
                 var tapCountdown = 5
+                self.countdownLabel.text = String(tapCountdown)
                 
                 self.tapMeButton.alpha = 1
                 self.tapMeButton.isEnabled = true
