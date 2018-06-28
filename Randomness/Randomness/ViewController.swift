@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.doStatsReport()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,20 +39,23 @@ class ViewController: UIViewController {
             }
             
             let diceValue = self.rollDiceAndCollectStats()
-            
             self.diceValueLabel.text = String(diceValue)
-            
-            var statsReport = String()
-            for index: UInt32 in 2...12 {
-                statsReport.append("\(index): ")
-                for _: UInt32 in 0...(self.stats[index] ?? 0) {
-                    statsReport.append("=")
-                }
-                statsReport.append("\n")
-            }
-            self.statsView.text = statsReport
+            self.doStatsReport()
            })
         
+    }
+    
+    func doStatsReport() {
+        var statsReport = String()
+        for index: UInt32 in 2...12 {
+            let prettyIndex = String(format: "%2 u", index)
+            statsReport.append("\(prettyIndex): ")
+            for _: UInt32 in 0...(stats[index] ?? 0) {
+                statsReport.append("=")
+            }
+            statsReport.append("\n")
+        }
+        statsView.text = statsReport
     }
     
     func rollDiceAndCollectStats() -> UInt32 {
