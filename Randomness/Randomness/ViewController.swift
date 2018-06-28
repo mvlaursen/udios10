@@ -10,15 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var diceValueLabel: UILabel!
+    @IBOutlet weak var dieAView: UIImageView!
+    @IBOutlet weak var dieBView: UIImageView!
     @IBOutlet weak var statsView: UITextView!
-    
+
     let NUM_ROLLS: UInt32 = 180
-    let TIME_INTERVAL: TimeInterval = 0.2
-    let DICE_WORDS: Array<String> = ["Snake eyes!", "Three", "Four", "Five", "Six",
-        "Seven", "Eight", "Nine", "Ten", "Yo-leven!", "Box cars!"]
-    
+    let TIME_INTERVAL: TimeInterval = 0.4
+    let DICE_WORDS: Array<String> = ["Snake eyes!", "3", "4", "5", "6", "7", "8", "9", "10", "Yo-leven!", "Box cars!"]
+
     var stats: [UInt32:UInt32] = [:]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func rollDiceAction(_ sender: Any) {
         var rollCount: UInt32 = 0
         stats = [:]
@@ -41,7 +42,14 @@ class ViewController: UIViewController {
                 rollCount += 1
             }
             
-            let diceValue = self.rollDiceAndCollectStats()
+            let dieAValue = arc4random_uniform(6) + 1
+            let dieBValue = arc4random_uniform(6) + 1
+            let diceValue = dieAValue + dieBValue
+            self.stats[diceValue] = (self.stats[diceValue] ?? 0) + 1
+            
+            self.dieAView.image = UIImage(named: "die" + String(dieAValue))
+            self.dieBView.image = UIImage(named: "die" + String(dieBValue))
+            
             let diceWordIndex: Int = Int(diceValue) - 2
             assert(diceWordIndex >= 0 && diceWordIndex < self.DICE_WORDS.count)
             self.diceValueLabel.text = self.DICE_WORDS[diceWordIndex]
@@ -49,7 +57,7 @@ class ViewController: UIViewController {
            })
         
     }
-    
+
     func doStatsReport() {
         var statsReport = String()
         for index: UInt32 in 2...12 {
@@ -61,15 +69,5 @@ class ViewController: UIViewController {
             statsReport.append("\n")
         }
         statsView.text = statsReport
-    }
-    
-    func rollDiceAndCollectStats() -> UInt32 {
-        let diceValue = rollDie() + rollDie()
-        stats[diceValue] = (stats[diceValue] ?? 0) + 1
-        return diceValue
-    }
-    
-    func rollDie() -> UInt32 {
-        return arc4random_uniform(6) + 1
     }
 }

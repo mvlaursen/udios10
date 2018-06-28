@@ -19,49 +19,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="center" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o3h-16-lhL" userLabel="Dice HStack">
+                                <rect key="frame" x="151.5" y="20" width="72" height="32"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="die4" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-kU-4oQ" userLabel="dieA">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="bgZ-ZL-zxO"/>
+                                            <constraint firstAttribute="height" constant="32" id="xmJ-N4-K2X"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="die3" translatesAutoresizingMaskIntoConstraints="NO" id="rPo-Nf-kaK" userLabel="dieB">
+                                        <rect key="frame" x="40" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Q1M-xF-Won"/>
+                                            <constraint firstAttribute="width" constant="32" id="b92-1e-jjP"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eh-Bt-FmY" userLabel="Result">
+                                <rect key="frame" x="16" y="60" width="342.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ptx-S0-gGk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9mK-rZ-OG5">
+                                <rect key="frame" x="16" y="89" width="342.5" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-ya-6jt">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <rect key="frame" x="16" y="617" width="342.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mgg-o2-EFD"/>
+                                </constraints>
                                 <state key="normal" title="Roll Dice"/>
                                 <connections>
                                     <action selector="rollDiceAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vd1-yx-OgX"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9mK-rZ-OG5">
-                                <rect key="frame" x="16" y="49" width="343" height="560"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eh-Bt-FmY" userLabel="Result">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="7yd-ya-6jt" secondAttribute="bottom" constant="20" symbolic="YES" id="3o3-JI-SPq"/>
-                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5FF-cA-a8h"/>
-                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="trailing" secondItem="7yd-ya-6jt" secondAttribute="trailing" id="LRW-7t-gd8"/>
-                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OTL-cK-goO"/>
-                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="trailing" secondItem="9mK-rZ-OG5" secondAttribute="trailing" id="TaG-R8-MBk"/>
-                            <constraint firstItem="7yd-ya-6jt" firstAttribute="top" secondItem="9mK-rZ-OG5" secondAttribute="bottom" constant="8" symbolic="YES" id="Wy7-lg-PsD"/>
-                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="top" secondItem="0eh-Bt-FmY" secondAttribute="bottom" constant="8" symbolic="YES" id="eml-e1-6Ux"/>
-                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="leading" secondItem="9mK-rZ-OG5" secondAttribute="leading" id="kGc-97-95e"/>
-                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="stM-34-X3D"/>
-                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="leading" secondItem="7yd-ya-6jt" secondAttribute="leading" id="znV-wl-h46"/>
+                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="leading" secondItem="9mK-rZ-OG5" secondAttribute="leading" id="1Fk-GE-6Sp"/>
+                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="leading" secondItem="7yd-ya-6jt" secondAttribute="leading" id="81q-qz-oz1"/>
+                            <constraint firstItem="o3h-16-lhL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IuA-VS-ima"/>
+                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="trailing" secondItem="7yd-ya-6jt" secondAttribute="trailing" id="J5L-0y-6nV"/>
+                            <constraint firstAttribute="bottom" secondItem="7yd-ya-6jt" secondAttribute="bottom" constant="20" symbolic="YES" id="L67-Xs-eWr"/>
+                            <constraint firstItem="9mK-rZ-OG5" firstAttribute="top" secondItem="0eh-Bt-FmY" secondAttribute="bottom" constant="8" symbolic="YES" id="LGb-Tn-6yn"/>
+                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LZw-En-ShO"/>
+                            <constraint firstItem="o3h-16-lhL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m1G-gg-C3a"/>
+                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="top" secondItem="o3h-16-lhL" secondAttribute="bottom" constant="8" symbolic="YES" id="nEg-Ez-EKG"/>
+                            <constraint firstItem="0eh-Bt-FmY" firstAttribute="trailing" secondItem="9mK-rZ-OG5" secondAttribute="trailing" id="rRV-0T-wlP"/>
+                            <constraint firstItem="7yd-ya-6jt" firstAttribute="top" secondItem="9mK-rZ-OG5" secondAttribute="bottom" constant="8" symbolic="YES" id="uUH-Gg-MUy"/>
+                            <constraint firstItem="o3h-16-lhL" firstAttribute="centerX" secondItem="0eh-Bt-FmY" secondAttribute="centerX" id="xli-bc-A1C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="diceValueLabel" destination="0eh-Bt-FmY" id="nKW-L0-pPU"/>
+                        <outlet property="dieAView" destination="6Hc-kU-4oQ" id="Yq4-aY-3fv"/>
+                        <outlet property="dieBView" destination="rPo-Nf-kaK" id="mmP-3X-PWf"/>
                         <outlet property="statsView" destination="9mK-rZ-OG5" id="QzH-8E-ekY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="24.375" y="31.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="die3" width="512" height="512"/>
+        <image name="die4" width="512" height="512"/>
+    </resources>
 </document>
