@@ -42,7 +42,9 @@ class ViewController: UIViewController {
             }
             
             let diceValue = self.rollDiceAndCollectStats()
-            self.diceValueLabel.text = self.DICE_WORDS[Int(diceValue) - 2]
+            let diceWordIndex: Int = Int(diceValue) - 2
+            assert(diceWordIndex >= 0 && diceWordIndex < self.DICE_WORDS.count)
+            self.diceValueLabel.text = self.DICE_WORDS[diceWordIndex]
             self.doStatsReport()
            })
         
