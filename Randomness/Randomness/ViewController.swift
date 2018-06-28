@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     let NUM_ROLLS: UInt32 = 180
     let TIME_INTERVAL: TimeInterval = 0.2
+    let DICE_WORDS: Array<String> = ["Snake eyes!", "Three", "Four", "Five", "Six",
+        "Seven", "Eight", "Nine", "Ten", "Yo-leven!", "Box cars!"]
     
     var stats: [UInt32:UInt32] = [:]
     
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
             }
             
             let diceValue = self.rollDiceAndCollectStats()
-            self.diceValueLabel.text = String(diceValue)
+            self.diceValueLabel.text = self.DICE_WORDS[Int(diceValue) - 2]
             self.doStatsReport()
            })
         
