@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dieBView: UIImageView!
     @IBOutlet weak var statsView: UITextView!
 
-    let NUM_ROLLS: UInt32 = 180
+    let NUM_ROLLS: UInt32 = 80
     let TIME_INTERVAL: TimeInterval = 0.4
     let DICE_WORDS: Array<String> = ["Snake eyes!", "3", "4", "5", "6", "7", "8", "9", "10", "Yo-leven!", "Box cars!"]
 
@@ -62,9 +62,9 @@ class ViewController: UIViewController {
         var statsReport = String()
         for index: UInt32 in 2...12 {
             let prettyIndex = String(format: "%2 u", index)
-            statsReport.append("\(prettyIndex): ")
+            statsReport.append("\(prettyIndex) ")
             for _: UInt32 in 0..<(stats[index] ?? 0) {
-                statsReport.append("=")
+                statsReport.append("\u{1F3B2}")
             }
             statsReport.append("\n")
         }
