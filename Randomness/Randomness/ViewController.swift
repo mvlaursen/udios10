@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceValueLabel: UILabel!
     @IBOutlet weak var statsView: UITextView!
     
-    let NUM_ROLLS: UInt32 = 100
+    let NUM_ROLLS: UInt32 = 180
     let TIME_INTERVAL: TimeInterval = 0.2
     
     var stats: [UInt32:UInt32] = [:]
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     @IBAction func rollDiceAction(_ sender: Any) {
         var rollCount: UInt32 = 0
+        stats = [:]
         
         Timer.scheduledTimer(withTimeInterval: TIME_INTERVAL, repeats: true, block: { (timer) in
             if rollCount >= self.NUM_ROLLS {
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
         for index: UInt32 in 2...12 {
             let prettyIndex = String(format: "%2 u", index)
             statsReport.append("\(prettyIndex): ")
-            for _: UInt32 in 0...(stats[index] ?? 0) {
+            for _: UInt32 in 0..<(stats[index] ?? 0) {
                 statsReport.append("=")
             }
             statsReport.append("\n")
