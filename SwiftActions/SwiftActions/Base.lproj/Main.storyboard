@@ -21,18 +21,43 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-JF-eCZ">
                                 <rect key="frame" x="163" y="20" width="51" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="FNG-oj-Wsn"/>
-                                    <constraint firstAttribute="height" constant="31" id="gd1-An-cJN"/>
+                                    <constraint firstAttribute="height" constant="31" id="jfA-10-Wzg"/>
                                 </constraints>
                                 <color key="onTintColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="1fq-R0-4Nk"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-jl-ghN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uninitialized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-jl-ghN">
                                 <rect key="frame" x="16" y="59" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="f9m-af-f18"/>
+                                    <constraint firstAttribute="height" constant="21" id="w3A-ZF-zyy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DMj-lc-MA4" userLabel="Segmented">
+                                <rect key="frame" x="66" y="88" width="243" height="29"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Qay-jh-wLN"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                    <segment title="Fourth"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="XWG-bc-vld"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-62-egv" userLabel="Segmented Label">
+                                <rect key="frame" x="16" y="124" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Vvd-ch-uob"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -41,15 +66,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1PE-jl-ghN" firstAttribute="top" secondItem="Qgn-JF-eCZ" secondAttribute="bottom" constant="8" id="OFS-TW-5zK"/>
-                            <constraint firstItem="Qgn-JF-eCZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SKw-hp-ZhH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1PE-jl-ghN" secondAttribute="trailing" constant="16" id="gK6-j3-NIs"/>
-                            <constraint firstItem="1PE-jl-ghN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lck-A1-KEe"/>
-                            <constraint firstItem="Qgn-JF-eCZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2K-ET-RhP"/>
+                            <constraint firstItem="DMj-lc-MA4" firstAttribute="top" secondItem="1PE-jl-ghN" secondAttribute="bottom" constant="8" id="2GQ-2s-ez8"/>
+                            <constraint firstItem="1PE-jl-ghN" firstAttribute="top" secondItem="Qgn-JF-eCZ" secondAttribute="bottom" constant="8" id="Fd8-aP-EFi"/>
+                            <constraint firstItem="Qgn-JF-eCZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LYv-qr-IDr"/>
+                            <constraint firstItem="NZY-62-egv" firstAttribute="top" secondItem="DMj-lc-MA4" secondAttribute="bottom" constant="8" id="WWt-Vx-bCe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NZY-62-egv" secondAttribute="trailing" constant="16" id="dVm-3V-ry2"/>
+                            <constraint firstItem="Qgn-JF-eCZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gAH-hy-yPw"/>
+                            <constraint firstItem="DMj-lc-MA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oYQ-9D-S8X"/>
+                            <constraint firstItem="NZY-62-egv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rtg-JG-BH0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1PE-jl-ghN" secondAttribute="trailing" constant="16" id="u4x-zx-H4r"/>
+                            <constraint firstItem="1PE-jl-ghN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="voc-Pr-ufR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="segmentedLabel" destination="NZY-62-egv" id="YAl-7i-iMi"/>
+                        <outlet property="segmentedOutlet" destination="DMj-lc-MA4" id="kL1-em-PO1"/>
                         <outlet property="switchLabel" destination="1PE-jl-ghN" id="m2L-hY-OFm"/>
                         <outlet property="switchOutlet" destination="Qgn-JF-eCZ" id="tey-Wn-tEx"/>
                     </connections>
