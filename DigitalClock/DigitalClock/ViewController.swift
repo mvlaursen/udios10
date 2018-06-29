@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsView: UIView!
     @IBOutlet weak var textColorSegmented: UISegmentedControl!
     
-    let SETTINGS_ALPHA_BRIGHT: CGFloat = 1.0
+    let SETTINGS_ALPHA_BRIGHT: CGFloat = 0.75
     let SETTINGS_ALPHA_DIM: CGFloat = 0.25
     
     override func viewDidLoad() {
