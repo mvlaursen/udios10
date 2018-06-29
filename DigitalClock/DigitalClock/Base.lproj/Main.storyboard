@@ -33,6 +33,9 @@
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oW-YQ-gYo" userLabel="Settings Button">
                                 <rect key="frame" x="16" y="611" width="343" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="hA1-Cj-Gt7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Show Settings">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,7 +50,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFp-19-bCx" userLabel="Text Color Label">
                                         <rect key="frame" x="8" y="8" width="327" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Sib-09-zHN"/>
+                                            <constraint firstAttribute="height" constant="21" id="Lgj-Sn-ncG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -67,7 +70,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H1e-56-BJd" userLabel="Background Color Control">
-                                        <rect key="frame" x="8" y="102.5" width="327" height="29"/>
+                                        <rect key="frame" x="8" y="103" width="327" height="29"/>
                                         <segments>
                                             <segment title="Black"/>
                                             <segment title="White"/>
@@ -80,7 +83,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-EL-Ftq" userLabel="Background Color Label">
-                                        <rect key="frame" x="8" y="71" width="327" height="23.5"/>
+                                        <rect key="frame" x="8" y="71" width="327" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,34 +91,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="top" secondItem="gF9-Ys-0z9" secondAttribute="bottom" constant="6" id="0Gj-cK-ojA"/>
-                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="leading" secondItem="H1e-56-BJd" secondAttribute="leading" id="0ud-bz-63h"/>
-                                    <constraint firstItem="YFp-19-bCx" firstAttribute="leading" secondItem="Gd1-Uh-Neh" secondAttribute="leadingMargin" id="4IX-m3-bbG"/>
-                                    <constraint firstItem="YFp-19-bCx" firstAttribute="trailing" secondItem="gF9-Ys-0z9" secondAttribute="trailing" id="BaV-PI-8GJ"/>
-                                    <constraint firstItem="YFp-19-bCx" firstAttribute="trailing" secondItem="Gd1-Uh-Neh" secondAttribute="trailingMargin" id="E5j-vo-jrc"/>
-                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="top" secondItem="YFp-19-bCx" secondAttribute="bottom" constant="8" symbolic="YES" id="Hkt-sc-yKD"/>
-                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="trailing" secondItem="H1e-56-BJd" secondAttribute="trailing" id="I7P-hK-OgO"/>
-                                    <constraint firstItem="YFp-19-bCx" firstAttribute="top" secondItem="Gd1-Uh-Neh" secondAttribute="topMargin" id="IqJ-8h-4jP"/>
-                                    <constraint firstItem="H1e-56-BJd" firstAttribute="top" secondItem="Hmi-EL-Ftq" secondAttribute="bottom" constant="8" symbolic="YES" id="RGG-2c-pyP"/>
-                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="trailing" secondItem="Hmi-EL-Ftq" secondAttribute="trailing" id="gL3-AD-TO0"/>
-                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="leading" secondItem="Hmi-EL-Ftq" secondAttribute="leading" id="lRL-TG-0x4"/>
-                                    <constraint firstItem="YFp-19-bCx" firstAttribute="leading" secondItem="gF9-Ys-0z9" secondAttribute="leading" id="m8D-QW-cmX"/>
+                                    <constraint firstItem="YFp-19-bCx" firstAttribute="trailing" secondItem="gF9-Ys-0z9" secondAttribute="trailing" id="1Zb-ok-shu"/>
+                                    <constraint firstAttribute="height" constant="142" id="88B-St-AGq"/>
+                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="trailing" secondItem="Hmi-EL-Ftq" secondAttribute="trailing" id="Afd-xN-d8k"/>
+                                    <constraint firstItem="H1e-56-BJd" firstAttribute="top" secondItem="Hmi-EL-Ftq" secondAttribute="bottom" constant="8" symbolic="YES" id="HTf-mk-gO0"/>
+                                    <constraint firstItem="YFp-19-bCx" firstAttribute="leading" secondItem="Gd1-Uh-Neh" secondAttribute="leadingMargin" id="XDk-AH-JYf"/>
+                                    <constraint firstItem="YFp-19-bCx" firstAttribute="leading" secondItem="gF9-Ys-0z9" secondAttribute="leading" id="eVR-Do-sca"/>
+                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="top" secondItem="YFp-19-bCx" secondAttribute="bottom" constant="8" symbolic="YES" id="jIe-gI-JHS"/>
+                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="leading" secondItem="H1e-56-BJd" secondAttribute="leading" id="jNf-Ui-ZZm"/>
+                                    <constraint firstItem="YFp-19-bCx" firstAttribute="top" secondItem="Gd1-Uh-Neh" secondAttribute="topMargin" id="pf7-Y0-zKL"/>
+                                    <constraint firstItem="gF9-Ys-0z9" firstAttribute="leading" secondItem="Hmi-EL-Ftq" secondAttribute="leading" id="tZC-KL-OaZ"/>
+                                    <constraint firstItem="YFp-19-bCx" firstAttribute="trailing" secondItem="Gd1-Uh-Neh" secondAttribute="trailingMargin" id="v9J-cj-0Fy"/>
+                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="trailing" secondItem="H1e-56-BJd" secondAttribute="trailing" id="zJI-p0-Mrz"/>
+                                    <constraint firstItem="Hmi-EL-Ftq" firstAttribute="top" secondItem="gF9-Ys-0z9" secondAttribute="bottom" constant="6" id="zgj-lx-mz5"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3SJ-U9-jZT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5k1-z9-Ovp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3SJ-U9-jZT" secondAttribute="trailing" constant="16" id="Bkx-w0-75X"/>
-                            <constraint firstItem="Gd1-Uh-Neh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="441" id="CVJ-fX-7X4"/>
-                            <constraint firstItem="2oW-YQ-gYo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IIr-X8-yFq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3SJ-U9-jZT" secondAttribute="bottom" constant="20" id="IRL-Qy-MqU"/>
-                            <constraint firstItem="Gd1-Uh-Neh" firstAttribute="trailing" secondItem="2oW-YQ-gYo" secondAttribute="trailing" id="N0X-qG-amv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2oW-YQ-gYo" secondAttribute="trailing" constant="16" id="OqG-G5-SJy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2oW-YQ-gYo" secondAttribute="bottom" constant="20" id="Uif-v2-9hV"/>
-                            <constraint firstItem="Gd1-Uh-Neh" firstAttribute="leading" secondItem="2oW-YQ-gYo" secondAttribute="leading" id="ZR5-XZ-tP3"/>
-                            <constraint firstItem="2oW-YQ-gYo" firstAttribute="top" secondItem="Gd1-Uh-Neh" secondAttribute="bottom" constant="8" symbolic="YES" id="aJu-l7-hP5"/>
-                            <constraint firstItem="3SJ-U9-jZT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x7Q-dU-hsP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3SJ-U9-jZT" secondAttribute="bottom" constant="20" id="2w9-WZ-7jg"/>
+                            <constraint firstItem="2oW-YQ-gYo" firstAttribute="top" secondItem="Gd1-Uh-Neh" secondAttribute="bottom" constant="8" id="8O3-5B-zsz"/>
+                            <constraint firstItem="3SJ-U9-jZT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EzT-2T-rub"/>
+                            <constraint firstItem="3SJ-U9-jZT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="G4J-4F-dNb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3SJ-U9-jZT" secondAttribute="trailing" constant="16" id="hsV-yA-Sfb"/>
+                            <constraint firstItem="2oW-YQ-gYo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jsn-u2-pEn"/>
+                            <constraint firstItem="Gd1-Uh-Neh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qES-98-phr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2oW-YQ-gYo" secondAttribute="trailing" constant="16" id="sJ5-qN-rti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2oW-YQ-gYo" secondAttribute="bottom" constant="20" id="szB-cm-Sne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gd1-Uh-Neh" secondAttribute="trailing" constant="16" id="teU-vh-0XU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
