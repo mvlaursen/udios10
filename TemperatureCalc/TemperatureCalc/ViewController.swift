@@ -34,6 +34,16 @@ class ViewController: UIViewController {
 
     @IBAction func calculate(_ sender: Any) {
         self.resignFirstResponder()
+        
+        if formatSeg.selectedSegmentIndex == 0 {
+            let f = Double(textField.text!)
+            let c = (5 * (f! - 32)) / 9
+            outputLabel.text = String(c)
+        } else if formatSeg.selectedSegmentIndex == 1 {
+            var c = Double(textField.text!)
+            let f = (9 * c!) / 5 + 32
+            outputLabel.text = String(f)
+        }
     }
     
     @IBAction func formatAction(_ sender: Any) {
