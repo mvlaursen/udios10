@@ -15,9 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    enum ConversionFormat {
+    case celsiusToFahrenheit
+    case fahrenheitToCelsius
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        formatSeg.selectedSegmentIndex = 0
+        updateViewForFormat(format: .celsiusToFahrenheit)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,10 +38,18 @@ class ViewController: UIViewController {
     
     @IBAction func formatAction(_ sender: Any) {
         if formatSeg.selectedSegmentIndex == 0 {
+            updateViewForFormat(format: .celsiusToFahrenheit)
+        } else if formatSeg.selectedSegmentIndex == 1 {
+            updateViewForFormat(format: .fahrenheitToCelsius)
+        }
+    }
+    
+    func updateViewForFormat(format: ConversionFormat) {
+        if (format == .celsiusToFahrenheit) {
             enterLabel.text = "Enter Fahrenheit"
             outputLabel.text = "0 Celsius"
             textField.text = ""
-        } else if formatSeg.selectedSegmentIndex == 1 {
+        } else if (format == .fahrenheitToCelsius) {
             enterLabel.text = "Enter Celsius"
             outputLabel.text = "0 Fahrenheit"
             textField.text = ""

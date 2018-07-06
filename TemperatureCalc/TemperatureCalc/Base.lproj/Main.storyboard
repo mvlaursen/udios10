@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-dR-nMc" userLabel="Enter Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-dR-nMc" userLabel="Enter Label">
                                 <rect key="frame" x="16" y="78" width="288" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dpu-x0-XXl"/>
@@ -66,8 +66,8 @@
                                     <constraint firstAttribute="height" constant="28" id="XlI-ZW-Rw3"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Calculate to C"/>
-                                    <segment title="Calculate to F"/>
+                                    <segment title="Convert F to C"/>
+                                    <segment title="Convert C to F"/>
                                 </segments>
                                 <connections>
                                     <action selector="formatAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YaN-d5-MeQ"/>
