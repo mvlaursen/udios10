@@ -35,16 +35,37 @@ class ViewController: UIViewController {
     @IBAction func calculate(_ sender: Any) {
         self.resignFirstResponder()
         
-        let inputText = textField.text ?? "0"
+        var c: Double = 0
+        var f: Double = 0
 
         if formatSeg.selectedSegmentIndex == 0 {
-            let f = Double(inputText)
-            let c = (5 * (f! - 32)) / 9
+            f = Double(textField.text!) ?? 0
+            c = (5 * (f - 32)) / 9
             outputLabel.text = String(format: "%4.1f Celsius", c)
         } else if formatSeg.selectedSegmentIndex == 1 {
-            let c = Double(inputText)
-            let f = (9 * c!) / 5 + 32
+            c = Double(textField.text!) ?? 0
+            f = (9 * c) / 5 + 32
             outputLabel.text = String(format: "%4.1f Fahrenheit", f)
+        }
+        
+        if f < 16 {
+            imageView.image = UIImage(named: "Temp1.png")
+        } else if f < 32 {
+            imageView.image = UIImage(named: "Temp2.png")
+        } else if f < 48 {
+            imageView.image = UIImage(named: "Temp3.png")
+        } else if f < 64 {
+            imageView.image = UIImage(named: "Temp4.png")
+        } else if f < 80 {
+            imageView.image = UIImage(named: "Temp5.png")
+        } else if f < 96 {
+            imageView.image = UIImage(named: "Temp6.png")
+        } else if f < 108 {
+            imageView.image = UIImage(named: "Temp7.png")
+        } else if f < 120 {
+            imageView.image = UIImage(named: "Temp8.png")
+        } else {
+            imageView.image = UIImage(named: "Temp9.png")
         }
     }
     
