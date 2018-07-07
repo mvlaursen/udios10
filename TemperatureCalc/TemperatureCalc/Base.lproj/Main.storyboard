@@ -21,40 +21,28 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TemperatureCalc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm1-ET-bAX" userLabel="TitleLabel">
                                 <rect key="frame" x="16" y="20" width="288" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hC1-PB-eaK"/>
+                                    <constraint firstAttribute="height" constant="50" id="HSm-H2-yp8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-dR-nMc" userLabel="Enter Label">
-                                <rect key="frame" x="16" y="78" width="288" height="50"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="73" minValue="0.0" maxValue="212" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-E6-dNb" userLabel="Input Slider">
+                                <rect key="frame" x="14" y="78" width="292" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dpu-x0-XXl"/>
+                                    <constraint firstAttribute="height" constant="29" id="D9c-24-AVp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rI2-Nd-A6B" userLabel="Enter Text Field">
-                                <rect key="frame" x="16" y="136" width="288" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="EdA-jE-XO1"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
-                                    <action selector="calculate:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="yrU-Gd-pUI"/>
+                                    <action selector="calculate:" destination="BYZ-38-t0r" eventType="valueChanged" id="jXY-K3-hm0"/>
                                 </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temp1" translatesAutoresizingMaskIntoConstraints="NO" id="bue-eH-1wi" userLabel="Thermometer Image">
-                                <rect key="frame" x="16" y="174" width="288" height="192"/>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temp2" translatesAutoresizingMaskIntoConstraints="NO" id="bue-eH-1wi" userLabel="Thermometer Image">
+                                <rect key="frame" x="16" y="173" width="288" height="193"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Celsius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-x8-eWQ" userLabel="Calculated Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Celsius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-x8-eWQ" userLabel="Output Label">
                                 <rect key="frame" x="16" y="374" width="288" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="l9A-7F-xvm"/>
+                                    <constraint firstAttribute="height" constant="50" id="cav-4V-y1O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -63,7 +51,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6s2-5T-OPe">
                                 <rect key="frame" x="16" y="432" width="288" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="XlI-ZW-Rw3"/>
+                                    <constraint firstAttribute="height" constant="28" id="puU-aW-8WP"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Convert F to C"/>
@@ -73,45 +61,54 @@
                                     <action selector="formatAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YaN-d5-MeQ"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-dR-nMc" userLabel="Input Label">
+                                <rect key="frame" x="16" y="115" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YOw-pI-jaF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sm1-ET-bAX" secondAttribute="trailing" constant="16" id="1X4-Ip-VyV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rI2-Nd-A6B" secondAttribute="trailing" constant="16" id="2HC-xz-I19"/>
-                            <constraint firstItem="bue-eH-1wi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3dI-Le-Bg5"/>
-                            <constraint firstItem="6s2-5T-OPe" firstAttribute="top" secondItem="YZa-x8-eWQ" secondAttribute="bottom" constant="8" id="4aw-8Z-lvI"/>
-                            <constraint firstItem="sm1-ET-bAX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5VV-oN-ZVk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6s2-5T-OPe" secondAttribute="bottom" constant="20" id="AbJ-a8-ZgO"/>
-                            <constraint firstItem="rI2-Nd-A6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="B0p-Ol-Okw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6s2-5T-OPe" secondAttribute="trailing" constant="16" id="Ej9-TV-L4i"/>
-                            <constraint firstItem="rI2-Nd-A6B" firstAttribute="top" secondItem="vCk-dR-nMc" secondAttribute="bottom" constant="8" id="hQP-pH-AEb"/>
-                            <constraint firstItem="YZa-x8-eWQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ip4-az-5La"/>
-                            <constraint firstItem="vCk-dR-nMc" firstAttribute="top" secondItem="sm1-ET-bAX" secondAttribute="bottom" constant="8" id="jxa-Yl-DuR"/>
-                            <constraint firstItem="6s2-5T-OPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kzA-1Z-cyk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YZa-x8-eWQ" secondAttribute="trailing" constant="16" id="nAc-LN-ajB"/>
-                            <constraint firstItem="bue-eH-1wi" firstAttribute="top" secondItem="rI2-Nd-A6B" secondAttribute="bottom" constant="8" id="nPX-fB-IKb"/>
-                            <constraint firstItem="sm1-ET-bAX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ucC-Ou-fNB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bue-eH-1wi" secondAttribute="trailing" constant="16" id="uuI-be-1YM"/>
-                            <constraint firstItem="YZa-x8-eWQ" firstAttribute="top" secondItem="bue-eH-1wi" secondAttribute="bottom" constant="8" id="wyc-XX-lNq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vCk-dR-nMc" secondAttribute="trailing" constant="16" id="xb5-sB-l17"/>
-                            <constraint firstItem="vCk-dR-nMc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zMY-5z-DSQ"/>
+                            <constraint firstItem="6s2-5T-OPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0PH-ip-lgu"/>
+                            <constraint firstItem="YZa-x8-eWQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3J8-eo-U6V"/>
+                            <constraint firstItem="YZa-x8-eWQ" firstAttribute="top" secondItem="bue-eH-1wi" secondAttribute="bottom" constant="8" id="5HZ-Dh-Qjw"/>
+                            <constraint firstItem="bue-eH-1wi" firstAttribute="top" secondItem="vCk-dR-nMc" secondAttribute="bottom" constant="8" id="AFQ-8x-Exg"/>
+                            <constraint firstItem="CmE-E6-dNb" firstAttribute="top" secondItem="sm1-ET-bAX" secondAttribute="bottom" constant="8" id="HeN-WC-5Lc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CmE-E6-dNb" secondAttribute="trailing" constant="16" id="Qa9-dO-4j3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6s2-5T-OPe" secondAttribute="bottom" constant="20" id="UhO-N8-bWI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6s2-5T-OPe" secondAttribute="trailing" constant="16" id="VHJ-TR-I4a"/>
+                            <constraint firstItem="bue-eH-1wi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WcR-5c-3Jk"/>
+                            <constraint firstItem="6s2-5T-OPe" firstAttribute="top" secondItem="YZa-x8-eWQ" secondAttribute="bottom" constant="8" id="Xqa-Tq-dNI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vCk-dR-nMc" secondAttribute="trailing" constant="16" id="ahY-xB-Tgh"/>
+                            <constraint firstItem="vCk-dR-nMc" firstAttribute="top" secondItem="CmE-E6-dNb" secondAttribute="bottom" constant="8" id="aiW-S6-5dv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sm1-ET-bAX" secondAttribute="trailing" constant="16" id="dy0-j1-Cis"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bue-eH-1wi" secondAttribute="trailing" constant="16" id="fhI-AA-cWU"/>
+                            <constraint firstItem="vCk-dR-nMc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mk4-rc-9IZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YZa-x8-eWQ" secondAttribute="trailing" constant="16" id="plP-4X-vFP"/>
+                            <constraint firstItem="sm1-ET-bAX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rjM-oh-tf8"/>
+                            <constraint firstItem="CmE-E6-dNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="siX-Jv-xWa"/>
+                            <constraint firstItem="sm1-ET-bAX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xVm-HH-FCg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="conversionDirectionSeg" destination="6s2-5T-OPe" id="bK1-jC-Uwt"/>
-                        <outlet property="inputField" destination="rI2-Nd-A6B" id="PiK-Cb-7fa"/>
                         <outlet property="inputLabel" destination="vCk-dR-nMc" id="NpL-em-UHc"/>
+                        <outlet property="inputSlider" destination="CmE-E6-dNb" id="kv0-sk-z9G"/>
                         <outlet property="outputLabel" destination="YZa-x8-eWQ" id="z3h-3b-qeU"/>
                         <outlet property="thermometerView" destination="bue-eH-1wi" id="on4-MY-4rf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="116.25" y="117.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Temp1" width="263" height="943"/>
+        <image name="Temp2" width="263" height="943"/>
     </resources>
 </document>

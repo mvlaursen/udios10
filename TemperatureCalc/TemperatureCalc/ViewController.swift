@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var conversionDirectionSeg: UISegmentedControl!
-    @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var inputLabel: UILabel!
+    @IBOutlet weak var inputSlider: UISlider!
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var thermometerView: UIImageView!
 
-    let DEFAULT_C_ENTRY: String = "23"
-    let DEFAULT_F_ENTRY: String = "73"
+    let DEFAULT_C_VALUE: Float = 23
+    let DEFAULT_F_VALUE: Float = 73
     
     enum ConversionDirection {
     case celsiusToFahrenheit
@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         conversionDirectionSeg.selectedSegmentIndex = 0
-        inputField.text = DEFAULT_F_ENTRY
-        updateView(direction: .fahrenheitToCelsius, input: DEFAULT_F_ENTRY)
+        inputSlider.value = DEFAULT_F_VALUE
+        updateView(direction: .fahrenheitToCelsius, input: DEFAULT_F_VALUE)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,14 +40,14 @@ class ViewController: UIViewController {
         self.resignFirstResponder()
         
         var conversionDirection: ConversionDirection = .fahrenheitToCelsius
-        var input: String = DEFAULT_F_ENTRY
+        var input: Float = DEFAULT_F_VALUE
 
         if conversionDirectionSeg.selectedSegmentIndex == 0 {
             conversionDirection = .fahrenheitToCelsius
-            input = inputField.text ?? DEFAULT_F_ENTRY
+            input = inputSlider.value
         } else if conversionDirectionSeg.selectedSegmentIndex == 1 {
             conversionDirection = .celsiusToFahrenheit
-            input = inputField.text ?? DEFAULT_C_ENTRY
+            input = inputSlider.value
         }
         
         updateView(direction: conversionDirection, input: input)
@@ -55,27 +55,27 @@ class ViewController: UIViewController {
     
     @IBAction func formatAction(_ sender: Any) {
         if conversionDirectionSeg.selectedSegmentIndex == 0 {
-            inputField.text = DEFAULT_F_ENTRY
-            updateView(direction: .fahrenheitToCelsius, input: DEFAULT_F_ENTRY)
+            inputSlider.value = DEFAULT_F_VALUE
+            updateView(direction: .fahrenheitToCelsius, input: DEFAULT_F_VALUE)
         } else if conversionDirectionSeg.selectedSegmentIndex == 1 {
-            inputField.text = DEFAULT_C_ENTRY
-            updateView(direction: .fahrenheitToCelsius, input: DEFAULT_C_ENTRY)
+            inputSlider.value = DEFAULT_C_VALUE
+            updateView(direction: .fahrenheitToCelsius, input: DEFAULT_C_VALUE)
         }
     }
     
-    func updateView(direction: ConversionDirection, input: String) {
-        var c: Double = 0
-        var f: Double = 0
+    func updateView(direction: ConversionDirection, input: Float) {
+        var c: Float = 0
+        var f: Float = 0
         
         if direction == .celsiusToFahrenheit {
-            c = Double(input) ?? 0
+            c = input
             f = (9 * c) / 5 + 32
-            inputLabel.text = "Enter Celsius"
+            inputLabel.text = String(format: "%4.1f Celsius", c)
             outputLabel.text = String(format: "%4.1f Fahrenheit", f)
         } else if direction == .fahrenheitToCelsius {
-            f = Double(input) ?? 0
+            f = input
             c = (5 * (f - 32)) / 9
-            inputLabel.text = "Enter Fahrenheit"
+            inputLabel.text = String(format: "%4.1f Fahrenheit", f)
             outputLabel.text = String(format: "%4.1f Celsius", c)
         }
         
