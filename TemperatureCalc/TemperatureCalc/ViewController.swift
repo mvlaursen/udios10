@@ -40,11 +40,11 @@ class ViewController: UIViewController {
         if formatSeg.selectedSegmentIndex == 0 {
             let f = Double(inputText)
             let c = (5 * (f! - 32)) / 9
-            outputLabel.text = String(c)
+            outputLabel.text = String(format: "%4.1f", c)
         } else if formatSeg.selectedSegmentIndex == 1 {
             let c = Double(inputText)
             let f = (9 * c!) / 5 + 32
-            outputLabel.text = String(f)
+            outputLabel.text = String(format: "%4.1f", f)
         }
     }
     
