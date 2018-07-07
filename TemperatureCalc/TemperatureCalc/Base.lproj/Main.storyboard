@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="73" minValue="0.0" maxValue="212" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-E6-dNb" userLabel="Input Slider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-E6-dNb" userLabel="Input Slider">
                                 <rect key="frame" x="14" y="78" width="292" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="D9c-24-AVp"/>
