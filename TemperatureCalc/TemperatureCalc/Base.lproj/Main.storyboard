@@ -99,11 +99,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="enterLabel" destination="vCk-dR-nMc" id="NpL-em-UHc"/>
-                        <outlet property="formatSeg" destination="6s2-5T-OPe" id="bK1-jC-Uwt"/>
-                        <outlet property="imageView" destination="bue-eH-1wi" id="on4-MY-4rf"/>
+                        <outlet property="conversionDirectionSeg" destination="6s2-5T-OPe" id="bK1-jC-Uwt"/>
+                        <outlet property="inputField" destination="rI2-Nd-A6B" id="PiK-Cb-7fa"/>
+                        <outlet property="inputLabel" destination="vCk-dR-nMc" id="NpL-em-UHc"/>
                         <outlet property="outputLabel" destination="YZa-x8-eWQ" id="z3h-3b-qeU"/>
-                        <outlet property="textField" destination="rI2-Nd-A6B" id="PiK-Cb-7fa"/>
+                        <outlet property="thermometerView" destination="bue-eH-1wi" id="on4-MY-4rf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
