@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     let COUNTDOWN: Int = 10
     
     var isPlaying: Bool = false
-    var maracaIndex: Int = 1
     var score: Int = 0
     
     override func viewDidLoad() {
@@ -37,13 +36,17 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake && isPlaying {
+            var maracaIndex: Int = 0
             score += 1
             scoreLabel.text = String(score)
             
-            maracaIndex += 1
-            maracaImage.image = UIImage(named: "Maracas\(maracaIndex).png")
-            if maracaIndex == 4 {
-                maracaIndex = 0
+            Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+                maracaIndex += 1
+                self.maracaImage.image = UIImage(named: "Maracas\(maracaIndex).png")
+                if maracaIndex == 5 {
+                    timer.invalidate()
+                    self.maracaImage.image = UIImage(named: "Maracas1.png")
+                }
             }
         }
     }
