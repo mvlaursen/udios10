@@ -14,9 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     
+    let COUNTDOWN: Int = 10
+    
+    var score: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         startButton.layer.cornerRadius = 10
     }
@@ -27,6 +30,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startGame(_ sender: Any) {
+        startButton.isEnabled = false
+        
+        var countdown = COUNTDOWN
+        timerLabel.text = String(countdown)
+
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            countdown -= 1
+            self.timerLabel.text = String(countdown)
+            
+            if countdown == 0 {
+                timer.invalidate()
+                self.startButton.isEnabled = true
+            }
+        }
     }
 }
 
