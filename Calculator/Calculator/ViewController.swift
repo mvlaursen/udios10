@@ -11,17 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
     
-    private var accumulator: Double = 0
-    private var displayValuePrivate: Double = 0
-    var displayValue: Double {
-        get {
-            return displayValuePrivate
-        }
-        set {
-            displayValuePrivate = newValue
-            display.text = String(format: "%2.0f", displayValuePrivate)
-        }
-    }
+    var accumulator: Double = 0
+    var displayValue: Double = 0
     var operation: String = "="
     
     override func viewDidLoad() {
@@ -43,25 +34,30 @@ class ViewController: UIViewController {
         default: break
         }
         
-        displayValue = accumulator
+        setDisplay(value: accumulator)
     }
     
     @IBAction func clear(_ sender: Any) {
         accumulator = 0
-        displayValue = 0
+        setDisplay(value: 0)
         operation = "="
     }
     
     @IBAction func digitTapped(_ sender: AnyObject) {
         let buttonTitle: String = sender.currentTitle ?? "0"
         let digit: Double = NumberFormatter().number(from: buttonTitle)?.doubleValue ?? 0
-        displayValue = displayValue == 0 ? digit : 10 * displayValue + digit
+        setDisplay(value: displayValue == 0 ? digit : 10 * displayValue + digit)
     }
     
     @IBAction func operation(_ sender: AnyObject) {
         operation = sender.currentTitle ?? "-"
         accumulator = displayValue
-        displayValue = 0
+        setDisplay(value: 0)
+    }
+    
+    func setDisplay(value: Double) {
+        displayValue = value
+        display.text = String(format: "%2.0f", value)
     }
 }
 
