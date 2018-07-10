@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        clear()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,10 +38,8 @@ class ViewController: UIViewController {
         setDisplay(value: accumulator)
     }
     
-    @IBAction func clear(_ sender: Any) {
-        accumulator = 0
-        setDisplay(value: 0)
-        operation = "="
+    @IBAction func clearTapped(_ sender: Any) {
+        clear()
     }
     
     @IBAction func digitTapped(_ sender: AnyObject) {
@@ -53,6 +52,12 @@ class ViewController: UIViewController {
         operation = sender.currentTitle ?? "-"
         accumulator = displayValue
         setDisplay(value: 0)
+    }
+    
+    func clear() {
+        accumulator = 0
+        setDisplay(value: 0)
+        operation = "="
     }
     
     func setDisplay(value: Double) {
