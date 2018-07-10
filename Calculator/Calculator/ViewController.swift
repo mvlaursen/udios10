@@ -9,22 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var readout: UILabel!
+    @IBOutlet weak var display: UILabel!
     
+    private var accumulator: Double = 0
+    private var displayValuePrivate: Double = 0
     var displayValue: Double {
         get {
-            return (NumberFormatter().number(from: readout.text!)?.doubleValue)!
+            return displayValuePrivate
         }
         set {
-            readout.text = String(format: "%2.0f", newValue)
-            isFirstDigit = true
-            operation2 = "="
+            displayValuePrivate = newValue
+            display.text = String(format: "%2.0f", displayValuePrivate)
         }
     }
-    
-    var isFirstDigit: Bool = true
-    var operation1: Double = 0
-    var operation2: String = "="
+    var operation: String = "="
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,30 +35,33 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculate(_ sender: AnyObject) {
-        switch operation2 {
-        case "+": displayValue += operation1
-        case "*": displayValue *= operation1
-        case "-": displayValue -= operation1
-        case "/": displayValue = operation1 / displayValue
+        switch operation {
+        case "+": accumulator += displayValue
+        case "*": accumulator *= displayValue
+        case "-": accumulator -= displayValue
+        case "/": accumulator = accumulator / displayValue
         default: break
         }
+        
+        displayValue = accumulator
     }
     
     @IBAction func clear(_ sender: Any) {
+        accumulator = 0
         displayValue = 0
+        operation = "="
     }
     
     @IBAction func digitTapped(_ sender: AnyObject) {
-        let digit = sender.currentTitle!
-        
-        readout.text = isFirstDigit ? digit : readout.text! + digit!
-        isFirstDigit = false
+        let buttonTitle: String = sender.currentTitle ?? "0"
+        let digit: Double = NumberFormatter().number(from: buttonTitle)?.doubleValue ?? 0
+        displayValue = displayValue == 0 ? digit : 10 * displayValue + digit
     }
     
     @IBAction func operation(_ sender: AnyObject) {
-        operation2 = sender.currentTitle as! String
-        operation1 = displayValue
-        isFirstDigit = true
+        operation = sender.currentTitle ?? "-"
+        accumulator = displayValue
+        displayValue = 0
     }
 }
 
