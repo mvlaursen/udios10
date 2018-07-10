@@ -25,6 +25,7 @@
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="48"/>
                                 <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="1"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vUV-NF-lXw">
                                 <rect key="frame" x="28" y="196" width="264" height="60"/>
@@ -37,9 +38,14 @@
                                             <constraint firstAttribute="height" constant="60" id="5DC-cQ-TNx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xD3-zk-dQW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kk8-u4-799">
                                         <rect key="frame" x="68" y="0.0" width="60" height="60"/>
@@ -49,9 +55,14 @@
                                             <constraint firstAttribute="width" constant="60" id="uSd-P7-4Rq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Iw-3O-tiC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exX-k0-WRe">
                                         <rect key="frame" x="136" y="0.0" width="60" height="60"/>
@@ -61,21 +72,31 @@
                                             <constraint firstAttribute="height" constant="60" id="Nni-SK-qnL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0iX-xu-NhZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMq-dP-Xbd">
                                         <rect key="frame" x="204" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="XPi-Yt-59d"/>
                                             <constraint firstAttribute="width" constant="60" id="gXm-4y-g7Q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="C">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCS-v9-R9J"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -93,9 +114,14 @@
                                             <constraint firstAttribute="height" constant="60" id="vs7-E6-Mpi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-ix-ylQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-3T-eLV">
                                         <rect key="frame" x="68" y="0.0" width="60" height="60"/>
@@ -105,9 +131,14 @@
                                             <constraint firstAttribute="width" constant="60" id="btT-nx-xTZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V12-HG-qjY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lZ-Jy-fKi">
                                         <rect key="frame" x="136" y="0.0" width="60" height="60"/>
@@ -117,21 +148,31 @@
                                             <constraint firstAttribute="height" constant="60" id="sSe-Gc-RV5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBn-7s-yZ1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0s-n0-bR5">
                                         <rect key="frame" x="204" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="VL6-HB-roj"/>
                                             <constraint firstAttribute="height" constant="60" id="dZd-9Q-GLn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W37-d9-VP0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -149,9 +190,14 @@
                                             <constraint firstAttribute="width" constant="60" id="pTc-Eo-5vb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U2n-3I-Q79"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iui-Bj-72k">
                                         <rect key="frame" x="68" y="0.0" width="60" height="60"/>
@@ -161,9 +207,14 @@
                                             <constraint firstAttribute="width" constant="60" id="ikh-w0-CA0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqr-r4-fEe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-v4-GwY">
                                         <rect key="frame" x="136" y="0.0" width="60" height="60"/>
@@ -173,21 +224,31 @@
                                             <constraint firstAttribute="width" constant="60" id="Kdl-hz-J9t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRQ-sS-8zo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-k5-z9I">
                                         <rect key="frame" x="204" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="V72-sO-P9L"/>
                                             <constraint firstAttribute="width" constant="60" id="hpr-yc-PKo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VzH-GM-3o8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -199,15 +260,20 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSC-vf-deL">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Cj0-wP-13V"/>
                                             <constraint firstAttribute="height" constant="60" id="hKy-PJ-Snr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="boJ-x7-w68"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-Pe-iuh">
                                         <rect key="frame" x="68" y="0.0" width="60" height="60"/>
@@ -217,33 +283,48 @@
                                             <constraint firstAttribute="height" constant="60" id="zSd-kh-kCR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VnD-zp-PGE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4Q-HA-Pbt">
                                         <rect key="frame" x="136" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="CeN-cb-bez"/>
                                             <constraint firstAttribute="width" constant="60" id="PZY-WJ-KpR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="/">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Q6-oO-qc7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-vu-Ewp">
                                         <rect key="frame" x="204" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="QgZ-iJ-DZD"/>
                                             <constraint firstAttribute="height" constant="60" id="ohX-gn-9QO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hMY-9I-cVZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -268,6 +349,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="readout" destination="2Sg-8H-ZJJ" id="Yy7-C9-Jn7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
