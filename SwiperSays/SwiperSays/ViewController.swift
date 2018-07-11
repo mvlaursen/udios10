@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     
     let DEFAULT_COUNTDOWN: Int = 20
+    let MAX_SWIPE_TIME: TimeInterval = 1.5
     
     var countdown: Int = 0
     var isGameActive: Bool = false
-    var simonTimer: Timer = Timer()
     var score: Int = 0
-    
+    var swiperTimer: Timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -94,15 +95,15 @@ class ViewController: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
         instructionLabel.text = array[randomIndex]
         
-        simonTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (_) in
-            
+        swiperTimer = Timer.scheduledTimer(withTimeInterval: MAX_SWIPE_TIME, repeats: false) { (_) in
+            self.simonSays()
         }
     }
     
     @objc func swipe(sender: UISwipeGestureRecognizer) {
         if isGameActive {
             if sender.direction == .down {
-                simonTimer.invalidate()
+                swiperTimer.invalidate()
                 
                 if instructionLabel.text == "Swiper says swipe down." {
                     setScore(value: score + 1)
@@ -113,7 +114,7 @@ class ViewController: UIViewController {
                 }
             }
             if sender.direction == .left {
-                simonTimer.invalidate()
+                swiperTimer.invalidate()
                 
                 if instructionLabel.text == "Swiper says swipe left." {
                     setScore(value: score + 1)
@@ -124,7 +125,7 @@ class ViewController: UIViewController {
                 }
             }
             if sender.direction == .right {
-                simonTimer.invalidate()
+                swiperTimer.invalidate()
                 
                 if instructionLabel.text == "Swiper says swipe right." {
                     setScore(value: score + 1)
@@ -135,7 +136,7 @@ class ViewController: UIViewController {
                 }
             }
             if sender.direction == .up {
-                simonTimer.invalidate()
+                swiperTimer.invalidate()
                 
                 if instructionLabel.text == "Swiper says swipe up." {
                     setScore(value: score + 1)
