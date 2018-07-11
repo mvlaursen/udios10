@@ -122,49 +122,22 @@ class ViewController: UIViewController {
         }
         
         swiperTimer = Timer.scheduledTimer(withTimeInterval: MAX_SWIPE_TIME, repeats: false) { (_) in
-            self.simonSays()
+            if self.isGameActive {
+                self.simonSays()
+            }
         }
     }
     
     @objc func swipe(sender: UISwipeGestureRecognizer) {
         if isGameActive {
-            if sender.direction == .down {
-                swiperTimer.invalidate()
-                
-                if instructionLabel.text == "Swiper says swipe down." {
-                    setScore(value: score + 1)
-                    simonSays()
-                } else {
-                    setScore(value: score - 1)
-                    simonSays()
-                }
+            swiperTimer.invalidate()
+            
+            let infoFiltered = swipeInfo.filter { (info) -> Bool in
+                sender.direction == info.direction
             }
-            if sender.direction == .left {
-                swiperTimer.invalidate()
-                
-                if instructionLabel.text == "Swiper says swipe left." {
-                    setScore(value: score + 1)
-                    simonSays()
-                } else {
-                    setScore(value: score - 1)
-                    simonSays()
-                }
-            }
-            if sender.direction == .right {
-                swiperTimer.invalidate()
-                
-                if instructionLabel.text == "Swiper says swipe right." {
-                    setScore(value: score + 1)
-                    simonSays()
-                } else {
-                    setScore(value: score - 1)
-                    simonSays()
-                }
-            }
-            if sender.direction == .up {
-                swiperTimer.invalidate()
-                
-                if instructionLabel.text == "Swiper says swipe up." {
+            assert(infoFiltered.count == 1)
+            if (infoFiltered.count == 1) {
+                if instructionLabel.text == infoFiltered[0].goodInstruction {
                     setScore(value: score + 1)
                     simonSays()
                 } else {
