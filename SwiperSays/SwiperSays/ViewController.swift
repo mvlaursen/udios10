@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let DEFAULT_COUNTDOWN: Int = 20
     
     var countdown: Int = 0
-    var mode: Int = 0
+    var isGameActive: Bool = false
     var simonTimer: Timer = Timer()
     var score: Int = 0
     
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 
     @IBAction func startGame(_ sender: UIButton) {
         if countdown == DEFAULT_COUNTDOWN {
-            mode = 1
+            isGameActive = true
             startGameButton.isEnabled = false
             startGameButton.alpha = 0.25
             
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                     self.startGameButton.alpha = 1
                     self.startGameButton.setTitle("Restart", for: .normal)
                     
-                    self.mode = 0
+                    self.isGameActive = false
                 }
             }
             
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
     }
     
     @objc func swipe(sender: UISwipeGestureRecognizer) {
-        if (mode == 1) {
+        if isGameActive {
             if sender.direction == .down {
                 simonTimer.invalidate()
                 
