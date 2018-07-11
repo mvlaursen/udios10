@@ -18,16 +18,20 @@ class ViewController: UIViewController {
         var badInstruction: String = String()
         var direction: UISwipeGestureRecognizerDirection = .left
         var goodInstruction: String = String()
+        var recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
         
-        init(direction: UISwipeGestureRecognizerDirection, goodInstruction: String, badInstruction: String) {
+        init(direction: UISwipeGestureRecognizerDirection, goodInstruction: String, badInstruction: String,
+             recognizer: UISwipeGestureRecognizer) {
             self.badInstruction = badInstruction
             self.direction = direction
             self.goodInstruction = goodInstruction
+            self.recognizer = recognizer
+            self.recognizer.direction = direction
         }
     }
     
     let DEFAULT_COUNTDOWN: Int = 20
-    let MAX_SWIPE_TIME: TimeInterval = 1.5
+    let MAX_SWIPE_TIME: TimeInterval = 3
     
     var countdown: Int = 0
     var instruction: Array<String> = []
@@ -42,29 +46,24 @@ class ViewController: UIViewController {
         setCountdown(value: DEFAULT_COUNTDOWN)
         setScore(value: 0)
         
-        swipeInfo.append(SwipeInfo(direction: .down, goodInstruction: "Swiper says swipe down.", badInstruction: "Swipe down."))
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeDown.direction = .down
-        self.view.addGestureRecognizer(swipeDown)
+        swipeInfo.append(SwipeInfo(direction: .down, goodInstruction: "Swiper says swipe down.",
+            badInstruction: "Swipe down.", recognizer: swipeDown))
 
-        swipeInfo.append(SwipeInfo(direction: .left, goodInstruction: "Swiper says swipe left.", badInstruction: "Swipe left."))
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
+        swipeInfo.append(SwipeInfo(direction: .left, goodInstruction: "Swiper says swipe left.",
+            badInstruction: "Swipe left.", recognizer: swipeLeft))
 
-        swipeInfo.append(SwipeInfo(direction: .right, goodInstruction: "Swiper says swipe right.", badInstruction: "Swipe right."))
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
+        swipeInfo.append(SwipeInfo(direction: .right, goodInstruction: "Swiper says swipe right.",
+            badInstruction: "Swipe right.", recognizer: swipeRight))
 
-        swipeInfo.append(SwipeInfo(direction: .up, goodInstruction: "Swiper says swipe up.", badInstruction: "Swipe up."))
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeUp.direction = .up
-        self.view.addGestureRecognizer(swipeUp)
+        swipeInfo.append(SwipeInfo(direction: .up, goodInstruction: "Swiper says swipe up.",
+            badInstruction: "Swipe up.", recognizer: swipeUp))
         
         for info in swipeInfo {
-            instruction.append(info.badInstruction)
-            instruction.append(info.goodInstruction)
+            self.view.addGestureRecognizer(info.recognizer)
         }
     }
 
@@ -114,8 +113,13 @@ class ViewController: UIViewController {
     }
     
     func simonSays() {
-        let randomIndex = Int(arc4random_uniform(UInt32(instruction.count)))
-        instructionLabel.text = instruction[randomIndex]
+        let swipeInfo: SwipeInfo = self.swipeInfo[Int(arc4random_uniform(UInt32(self.swipeInfo.count)))]
+        let badOrGood: Int = Int(arc4random_uniform(2))
+        if badOrGood == 0 {
+            instructionLabel.text = swipeInfo.badInstruction
+        } else {
+            instructionLabel.text = swipeInfo.goodInstruction
+        }
         
         swiperTimer = Timer.scheduledTimer(withTimeInterval: MAX_SWIPE_TIME, repeats: false) { (_) in
             self.simonSays()
