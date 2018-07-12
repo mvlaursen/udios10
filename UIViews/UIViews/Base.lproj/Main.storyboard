@@ -30,9 +30,11 @@
                                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-PQ-nZ2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-PQ-nZ2">
                                         <rect key="frame" x="131" y="166" width="80" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="za6-Nv-Gum"/>
+                                        </constraints>
                                         <state key="normal" title="Hide View 1"/>
                                         <connections>
                                             <action selector="hideView1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JFH-ab-f90"/>
@@ -42,9 +44,11 @@
                                 <color key="backgroundColor" red="0.99942404029999998" green="1" blue="0.88205295138888884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="VwM-R9-Uta" firstAttribute="leading" secondItem="9Jz-98-6IM" secondAttribute="leading" constant="8" id="3ub-1v-vbO"/>
+                                    <constraint firstItem="SGy-PQ-nZ2" firstAttribute="centerX" secondItem="9Jz-98-6IM" secondAttribute="centerX" id="Afe-ee-1Vb"/>
                                     <constraint firstAttribute="trailing" secondItem="VwM-R9-Uta" secondAttribute="trailing" constant="8" id="CSj-82-Gqp"/>
                                     <constraint firstAttribute="height" constant="204" id="JBj-Of-kSL"/>
                                     <constraint firstItem="VwM-R9-Uta" firstAttribute="top" secondItem="9Jz-98-6IM" secondAttribute="top" constant="8" id="Mvk-w7-V4q"/>
+                                    <constraint firstAttribute="bottom" secondItem="SGy-PQ-nZ2" secondAttribute="bottom" constant="8" id="vZF-wC-RJ7"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI Views Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjb-yq-yGv">
@@ -69,9 +73,11 @@
                                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-d6-Avx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-d6-Avx">
                                         <rect key="frame" x="130" y="166" width="82" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vH8-kg-PjN"/>
+                                        </constraints>
                                         <state key="normal" title="Hide View 2"/>
                                         <connections>
                                             <action selector="hideView2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkY-B8-nce"/>
@@ -80,7 +86,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.88324652777777779" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pXf-d6-Avx" secondAttribute="bottom" constant="8" id="78m-XV-aFy"/>
                                     <constraint firstItem="f1C-as-e51" firstAttribute="leading" secondItem="EwN-7p-Hjh" secondAttribute="leading" constant="8" id="7Gu-w6-tS2"/>
+                                    <constraint firstItem="pXf-d6-Avx" firstAttribute="centerX" secondItem="EwN-7p-Hjh" secondAttribute="centerX" id="LiT-v9-Xnj"/>
                                     <constraint firstAttribute="height" constant="204" id="P9G-Tf-Ju4"/>
                                     <constraint firstItem="f1C-as-e51" firstAttribute="top" secondItem="EwN-7p-Hjh" secondAttribute="top" constant="8" id="YS9-UW-YRj"/>
                                     <constraint firstAttribute="trailing" secondItem="f1C-as-e51" secondAttribute="trailing" constant="8" id="tec-69-Mlf"/>
