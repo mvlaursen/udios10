@@ -21,6 +21,10 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func switchToXibView(_ sender: Any) {
+        let xibView = XIBViewController(nibName: "XIBViewController", bundle: nil)
+        xibView.modalTransitionStyle = .partialCurl
+        self.present(xibView, animated: true, completion: nil)
+    }
 }
 

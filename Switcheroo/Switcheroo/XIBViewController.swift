@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  XIBViewController.swift
 //  Switcheroo
 //
 //  Created by Mike Laursen on 7/19/18.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-    @IBOutlet weak var helloLabel: UILabel!
-    
+class XIBViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +31,8 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    @IBAction func dismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
