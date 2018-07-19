@@ -33,6 +33,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g5D-5b-lA7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4Yq-A8-Xh5"/>
                             <constraint firstItem="g5D-5b-lA7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Azi-2T-iSS"/>
