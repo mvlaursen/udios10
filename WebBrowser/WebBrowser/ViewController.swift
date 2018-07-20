@@ -54,7 +54,11 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     // Search Bar delegate methods
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        loadUrl(text: searchBar.text!)
+        let baseUrl = "http://www.google.com/search?q="
+        let rawQuery = searchBar.text!
+        let encodedQuery = rawQuery.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        let combinedUrl = baseUrl + encodedQuery!
+        loadUrl(text: combinedUrl)
     }
     
     // WKWebView delegate methods
