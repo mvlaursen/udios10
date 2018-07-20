@@ -76,8 +76,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="mapTypeChooser" destination="uoP-IM-Uwa" id="1I6-Mr-cJq"/>
                         <outlet property="mapView" destination="YoM-Wa-RM8" id="uJ8-Ag-CL6"/>
-                        <outlet property="segmentControl" destination="uoP-IM-Uwa" id="1I6-Mr-cJq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

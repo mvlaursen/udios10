@@ -10,8 +10,8 @@ import MapKit
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var mapTypeChooser: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func chooseMapType(_ sender: UISegmentedControl) {
-        if segmentControl.selectedSegmentIndex == 0 {
+        switch mapTypeChooser.selectedSegmentIndex {
+        case 0: mapView.mapType = .standard
+        case 1: mapView.mapType = .satellite
+        case 2: mapView.mapType = .hybrid
+        default: do {
             mapView.mapType = .standard
-        } else if segmentControl.selectedSegmentIndex == 1 {
-            mapView.mapType = .satellite
-        } else {
-            mapView.mapType = .hybrid
+            assert(false)
+            }
         }
     }
     
