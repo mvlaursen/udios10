@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,10 +27,7 @@ class ViewController: UIViewController {
         annotation.title = "Mountain View City Hall"
         annotation.subtitle = "500 Castro Street"
         mapView.addAnnotation(annotation)
-
-        let span = MKCoordinateSpanMake(0.1, 0.1)
-        let region = MKCoordinateRegion(center: DEFAULT_LOCATION, span: span)
-        mapView.setRegion(region, animated: true)        
+        setLocation(location: DEFAULT_LOCATION)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +51,31 @@ class ViewController: UIViewController {
     }
     
     @IBAction func locateMe(_ sender: UIBarButtonItem) {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        mapView.showsUserLocation = true
+    }
+    
+    // CLLocationManager delegate methods
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation = locations[0] as CLLocation
+        
+        locationManager.stopUpdatingLocation()
+        let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        setLocation(location: location)
+        
+    }
+    
+    // Utility methods
+    
+    func setLocation(location: CLLocationCoordinate2D) {
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
     }
 }
 
