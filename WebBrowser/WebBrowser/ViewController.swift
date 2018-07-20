@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
@@ -17,6 +17,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        webView.navigationDelegate = self
         
         searchBar.autocapitalizationType = .none
         searchBar.delegate = self
@@ -49,9 +51,31 @@ class ViewController: UIViewController, UISearchBarDelegate {
         webView.stopLoading()
     }
     
+    // Search Bar delegate methods
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         loadUrl(text: searchBar.text!)
     }
+    
+    // WKWebView delegate methods
+    
+    func webView(_ webView: WKWebView, didFail: WKNavigation!, withError: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
+    
+    // Utility methods
     
     func loadUrl(text: String) {
         let url = URL(string: text)
