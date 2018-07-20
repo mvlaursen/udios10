@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
@@ -18,9 +18,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let url = URL(string: "http://yahoo.com/")
-        let request = URLRequest(url: url!)
-        webView.load(request)
+        searchBar.autocapitalizationType = .none
+        searchBar.delegate = self
+        
+        loadUrl(text: "http://yahoo.com")
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +47,16 @@ class ViewController: UIViewController {
     
     @IBAction func stop(_ sender: UIBarButtonItem) {
         webView.stopLoading()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        loadUrl(text: searchBar.text!)
+    }
+    
+    func loadUrl(text: String) {
+        let url = URL(string: text)
+        let request = URLRequest(url: url!)
+        webView.load(request)
     }
 }
 
