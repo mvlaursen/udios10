@@ -33,25 +33,25 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5k-xU-Qhg">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="PHw-gM-afR">
+                                    <barButtonItem systemItem="rewind" id="PHw-gM-afR" userLabel="Back">
                                         <connections>
-                                            <action selector="goBack:" destination="Mj2-Ic-2TD" id="xZj-Zg-qra"/>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" id="Rz4-Y9-nZW"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="fastForward" id="Pab-vi-V0C">
+                                    <barButtonItem systemItem="fastForward" id="Pab-vi-V0C" userLabel="Forward">
                                         <connections>
-                                            <action selector="goForward:" destination="Mj2-Ic-2TD" id="UqD-0Y-DM2"/>
+                                            <action selector="forwardAction:" destination="BYZ-38-t0r" id="9Ie-dh-lc2"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="m6I-Oy-qeQ"/>
                                     <barButtonItem systemItem="refresh" id="cE2-AQ-hvd">
                                         <connections>
-                                            <action selector="reload:" destination="Mj2-Ic-2TD" id="P4x-FM-2jB"/>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="tG2-eW-b8t"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="stop" id="ubs-Lo-kTv">
                                         <connections>
-                                            <action selector="stopLoading:" destination="Mj2-Ic-2TD" id="Tup-1R-fFX"/>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="VVm-xe-1Qp"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
