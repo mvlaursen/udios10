@@ -65,6 +65,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError: Error) {
         activityIndicator.stopAnimating()
+        
+        let alert = UIAlertController(title: "Error", message: withError.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
