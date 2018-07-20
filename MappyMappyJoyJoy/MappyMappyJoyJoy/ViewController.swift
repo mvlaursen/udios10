@@ -6,6 +6,7 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import CoreLocation
 import MapKit
 import UIKit
 
@@ -13,9 +14,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
+    let DEFAULT_LOCATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198))
+    let locationManager = CLLocationManager()
+    var location = CLLocationCoordinate2D()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = DEFAULT_LOCATION
+        annotation.title = "Mountain View City Hall"
+        annotation.subtitle = "500 Castro Street"
+        mapView.addAnnotation(annotation)
+
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region = MKCoordinateRegion(center: DEFAULT_LOCATION, span: span)
+        mapView.setRegion(region, animated: true)        
     }
 
     override func didReceiveMemoryWarning() {
