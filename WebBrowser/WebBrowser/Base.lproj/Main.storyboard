@@ -20,7 +20,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8Rz-co-isn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
                             </searchBar>
                             <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mj2-Ic-2TD">
                                 <rect key="frame" x="0.0" y="56" width="320" height="380"/>
@@ -33,11 +33,27 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5k-xU-Qhg">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="PHw-gM-afR"/>
-                                    <barButtonItem systemItem="fastForward" id="Pab-vi-V0C"/>
+                                    <barButtonItem systemItem="rewind" id="PHw-gM-afR">
+                                        <connections>
+                                            <action selector="goBack:" destination="Mj2-Ic-2TD" id="xZj-Zg-qra"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="Pab-vi-V0C">
+                                        <connections>
+                                            <action selector="goForward:" destination="Mj2-Ic-2TD" id="UqD-0Y-DM2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="m6I-Oy-qeQ"/>
-                                    <barButtonItem systemItem="refresh" id="cE2-AQ-hvd"/>
-                                    <barButtonItem systemItem="stop" id="ubs-Lo-kTv"/>
+                                    <barButtonItem systemItem="refresh" id="cE2-AQ-hvd">
+                                        <connections>
+                                            <action selector="reload:" destination="Mj2-Ic-2TD" id="P4x-FM-2jB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="stop" id="ubs-Lo-kTv">
+                                        <connections>
+                                            <action selector="stopLoading:" destination="Mj2-Ic-2TD" id="Tup-1R-fFX"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-rE-7Cg" userLabel="Activity Indicator">
@@ -62,6 +78,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="0qx-rE-7Cg" id="fr3-Yq-022"/>
+                        <outlet property="searchBar" destination="8Rz-co-isn" id="P6G-jK-P1K"/>
+                        <outlet property="webView" destination="Mj2-Ic-2TD" id="7LT-Gd-var"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
