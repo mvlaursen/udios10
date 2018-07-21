@@ -14,7 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
-    let DEFAULT_LOCATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198)) // Mountain View City Hall (totally arbitrary choice)
+    let DESTINATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198)) // Mountain View City Hall (totally arbitrary choice)
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -25,11 +25,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         let annotation = MKPointAnnotation()
-        annotation.coordinate = DEFAULT_LOCATION
+        annotation.coordinate = DESTINATION
         annotation.title = "Mountain View City Hall"
         annotation.subtitle = "500 Castro Street"
         mapView.addAnnotation(annotation)
-        setLocation(location: DEFAULT_LOCATION)
+        setLocation(location: DESTINATION)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,9 +50,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func directionsAction(_ sender: UIBarButtonItem) {
-        let latitude = String(DEFAULT_LOCATION.latitude)
+        let latitude = String(DESTINATION.latitude)
         let encodedLatitude = latitude.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-        let longitude = String(DEFAULT_LOCATION.longitude)
+        let longitude = String(DESTINATION.longitude)
         let encodedLongitude = longitude.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         
         let destinationUrl = URL(string: "http://maps.apple.com/map?daddr=" + encodedLatitude! + "," + encodedLongitude!)
