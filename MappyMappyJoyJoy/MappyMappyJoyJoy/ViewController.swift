@@ -48,6 +48,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func directionsAction(_ sender: UIBarButtonItem) {
+        let destinationUrl = URL(string: "http://maps.apple.com/map?daddr=\(DEFAULT_LOCATION.latitude),\(DEFAULT_LOCATION.longitude)")
+        UIApplication.shared.open(destinationUrl!, options: [:], completionHandler: nil)
     }
     
     @IBAction func locateMe(_ sender: UIBarButtonItem) {
