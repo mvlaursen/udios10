@@ -61,10 +61,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func locateMe(_ sender: UIBarButtonItem) {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        mapView.showsUserLocation = true
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            mapView.showsUserLocation = true
+            break
+        case .denied, .restricted:
+            mapView.showsUserLocation = false
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        }
     }
     
     // CLLocationManager delegate methods
