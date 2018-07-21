@@ -16,7 +16,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let DEFAULT_LOCATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198)) // Mountain View City Hall (totally arbitrary choice)
     let locationManager = CLLocationManager()
-    var location = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
