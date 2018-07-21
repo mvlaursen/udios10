@@ -23,6 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = DEFAULT_LOCATION
@@ -60,7 +61,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func locateMe(_ sender: UIBarButtonItem) {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
