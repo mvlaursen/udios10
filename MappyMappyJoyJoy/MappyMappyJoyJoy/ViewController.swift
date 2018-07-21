@@ -14,13 +14,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
-    let DEFAULT_LOCATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198))
+    let DEFAULT_LOCATION = CLLocationCoordinate2D(latitude: CLLocationDegrees(37.389859), longitude: CLLocationDegrees(-122.082198)) // Mountain View City Hall (totally arbitrary choice)
     let locationManager = CLLocationManager()
     var location = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        locationManager.delegate = self
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = DEFAULT_LOCATION
@@ -48,13 +50,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func directionsAction(_ sender: UIBarButtonItem) {
-        let destinationUrl = URL(string: "http://maps.apple.com/map?daddr=\(DEFAULT_LOCATION.latitude),\(DEFAULT_LOCATION.longitude)")
+        let latitude = String(DEFAULT_LOCATION.latitude)
+        let encodedLatitude = latitude.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        let longitude = String(DEFAULT_LOCATION.longitude)
+        let encodedLongitude = longitude.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        
+        let destinationUrl = URL(string: "http://maps.apple.com/map?daddr=" + encodedLatitude! + "," + encodedLongitude!)
         UIApplication.shared.open(destinationUrl!, options: [:], completionHandler: nil)
     }
     
     @IBAction func locateMe(_ sender: UIBarButtonItem) {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
