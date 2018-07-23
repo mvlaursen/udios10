@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet private weak var nextButton: UIBarButtonItem!
     @IBOutlet private weak var previousButton: UIBarButtonItem!
     
-    private let NUM_IMAGES: uint = 6
+    private let IMAGE_RANGE: CountableClosedRange<Int> = 1...6
     
     // TODO: Can we make a limited range of ints in Swift?
-    private var imageIndex: uint = 1
+    private var imageIndex: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,28 +32,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func next(_ sender: UIBarButtonItem) {
-        if (imageIndex < NUM_IMAGES) {
+        if (imageIndex < IMAGE_RANGE.max()!) {
             imageIndex += 1
             setImage(imageIndex)
         }
     }
 
     @IBAction func previous(_ sender: UIBarButtonItem) {
-        if (imageIndex > 1) {
+        if (imageIndex > IMAGE_RANGE.min()!) {
             imageIndex -= 1
             setImage(imageIndex)
         }
     }
     
-    func setImage(_ index: uint) {
+    func setImage(_ index: Int) {        
         imageView.image = UIImage(named: "Image\(index)")
         
-        label.text = "\(index) of \(NUM_IMAGES)"
+        label.text = "\(index) of \(IMAGE_RANGE.max()!)"
         
-        if index == 1 {
+        if index <= IMAGE_RANGE.min()! {
             nextButton.isEnabled = true
             previousButton.isEnabled = false
-        } else if index >= NUM_IMAGES {
+        } else if index >= IMAGE_RANGE.max()! {
             nextButton.isEnabled = false
             previousButton.isEnabled = true
         } else {
