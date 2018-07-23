@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     private let NUM_IMAGES: uint = 6
     
     // TODO: Can we make a limited range of ints in Swift?
-    private var imageIndex: uint = 0
+    private var imageIndex: uint = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        setImage(0)
+        setImage(1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,18 +39,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func previous(_ sender: UIBarButtonItem) {
-        if (imageIndex > 0) {
+        if (imageIndex > 1) {
             imageIndex -= 1
             setImage(imageIndex)
         }
     }
     
     func setImage(_ index: uint) {
-        imageView.image = UIImage(named: "Image1")
+        imageView.image = UIImage(named: "Image\(index)")
         
         label.text = "\(index) of \(NUM_IMAGES)"
         
-        if index == 0 {
+        if index == 1 {
             nextButton.isEnabled = true
             previousButton.isEnabled = false
         } else if index >= NUM_IMAGES {
