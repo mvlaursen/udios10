@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     
     private var cardTimer: Timer? = nil
     private var countdown = 0
-    private var countdownTimer: Timer? = nil
     private var gameState = GameState.ready
     private var leftIndex = -1
      private var rightIndex = -1
@@ -49,15 +48,17 @@ class ViewController: UIViewController {
             
             startCardTimer()
         
-            countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (countdownTimer) in
                 self.countdown -= 1
                 self.updateScoreboard()
             
                 if self.countdown == 0 {
+                    countdownTimer.invalidate()
                     self.gameState = .ended
                     self.stopCardTimer()
-                    self.countdownTimer!.invalidate()
                     self.button.setTitle("Reset", for: .normal)
+                } else if self.cardTimer == nil {
+                    self.startCardTimer()
                 }
             })
             gameState = .playing
@@ -79,13 +80,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func cardTimerHandler() {
-        self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
-        self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
-        self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
-        self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
-    }
-
     func reset() {
         gameState = .ready
         button.setTitle("Start", for: .normal)
@@ -99,7 +93,23 @@ class ViewController: UIViewController {
     }
     
     func startCardTimer() {
-        cardTimer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(cardTimerHandler), userInfo: nil, repeats: true)
+        button.isEnabled = false
+        // TODO: Would be cool to randomly alternate blue and red.
+        leftCard.image = UIImage(named: "blue_cover")
+        rightCard.image = UIImage(named: "red_cover")
+
+        cardTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { (_) in
+            self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+            self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+            self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
+            self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
+            self.button.isEnabled = true
+            self.cardTimer = nil
+
+            self.cardTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (_) in
+                self.stopCardTimer()
+            })
+        })
     }
     
     func stopCardTimer() {
