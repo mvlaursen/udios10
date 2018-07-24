@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     private var cardTimer: Timer? = nil
     private var countdown = 0
     private var countdownTimer: Timer? = nil
+    private var leftIndex = -1
     private var gameMode = 0 // 0 =
+    private var rightIndex = -1
     private var scoreInt = 0
     
     override func viewDidLoad() {
@@ -41,10 +43,10 @@ class ViewController: UIViewController {
             button.setTitle("Snap", for: .normal)
             
             cardTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                let leftIndex = arc4random_uniform(UInt32(self.CARD_LIST.count))
-                let rightIndex = arc4random_uniform(UInt32(self.CARD_LIST.count))
-                self.leftCard.image = UIImage(named: self.CARD_LIST[Int(leftIndex)])
-                self.rightCard.image = UIImage(named: self.CARD_LIST[Int(rightIndex)])
+                self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+                self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+                self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
+                self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
             })
             
             countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
@@ -59,11 +61,19 @@ class ViewController: UIViewController {
             })
         } else if countdown == 0 {
             reset()
+        } else {
+            if leftIndex == rightIndex {
+                scoreInt += 1
+            } else {
+                scoreInt -= 1
+            }
         }
     }
     
     func reset() {
         button.setTitle("Start", for: .normal)
+        leftIndex = -1
+        rightIndex = -1
         leftCard.image = UIImage(named: "blue_cover")
         rightCard.image = UIImage(named: "red_cover")
         scoreInt = 0
