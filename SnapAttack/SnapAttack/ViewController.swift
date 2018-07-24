@@ -15,16 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     
-    private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "ace_of_hearts"]
-    private let COUNTDOWN_START = 20
+    private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "jack_of_hearts2", "queen_of_hearts2", "king_of_hearts2", "ace_of_hearts"]
+    private let COUNTDOWN_START = 25
+    private let REACTION_TIME = 0.8
     
     private enum GameState {
-    case ready, playing, ended
+    case start, cardsHidden, cardsShowing, end
     }
     
     private var cardTimer: Timer? = nil
     private var countdown = 0
-    private var gameState = GameState.ready
+    private var gameState = GameState.start
     private var leftIndex = -1
      private var rightIndex = -1
     private var scoreInt = 0
@@ -43,45 +44,57 @@ class ViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         switch gameState {
-        case .ready:
-            button.setTitle("Snap", for: .normal)
+        case .start:
+            enableButton(false)
+            button.setTitle("Slap", for: .normal)
             
-            startCardTimer()
-        
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (countdownTimer) in
                 self.countdown -= 1
                 self.updateScoreboard()
             
                 if self.countdown == 0 {
                     countdownTimer.invalidate()
-                    self.gameState = .ended
                     self.stopCardTimer()
+                    self.enableButton(true)
                     self.button.setTitle("Reset", for: .normal)
+                    self.gameState = .end
                 } else if self.cardTimer == nil {
                     self.startCardTimer()
                 }
             })
-            gameState = .playing
+
+            startCardTimer()
             break
 
-        case .playing:
+        case .cardsHidden:
+            break
+            
+        case .cardsShowing:
             stopCardTimer()
             if leftIndex == rightIndex {
                 scoreInt += 1
             } else {
                 scoreInt -= 1
             }
-            startCardTimer()
             break
-            
-        case .ended:
+        
+        case .end:
             reset()
             break
         }
     }
     
+    func enableButton(_ enabled: Bool) {
+        button.isEnabled = enabled
+        if button.isEnabled {
+            button.alpha = 1.0
+        } else {
+            button.alpha = 0.75
+        }
+    }
+    
     func reset() {
-        gameState = .ready
+        enableButton(true)
         button.setTitle("Start", for: .normal)
         leftIndex = -1
         rightIndex = -1
@@ -90,10 +103,12 @@ class ViewController: UIViewController {
         scoreInt = 0
         countdown = COUNTDOWN_START
         updateScoreboard()
+        gameState = .start
     }
     
     func startCardTimer() {
-        button.isEnabled = false
+        gameState = .cardsHidden
+        enableButton(false)
         // TODO: Would be cool to randomly alternate blue and red.
         leftCard.image = UIImage(named: "blue_cover")
         rightCard.image = UIImage(named: "red_cover")
@@ -103,12 +118,14 @@ class ViewController: UIViewController {
             self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
             self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
             self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
-            self.button.isEnabled = true
+            self.enableButton(true)
             self.cardTimer = nil
 
-            self.cardTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (_) in
+            self.cardTimer = Timer.scheduledTimer(withTimeInterval: self.REACTION_TIME, repeats: false, block: { (_) in
                 self.stopCardTimer()
             })
+            
+            self.gameState = .cardsShowing
         })
     }
     
