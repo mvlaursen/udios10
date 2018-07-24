@@ -46,13 +46,8 @@ class ViewController: UIViewController {
         switch gameState {
         case .ready:
             button.setTitle("Snap", for: .normal)
-        
-            cardTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: true, block: { (_) in
-                self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
-                self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
-                self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
-                self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
-            })
+            
+            startCardTimer()
         
             countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
                 self.countdown -= 1
@@ -60,7 +55,7 @@ class ViewController: UIViewController {
             
                 if self.countdown == 0 {
                     self.gameState = .ended
-                    self.cardTimer!.invalidate()
+                    self.stopCardTimer()
                     self.countdownTimer!.invalidate()
                     self.button.setTitle("Reset", for: .normal)
                 }
@@ -69,14 +64,13 @@ class ViewController: UIViewController {
             break
 
         case .playing:
-            // TODO: This isn't quite right. When the user presses the button, we need to stop cardTimer
-            // and then reset it.
-        
+            stopCardTimer()
             if leftIndex == rightIndex {
                 scoreInt += 1
             } else {
                 scoreInt -= 1
             }
+            startCardTimer()
             break
             
         case .ended:
@@ -85,6 +79,13 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func cardTimerHandler() {
+        self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+        self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
+        self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
+        self.rightCard.image = UIImage(named: self.CARD_LIST[self.rightIndex])
+    }
+
     func reset() {
         gameState = .ready
         button.setTitle("Start", for: .normal)
@@ -95,6 +96,17 @@ class ViewController: UIViewController {
         scoreInt = 0
         countdown = COUNTDOWN_START
         updateScoreboard()
+    }
+    
+    func startCardTimer() {
+        cardTimer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(cardTimerHandler), userInfo: nil, repeats: true)
+    }
+    
+    func stopCardTimer() {
+        if cardTimer != nil {
+            cardTimer!.invalidate()
+        }
+        cardTimer = nil
     }
     
     func updateScoreboard() {
