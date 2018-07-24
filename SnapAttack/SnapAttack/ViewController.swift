@@ -15,15 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     
-    private let CARD_LIST = ["2_of_hearts", "3_of_hearts", "4_of_hearts", "5_of_hearts", "6_of_hearts", "7_of_hearts", "8_of_hearts", "9_of_hearts", "10_of_hearts", "ace_of_hearts"]
+    private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "ace_of_hearts"]
     private let COUNTDOWN_START = 20
+    
+    private enum GameMode {
+    case ready, playing, ended
+    }
     
     private var cardTimer: Timer? = nil
     private var countdown = 0
     private var countdownTimer: Timer? = nil
     private var leftIndex = -1
-    private var gameMode = 0 // 0 = GAME_ENDED, COUNTDOWN_START = GAME_READY, all other = game running
-    private var rightIndex = -1
+     private var rightIndex = -1
     private var scoreInt = 0
     
     override func viewDidLoad() {
@@ -42,7 +45,7 @@ class ViewController: UIViewController {
         if countdown == COUNTDOWN_START {
             button.setTitle("Snap", for: .normal)
             
-            cardTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            cardTimer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: true, block: { (_) in
                 self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
                 self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
                 self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
