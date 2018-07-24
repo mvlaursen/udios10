@@ -27,10 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        button.setTitle("Start", for: .normal)
-        scoreInt = 0
-        countdown = COUNTDOWN_START
-        updateScoreboard()
+        reset()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +38,10 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         if countdown == COUNTDOWN_START {
             button.setTitle("Snap", for: .normal)
+            cardTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                
+            })
+            
             countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
                 self.countdown -= 1
                 self.updateScoreboard()
@@ -51,11 +52,17 @@ class ViewController: UIViewController {
                 }
             })
         } else if countdown == 0 {
-            button.setTitle("Start", for: .normal)
-            scoreInt = 0
-            countdown = 20
-            updateScoreboard()
+            reset()
         }
+    }
+    
+    func reset() {
+        button.setTitle("Start", for: .normal)
+        leftCard.image = UIImage(named: "blue_cover")
+        rightCard.image = UIImage(named: "red_cover")
+        scoreInt = 0
+        countdown = COUNTDOWN_START
+        updateScoreboard()
     }
     
     func updateScoreboard() {
