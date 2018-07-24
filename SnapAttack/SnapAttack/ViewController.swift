@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     private var countdown = 0
     private var countdownTimer: Timer? = nil
     private var leftIndex = -1
-    private var gameMode = 0 // 0 =
+    private var gameMode = 0 // 0 = GAME_ENDED, COUNTDOWN_START = GAME_READY, all other = game running
     private var rightIndex = -1
     private var scoreInt = 0
     
@@ -62,6 +62,9 @@ class ViewController: UIViewController {
         } else if countdown == 0 {
             reset()
         } else {
+            // TODO: This isn't quite right. When the user presses the button, we need to stop cardTimer
+            // and then reset it.
+            
             if leftIndex == rightIndex {
                 scoreInt += 1
             } else {
