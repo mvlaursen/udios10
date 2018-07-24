@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     
-    var cardTimer: Timer? = nil
-    var timer: Timer? = nil
+    private let COUNTDOWN_START = 20
     
+    var cardTimer: Timer? = nil
+    var countdown = 0
+    var countdownTimer: Timer? = nil
     var gameMode = 0 // 0 =
     var scoreInt = 0
-    var timerInt = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         
         button.setTitle("Start", for: .normal)
         scoreInt = 0
-        timerInt = 20
+        countdown = COUNTDOWN_START
         updateScoreboard()
     }
 
@@ -38,28 +39,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if timerInt == 20 {
+        if countdown == COUNTDOWN_START {
             button.setTitle("Snap", for: .normal)
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                self.timerInt -= 1
+            countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                self.countdown -= 1
                 self.updateScoreboard()
                 
-                if self.timerInt == 0 {
-                    self.timer!.invalidate()
+                if self.countdown == 0 {
+                    self.countdownTimer!.invalidate()
                     self.button.setTitle("Reset", for: .normal)
                 }
             })
-        } else if timerInt == 0 {
+        } else if countdown == 0 {
             button.setTitle("Start", for: .normal)
             scoreInt = 0
-            timerInt = 20
+            countdown = 20
             updateScoreboard()
         }
     }
     
     func updateScoreboard() {
         scoreLabel.text = String("Score: \(scoreInt)")
-        timeLabel.text = String("Time: \(timerInt)")
+        timeLabel.text = String("Time: \(countdown)")
     }
 }
 
