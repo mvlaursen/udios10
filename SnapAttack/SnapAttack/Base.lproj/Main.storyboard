@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cheveuxdange.ttf">
+            <string>Cheveuxdange</string>
+        </array>
+        <array key="DK Cinnabar Brush.ttf">
+            <string>DKCinnabarBrush</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnapAttack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Table" translatesAutoresizingMaskIntoConstraints="NO" id="jR4-LS-OdU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiD-w9-RnW">
+                                <rect key="frame" x="26" y="376" width="268" height="84"/>
+                                <fontDescription key="fontDescription" name="DKCinnabarBrush" family="DK Cinnabar Brush" pointSize="72"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lxs-5q-Ae7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap Attack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReH-dj-vsS">
+                                <rect key="frame" x="52" y="36" width="216.5" height="36"/>
+                                <fontDescription key="fontDescription" name="DKCinnabarBrush" family="DK Cinnabar Brush" pointSize="36"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I25-rM-8NZ" userLabel="Score Stack">
+                                <rect key="frame" x="8" y="84" width="304" height="40.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYL-Uy-RPp" userLabel="Time">
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="40.5"/>
+                                        <fontDescription key="fontDescription" name="Cheveuxdange" family="Cheveuxdange" pointSize="36"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6x-ea-GFy" userLabel="Score">
+                                        <rect key="frame" x="156" y="0.0" width="148" height="40.5"/>
+                                        <fontDescription key="fontDescription" name="Cheveuxdange" family="Cheveuxdange" pointSize="36"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hEH-0g-1E3" userLabel="Card Stack">
+                                <rect key="frame" x="8" y="133" width="304" height="214"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-Q3-dDv" userLabel="Left Card">
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="214"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Um3-Q3-dDv" secondAttribute="height" multiplier="500:726" id="5ar-ko-i1u"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="zNv-hU-f7A" userLabel="width &lt;= 500"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-eO-iMI" userLabel="Right Card">
+                                        <rect key="frame" x="156" y="0.0" width="148" height="214"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="9Jw-fO-r31" userLabel="width &lt;= 500"/>
+                                            <constraint firstAttribute="width" secondItem="L4C-eO-iMI" secondAttribute="height" multiplier="500:726" id="YgF-aA-iuk"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="L4C-eO-iMI" firstAttribute="width" secondItem="Um3-Q3-dDv" secondAttribute="width" id="kwt-iS-hjV"/>
+                                    <constraint firstItem="L4C-eO-iMI" firstAttribute="height" secondItem="Um3-Q3-dDv" secondAttribute="height" id="uqr-br-qYY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hEH-0g-1E3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5cz-i5-dAV"/>
+                            <constraint firstItem="jR4-LS-OdU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ewc-tc-Qsr"/>
+                            <constraint firstItem="hEH-0g-1E3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="GaG-35-sKt"/>
+                            <constraint firstItem="UiD-w9-RnW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IqA-Yn-wEq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hEH-0g-1E3" secondAttribute="trailing" constant="8" id="NE4-fS-ugy"/>
+                            <constraint firstItem="I25-rM-8NZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Sw6-3G-WJF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I25-rM-8NZ" secondAttribute="trailing" constant="8" id="drk-W0-kWG"/>
+                            <constraint firstItem="ReH-dj-vsS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fOV-Fe-AlJ"/>
+                            <constraint firstItem="jR4-LS-OdU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="njE-pc-8mX"/>
+                            <constraint firstItem="hEH-0g-1E3" firstAttribute="top" secondItem="I25-rM-8NZ" secondAttribute="bottom" constant="8" id="pBZ-ts-F7C"/>
+                            <constraint firstItem="jR4-LS-OdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q9l-Ps-Jz3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UiD-w9-RnW" secondAttribute="bottom" constant="20" id="tIx-Pc-IKg"/>
+                            <constraint firstItem="ReH-dj-vsS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wMj-3e-vZo"/>
+                            <constraint firstItem="jR4-LS-OdU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wZ6-a1-VoZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="UiD-w9-RnW" id="kAT-5i-GPJ"/>
+                        <outlet property="leftCard" destination="Um3-Q3-dDv" id="uN8-22-kpV"/>
+                        <outlet property="rightCard" destination="L4C-eO-iMI" id="fFV-tX-dZF"/>
+                        <outlet property="scoreLabel" destination="e6x-ea-GFy" id="T1k-pP-1uJ"/>
+                        <outlet property="timeLabel" destination="DYL-Uy-RPp" id="Znb-2A-wHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22.5" y="23.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Table" width="1980" height="1200"/>
+    </resources>
+</document>
