@@ -15,9 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let imageUrl = URL(string: "https://www.pets4homes.co.uk/images/articles/1646/large/kitten-emergencies-signs-to-look-out-for-537479947ec1c.jpg")
-        let data = NSData(contentsOf: imageUrl!)
-        imageView.image = UIImage(data: data! as Data)
+        let imageUrl = URL(string: "http://laursen.org/200903SanFranciscoZoo/content/bin/images/large/20090307_IMG_1520.jpg")
+        let data = try? Data(contentsOf: imageUrl!)
+        if data != nil {
+            imageView.image = UIImage(data: data!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
