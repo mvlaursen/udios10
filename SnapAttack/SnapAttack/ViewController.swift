@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet private weak var timeLabel: UILabel!
     
     private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "jack_of_hearts2", "queen_of_hearts2", "king_of_hearts2", "ace_of_hearts"]
-    private let COUNTDOWN_START = 30
+    private let COUNTDOWN_START = 60
     private let FACE_DOWN_TIME = 0.2
-    private let REACTION_TIME = 0.8
+    private let REACTION_TIME = 0.75
     
     private enum GameState {
     case start, cardsHidden, cardsShowing, end
@@ -73,6 +73,7 @@ class ViewController: UIViewController {
             
         case .cardsShowing:
             stopCardTimer()
+            enableButton(false)
             if leftIndex == rightIndex {
                 AudioServicesPlaySystemSound(SystemSoundID(1115)) // "JBL_Ambiguous"
                 scoreInt += 1
