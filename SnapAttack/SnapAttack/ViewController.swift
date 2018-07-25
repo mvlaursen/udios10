@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet private weak var timeLabel: UILabel!
     
     private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "jack_of_hearts2", "queen_of_hearts2", "king_of_hearts2", "ace_of_hearts"]
-    private let COUNTDOWN_START = 25
-    private let REACTION_TIME = 0.8
+    private let COUNTDOWN_START = 30
+    private let REACTION_TIME = 0.75
     
     private enum GameState {
     case start, cardsHidden, cardsShowing, end
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     private var countdown = 0
     private var gameState = GameState.start
     private var leftIndex = -1
-     private var rightIndex = -1
+    private var rightIndex = -1
     private var scoreInt = 0
     
     override func viewDidLoad() {
