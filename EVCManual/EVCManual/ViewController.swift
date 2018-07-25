@@ -16,8 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let bundleUrl = Bundle.main.bundleURL
-        let manualUrl = bundleUrl.appendingPathComponent("97Eurovan.pdf")
+        let manualUrl = Bundle.main.bundleURL.appendingPathComponent("97Eurovan.pdf")
         let request = URLRequest(url: manualUrl)
         webView.load(request)
     }
