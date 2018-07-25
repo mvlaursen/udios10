@@ -14,6 +14,7 @@
 		3BD35E8D2107AF1900E528C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35E8B2107AF1900E528C4 /* LaunchScreen.storyboard */; };
 		3BD35E962107AFA800E528C4 /* Cheveuxdange.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35E942107AFA800E528C4 /* Cheveuxdange.ttf */; };
 		3BD35E972107AFA800E528C4 /* DK Cinnabar Brush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35E952107AFA800E528C4 /* DK Cinnabar Brush.ttf */; };
+		3BD35E9A21082A2B00E528C4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD35E9921082A2A00E528C4 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3BD35E8E2107AF1900E528C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD35E942107AFA800E528C4 /* Cheveuxdange.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cheveuxdange.ttf; path = "../../../../Downloads/Snap Attack Rescourses/Cheveuxdange.ttf"; sourceTree = "<group>"; };
 		3BD35E952107AFA800E528C4 /* DK Cinnabar Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DK Cinnabar Brush.ttf"; path = "../../../../Downloads/Snap Attack Rescourses/DK Cinnabar Brush.ttf"; sourceTree = "<group>"; };
+		3BD35E9921082A2A00E528C4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD35E9A21082A2B00E528C4 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				3BD35E812107AF1900E528C4 /* SnapAttack */,
 				3BD35E802107AF1900E528C4 /* Products */,
+				3BD35E9821082A2A00E528C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				3BD35E952107AFA800E528C4 /* DK Cinnabar Brush.ttf */,
 			);
 			path = SnapAttack;
+			sourceTree = "<group>";
+		};
+		3BD35E9821082A2A00E528C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BD35E9921082A2A00E528C4 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

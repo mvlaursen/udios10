@@ -6,6 +6,7 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -73,9 +74,11 @@ class ViewController: UIViewController {
         case .cardsShowing:
             stopCardTimer()
             if leftIndex == rightIndex {
+                AudioServicesPlaySystemSound(SystemSoundID(1115)) // "JBL_Ambiguous"
                 scoreInt += 1
                 updateScoreboard()
             } else {
+                AudioServicesPlaySystemSound(SystemSoundID(1053)) // "SIMToolkitNegativeACK"
                 scoreInt -= 1
                 updateScoreboard()
             }
