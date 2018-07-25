@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     
     private let CARD_LIST = ["2_of_hearts", "7_of_hearts", "jack_of_hearts2", "queen_of_hearts2", "king_of_hearts2", "ace_of_hearts"]
     private let COUNTDOWN_START = 30
-    private let REACTION_TIME = 0.75
+    private let FACE_DOWN_TIME = 0.2
+    private let REACTION_TIME = 0.8
     
     private enum GameState {
     case start, cardsHidden, cardsShowing, end
@@ -73,8 +74,10 @@ class ViewController: UIViewController {
             stopCardTimer()
             if leftIndex == rightIndex {
                 scoreInt += 1
+                updateScoreboard()
             } else {
                 scoreInt -= 1
+                updateScoreboard()
             }
             break
         
@@ -113,7 +116,7 @@ class ViewController: UIViewController {
         leftCard.image = UIImage(named: "blue_cover")
         rightCard.image = UIImage(named: "red_cover")
 
-        cardTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { (_) in
+        cardTimer = Timer.scheduledTimer(withTimeInterval: FACE_DOWN_TIME, repeats: false, block: { (_) in
             self.leftIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
             self.rightIndex = Int(arc4random_uniform(UInt32(self.CARD_LIST.count)))
             self.leftCard.image = UIImage(named: self.CARD_LIST[self.leftIndex])
