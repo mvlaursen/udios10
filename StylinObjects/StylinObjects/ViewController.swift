@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         image1.layer.borderColor = UIColor.blue.cgColor
         image1.layer.borderWidth = 5.0
-        image1.layer.cornerRadius = 20.0
     }
 
     override func didReceiveMemoryWarning() {

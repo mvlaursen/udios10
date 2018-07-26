@@ -25,6 +25,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="77m-4C-XSa" secondAttribute="height" multiplier="1920:1200" id="2jl-vN-y7r"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="7Eg-rx-Dse">
                                 <rect key="frame" x="16" y="208" width="288" height="180"/>
