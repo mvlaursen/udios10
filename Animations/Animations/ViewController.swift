@@ -14,18 +14,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        var index: Int = 0
-        
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
-            index = (index + 1) % 8
-            self.imageView.image = UIImage(named: "Image\(index + 1).png")
-        }
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerHandler), userInfo: 0, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func timerHandler(timer: Timer) {
+        let index = timer.userInfo as! Int
+        self.imageView.image = UIImage(named: "Image\(index + 1).png")
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerHandler), userInfo: (index + 1) % 8, repeats: false)
     }
 }
 
