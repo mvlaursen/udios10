@@ -31,7 +31,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="7Eg-rx-Dse">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="7Eg-rx-Dse">
                                 <rect key="frame" x="16" y="208" width="288" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Eg-rx-Dse" secondAttribute="height" multiplier="2560:1600" id="OvH-ls-43f"/>

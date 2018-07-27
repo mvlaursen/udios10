@@ -16,9 +16,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
-        image1.layer.borderColor = UIColor.blue.cgColor
+        
+        image1.layer.borderColor = UIColor.blue.withAlphaComponent(0.25).cgColor
         image1.layer.borderWidth = 5.0
+        
+        image2.layer.shadowColor = UIColor.black.cgColor
+        image2.layer.shadowOffset = CGSize(width: 2, height: 2)
+        image2.layer.shadowOpacity = 0.5
+        image2.layer.shadowRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
