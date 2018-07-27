@@ -36,23 +36,44 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Eg-rx-Dse" secondAttribute="height" multiplier="2560:1600" id="OvH-ls-43f"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zs3-e0-0eX">
-                                <rect key="frame" x="110" y="396" width="100" height="30"/>
+                                <rect key="frame" x="56" y="396" width="208" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSt-EB-llJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.337853183945105" green="0.73026705119324875" blue="0.89892578125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0dh-ZJ-aHh"/>
+                                        </constraints>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxk-0d-HU5">
-                                        <rect key="frame" x="54" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="108" y="0.0" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.337853183945105" green="0.73026705119324875" blue="0.89892578125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="OWx-TD-gn0"/>
+                                        </constraints>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -64,10 +85,9 @@
                             <constraint firstItem="zs3-e0-0eX" firstAttribute="top" secondItem="7Eg-rx-Dse" secondAttribute="bottom" constant="8" id="Djb-lu-b6Q"/>
                             <constraint firstItem="77m-4C-XSa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q1z-7J-NvT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Eg-rx-Dse" secondAttribute="trailing" constant="16" id="Zvz-Dt-wyy"/>
-                            <constraint firstItem="zs3-e0-0eX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="j0f-LS-d0H"/>
+                            <constraint firstItem="zs3-e0-0eX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lTR-g2-hQo"/>
                             <constraint firstItem="77m-4C-XSa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lro-2T-zfn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="77m-4C-XSa" secondAttribute="trailing" constant="16" id="u2K-vl-eoB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zs3-e0-0eX" secondAttribute="trailing" constant="110" id="xA2-8z-7w8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

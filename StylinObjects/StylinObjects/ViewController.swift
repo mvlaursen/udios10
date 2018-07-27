@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        button2.layer.borderColor = UIColor.blue.cgColor
+        button2.layer.borderWidth = 5
+        
         image1.layer.borderColor = UIColor.blue.withAlphaComponent(0.25).cgColor
         image1.layer.borderWidth = 5.0
         
