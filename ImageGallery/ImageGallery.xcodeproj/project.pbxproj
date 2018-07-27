@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B33B0B9210BC55A00F4B89B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B33B0B8210BC55A00F4B89B /* DetailViewController.swift */; };
 		3BC119BE210A9CB4009E4A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119BD210A9CB4009E4A23 /* AppDelegate.swift */; };
 		3BC119C3210A9CB4009E4A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC119C1210A9CB4009E4A23 /* Main.storyboard */; };
 		3BC119C5210A9CB5009E4A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC119C4210A9CB5009E4A23 /* Assets.xcassets */; };
 		3BC119C8210A9CB5009E4A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC119C6210A9CB5009E4A23 /* LaunchScreen.storyboard */; };
-		3BC119D0210A9FFA009E4A23 /* CollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119CF210A9FFA009E4A23 /* CollectionCollectionViewController.swift */; };
+		3BC119D0210A9FFA009E4A23 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119CF210A9FFA009E4A23 /* CollectionViewController.swift */; };
 		3BC119D2210AA15C009E4A23 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119D1210AA15C009E4A23 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B33B0B8210BC55A00F4B89B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3BC119BA210A9CB4009E4A23 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC119BD210A9CB4009E4A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC119C2210A9CB4009E4A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC119C4210A9CB5009E4A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BC119C7210A9CB5009E4A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BC119C9210A9CB5009E4A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BC119CF210A9FFA009E4A23 /* CollectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		3BC119CF210A9FFA009E4A23 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3BC119D1210AA15C009E4A23 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +60,8 @@
 			children = (
 				3BC119BD210A9CB4009E4A23 /* AppDelegate.swift */,
 				3BC119D1210AA15C009E4A23 /* CollectionViewCell.swift */,
-				3BC119CF210A9FFA009E4A23 /* CollectionCollectionViewController.swift */,
+				3BC119CF210A9FFA009E4A23 /* CollectionViewController.swift */,
+				3B33B0B8210BC55A00F4B89B /* DetailViewController.swift */,
 				3BC119C1210A9CB4009E4A23 /* Main.storyboard */,
 				3BC119C4210A9CB5009E4A23 /* Assets.xcassets */,
 				3BC119C6210A9CB5009E4A23 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC119D0210A9FFA009E4A23 /* CollectionCollectionViewController.swift in Sources */,
+				3BC119D0210A9FFA009E4A23 /* CollectionViewController.swift in Sources */,
 				3BC119BE210A9CB4009E4A23 /* AppDelegate.swift in Sources */,
 				3BC119D2210AA15C009E4A23 /* CollectionViewCell.swift in Sources */,
+				3B33B0B9210BC55A00F4B89B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

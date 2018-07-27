@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var images = ["Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png"]
     
