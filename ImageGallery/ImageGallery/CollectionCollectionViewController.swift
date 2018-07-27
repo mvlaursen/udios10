@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionCollectionViewController: UICollectionViewController {
+class CollectionCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var images = ["Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png"]
     
@@ -58,10 +58,39 @@ class CollectionCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
     
         // Configure the cell
+        
         cell.layer.borderColor = UIColor.white.withAlphaComponent(0.25).cgColor
         cell.layer.borderWidth = 3
         cell.cellImage.image = UIImage(named: images[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt atIndexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        var cellWidth = 0
+        var cellHeight = 0
+                
+        if screenWidth == 375 { // iPhone 6, 6s, 7, 8, X
+            cellWidth =  160
+            cellHeight = 160
+        } else if screenWidth == 414 { // iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus
+            cellWidth = 180
+            cellHeight = 180
+        } else if screenWidth == 768 { // iPad Mini, Air
+            cellWidth = 350
+            cellHeight = 350
+        } else if screenWidth == 834 { // iPad Pro 10.5
+            cellWidth = 390
+            cellHeight = 390
+        } else if screenWidth == 1024 { // iPad Pro 9.7, 12.9
+            cellWidth = 480
+            cellHeight = 480
+        } else {
+            cellWidth = 135
+            cellHeight = 135
+        }
+        
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 
     // MARK: UICollectionViewDelegate
