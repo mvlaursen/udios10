@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class CollectionCollectionViewController: UICollectionViewController {
 
-    var images = ["Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png"]
+    var images = ["Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png", "Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png", "Image6.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,8 @@ class CollectionCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
     
         // Configure the cell
-        
+        cell.layer.borderColor = UIColor.white.withAlphaComponent(0.25).cgColor
+        cell.layer.borderWidth = 3
         cell.cellImage.image = UIImage(named: images[indexPath.row])
         return cell
     }
