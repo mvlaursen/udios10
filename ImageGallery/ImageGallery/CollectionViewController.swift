@@ -92,6 +92,18 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell)
+            
+            if indexPath != nil {
+                let detailView = segue.destination as! DetailViewController
+                let image = images[(indexPath?.row)!] as String
+                detailView.sentData = image
+            }
+        }
+    }
 
     // MARK: UICollectionViewDelegate
 

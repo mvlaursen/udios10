@@ -9,11 +9,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var detailTextView: UITextView!
+    
+    var sentData:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        detailImage.layer.borderColor = UIColor.white.withAlphaComponent(0.25).cgColor
+        detailImage.layer.borderWidth = 5
+        detailImage.image = UIImage(named: sentData)
     }
 
     override func didReceiveMemoryWarning() {
