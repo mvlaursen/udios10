@@ -51,6 +51,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func colorAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func reset(_ sender: UIButton) {
+    }
+    
+    @IBAction func save(_ sender: UIButton) {
+    }
+    
+    @IBAction func settings(_ sender: UIButton) {
+    }
+    
     // Utility functions
     
     private func drawLine(_ fromPoint: CGPoint, toPoint: CGPoint) {
