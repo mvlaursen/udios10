@@ -23,6 +23,10 @@ class DetailViewController: UIViewController {
         detailImage.layer.borderColor = UIColor.white.withAlphaComponent(0.25).cgColor
         detailImage.layer.borderWidth = 5
         detailImage.image = UIImage(named: sentData)
+        detailLabel.text = sentData
+        detailTextView.text = "Some b.s. about \(sentData). Ipsum b.s. dolor text text text foo foo foo."
+        
+        self.navigationItem.title = sentData
     }
 
     override func didReceiveMemoryWarning() {
