@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gallery-->
+        <!--Image Gallery-->
         <scene sceneID="33S-fq-V9E">
             <objects>
                 <collectionViewController id="HYJ-JW-n3I" customClass="CollectionViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="HYJ-JW-n3I" id="EZQ-Th-aZh"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Gallery" id="UBO-6e-Ksw"/>
+                    <navigationItem key="navigationItem" title="Image Gallery" id="UBO-6e-Ksw"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tN-rK-jLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
