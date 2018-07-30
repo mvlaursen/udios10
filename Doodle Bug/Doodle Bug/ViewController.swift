@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (!swiped) {
+        if !swiped {
             drawLine(previousPoint, toPoint: previousPoint)
             previousPoint = CGPoint.zero
         }
