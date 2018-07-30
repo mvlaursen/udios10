@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     
     var previousPoint = CGPoint.zero
+    var strokeColor = UIColor.black.cgColor
     var swiped = false
     
     override func viewDidLoad() {
@@ -52,9 +53,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorAction(_ sender: UIButton) {
+        switch sender.restorationIdentifier {
+        case "red": strokeColor = UIColor.red.cgColor
+        case "blue": strokeColor = UIColor.blue.cgColor
+        case "green": strokeColor = UIColor.green.cgColor
+        case "yellow": strokeColor = UIColor.yellow.cgColor
+        case "pink": strokeColor = UIColor.magenta.cgColor
+        case "teal": strokeColor = UIColor(displayP3Red: 0/255, green: 128/255, blue: 128/255, alpha: 1.0).cgColor
+        case "white": strokeColor = UIColor.white.cgColor
+        default: strokeColor = UIColor.black.cgColor
+        }
     }
     
     @IBAction func reset(_ sender: UIButton) {
+        imageView.image = nil
+        previousPoint = CGPoint.zero
+        strokeColor = UIColor.black.cgColor
     }
     
     @IBAction func save(_ sender: UIButton) {
@@ -72,7 +86,7 @@ class ViewController: UIViewController {
         context?.setBlendMode(.normal)
         context?.setLineCap(.round)
         context?.setLineWidth(2)
-        context?.setStrokeColor(UIColor.black.cgColor)
+        context?.setStrokeColor(strokeColor)
         
         imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
