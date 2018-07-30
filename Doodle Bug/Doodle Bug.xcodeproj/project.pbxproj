@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B67058A2109318B0005D52C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6705892109318B0005D52C /* AppDelegate.swift */; };
-		3B67058C2109318B0005D52C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B67058B2109318B0005D52C /* ViewController.swift */; };
-		3B67058F2109318B0005D52C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B67058D2109318B0005D52C /* Main.storyboard */; };
-		3B6705912109318C0005D52C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6705902109318C0005D52C /* Assets.xcassets */; };
-		3B6705942109318C0005D52C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6705922109318C0005D52C /* LaunchScreen.storyboard */; };
+		3BC4D811210FB5150004879A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4D810210FB5150004879A /* AppDelegate.swift */; };
+		3BC4D813210FB5150004879A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4D812210FB5150004879A /* ViewController.swift */; };
+		3BC4D816210FB5150004879A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4D814210FB5150004879A /* Main.storyboard */; };
+		3BC4D818210FB5160004879A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4D817210FB5160004879A /* Assets.xcassets */; };
+		3BC4D81B210FB5160004879A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4D819210FB5160004879A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B6705862109318B0005D52C /* BackgroundColors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundColors.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B6705892109318B0005D52C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B67058B2109318B0005D52C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3B67058E2109318B0005D52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3B6705902109318C0005D52C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B6705932109318C0005D52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3B6705952109318C0005D52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC4D80D210FB5150004879A /* Doodle Bug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doodle Bug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC4D810210FB5150004879A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BC4D812210FB5150004879A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BC4D815210FB5150004879A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BC4D817210FB5160004879A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BC4D81A210FB5160004879A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3BC4D81C210FB5160004879A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B6705832109318B0005D52C /* Frameworks */ = {
+		3BC4D80A210FB5150004879A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,71 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B67057D2109318B0005D52C = {
+		3BC4D804210FB5150004879A = {
 			isa = PBXGroup;
 			children = (
-				3B6705882109318B0005D52C /* BackgroundColors */,
-				3B6705872109318B0005D52C /* Products */,
+				3BC4D80F210FB5150004879A /* Doodle Bug */,
+				3BC4D80E210FB5150004879A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3B6705872109318B0005D52C /* Products */ = {
+		3BC4D80E210FB5150004879A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B6705862109318B0005D52C /* BackgroundColors.app */,
+				3BC4D80D210FB5150004879A /* Doodle Bug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3B6705882109318B0005D52C /* BackgroundColors */ = {
+		3BC4D80F210FB5150004879A /* Doodle Bug */ = {
 			isa = PBXGroup;
 			children = (
-				3B6705892109318B0005D52C /* AppDelegate.swift */,
-				3B67058B2109318B0005D52C /* ViewController.swift */,
-				3B67058D2109318B0005D52C /* Main.storyboard */,
-				3B6705902109318C0005D52C /* Assets.xcassets */,
-				3B6705922109318C0005D52C /* LaunchScreen.storyboard */,
-				3B6705952109318C0005D52C /* Info.plist */,
+				3BC4D810210FB5150004879A /* AppDelegate.swift */,
+				3BC4D812210FB5150004879A /* ViewController.swift */,
+				3BC4D814210FB5150004879A /* Main.storyboard */,
+				3BC4D817210FB5160004879A /* Assets.xcassets */,
+				3BC4D819210FB5160004879A /* LaunchScreen.storyboard */,
+				3BC4D81C210FB5160004879A /* Info.plist */,
 			);
-			path = BackgroundColors;
+			path = "Doodle Bug";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B6705852109318B0005D52C /* BackgroundColors */ = {
+		3BC4D80C210FB5150004879A /* Doodle Bug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B6705982109318C0005D52C /* Build configuration list for PBXNativeTarget "BackgroundColors" */;
+			buildConfigurationList = 3BC4D81F210FB5160004879A /* Build configuration list for PBXNativeTarget "Doodle Bug" */;
 			buildPhases = (
-				3B6705822109318B0005D52C /* Sources */,
-				3B6705832109318B0005D52C /* Frameworks */,
-				3B6705842109318B0005D52C /* Resources */,
+				3BC4D809210FB5150004879A /* Sources */,
+				3BC4D80A210FB5150004879A /* Frameworks */,
+				3BC4D80B210FB5150004879A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BackgroundColors;
-			productName = BackgroundColors;
-			productReference = 3B6705862109318B0005D52C /* BackgroundColors.app */;
+			name = "Doodle Bug";
+			productName = "Doodle Bug";
+			productReference = 3BC4D80D210FB5150004879A /* Doodle Bug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3B67057E2109318B0005D52C /* Project object */ = {
+		3BC4D805210FB5150004879A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Laursen.org;
 				TargetAttributes = {
-					3B6705852109318B0005D52C = {
+					3BC4D80C210FB5150004879A = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 3B6705812109318B0005D52C /* Build configuration list for PBXProject "BackgroundColors" */;
+			buildConfigurationList = 3BC4D808210FB5150004879A /* Build configuration list for PBXProject "Doodle Bug" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -107,54 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 3B67057D2109318B0005D52C;
-			productRefGroup = 3B6705872109318B0005D52C /* Products */;
+			mainGroup = 3BC4D804210FB5150004879A;
+			productRefGroup = 3BC4D80E210FB5150004879A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B6705852109318B0005D52C /* BackgroundColors */,
+				3BC4D80C210FB5150004879A /* Doodle Bug */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3B6705842109318B0005D52C /* Resources */ = {
+		3BC4D80B210FB5150004879A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B6705942109318C0005D52C /* LaunchScreen.storyboard in Resources */,
-				3B6705912109318C0005D52C /* Assets.xcassets in Resources */,
-				3B67058F2109318B0005D52C /* Main.storyboard in Resources */,
+				3BC4D81B210FB5160004879A /* LaunchScreen.storyboard in Resources */,
+				3BC4D818210FB5160004879A /* Assets.xcassets in Resources */,
+				3BC4D816210FB5150004879A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B6705822109318B0005D52C /* Sources */ = {
+		3BC4D809210FB5150004879A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B67058C2109318B0005D52C /* ViewController.swift in Sources */,
-				3B67058A2109318B0005D52C /* AppDelegate.swift in Sources */,
+				3BC4D813210FB5150004879A /* ViewController.swift in Sources */,
+				3BC4D811210FB5150004879A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3B67058D2109318B0005D52C /* Main.storyboard */ = {
+		3BC4D814210FB5150004879A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3B67058E2109318B0005D52C /* Base */,
+				3BC4D815210FB5150004879A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3B6705922109318C0005D52C /* LaunchScreen.storyboard */ = {
+		3BC4D819210FB5160004879A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3B6705932109318C0005D52C /* Base */,
+				3BC4D81A210FB5160004879A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3B6705962109318C0005D52C /* Debug */ = {
+		3BC4D81D210FB5160004879A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		3B6705972109318C0005D52C /* Release */ = {
+		3BC4D81E210FB5160004879A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,38 +276,36 @@
 			};
 			name = Release;
 		};
-		3B6705992109318C0005D52C /* Debug */ = {
+		3BC4D820210FB5160004879A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NM9E6W7574;
-				INFOPLIST_FILE = BackgroundColors/Info.plist;
+				INFOPLIST_FILE = "Doodle Bug/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.BackgroundColors;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.laursen.Doodle-Bug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		3B67059A2109318C0005D52C /* Release */ = {
+		3BC4D821210FB5160004879A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NM9E6W7574;
-				INFOPLIST_FILE = BackgroundColors/Info.plist;
+				INFOPLIST_FILE = "Doodle Bug/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.BackgroundColors;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.laursen.Doodle-Bug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,25 +315,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B6705812109318B0005D52C /* Build configuration list for PBXProject "BackgroundColors" */ = {
+		3BC4D808210FB5150004879A /* Build configuration list for PBXProject "Doodle Bug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B6705962109318C0005D52C /* Debug */,
-				3B6705972109318C0005D52C /* Release */,
+				3BC4D81D210FB5160004879A /* Debug */,
+				3BC4D81E210FB5160004879A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B6705982109318C0005D52C /* Build configuration list for PBXNativeTarget "BackgroundColors" */ = {
+		3BC4D81F210FB5160004879A /* Build configuration list for PBXNativeTarget "Doodle Bug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B6705992109318C0005D52C /* Debug */,
-				3B67059A2109318C0005D52C /* Release */,
+				3BC4D820210FB5160004879A /* Debug */,
+				3BC4D821210FB5160004879A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3B67057E2109318B0005D52C /* Project object */;
+	rootObject = 3BC4D805210FB5150004879A /* Project object */;
 }
