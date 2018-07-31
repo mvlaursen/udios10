@@ -46,9 +46,9 @@ class SettingsViewController: UIViewController {
         
         let targetColorSpace = CGColorSpace(name: CGColorSpace.sRGB)
         let rgbColor = strokeColor.converted(to: targetColorSpace!, intent: CGColorRenderingIntent.defaultIntent, options: nil)
-        let red = rgbColor!.components![0]
-        let green = rgbColor!.components![1]
-        let blue = rgbColor!.components![2]
+        let red = 255.0 * rgbColor!.components![0]
+        let green = 255.0 * rgbColor!.components![1]
+        let blue = 255.0 * rgbColor!.components![2]
         let opacity = rgbColor!.components![3]
         redSlider.setValue(Float(red), animated: false)
         greenSlider.setValue(Float(green), animated: false)
@@ -76,15 +76,20 @@ class SettingsViewController: UIViewController {
     }
     */
 
-    @IBAction func adjustColor(_ sender: Any) {
-    }
-    
     @IBAction func adjustOpacity(_ sender: UISlider) {
+        let opacity = opacitySlider.value
+        opacityLabel.text = "Opacity: \(opacity)"
+        opacitySlider.setValue(Float(opacity), animated: false)
     }
     
     @IBAction func adjustStrokeWidth(_ sender: UISlider) {
+        strokeWidth = CGFloat(strokeWidthSlider.value)
+        strokeWidthLabel.text = "Stroke Width: \(strokeWidth)"
+        strokeWidthSlider.setValue(Float(strokeWidth), animated: false)
     }
     
     @IBAction func exit(_ sender: UIButton) {
+        self.delegate?.settingsViewControllerFinished(self)
+        self.dismiss(animated: true, completion: nil)
     }
 }

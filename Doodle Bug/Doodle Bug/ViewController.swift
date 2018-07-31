@@ -105,7 +105,8 @@ class ViewController: UIViewController {
 
 extension ViewController: SettingsViewControllerDelegate {
     func settingsViewControllerFinished(_ settingsViewController: SettingsViewController) {
-         self.strokeColor = settingsViewController.color
+        self.strokeColor = settingsViewController.color
+        self.strokeWidth = settingsViewController.strokeWidth
     }
 }
 

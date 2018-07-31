@@ -203,23 +203,14 @@
                             <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="red" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="qz0-TT-b5M">
                                 <rect key="frame" x="14" y="316" width="292" height="31"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="adjustColor:" destination="j4O-Gm-YW9" eventType="valueChanged" id="TIO-kL-lOZ"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="green" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="aBk-sG-aWo">
                                 <rect key="frame" x="14" y="354" width="292" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="adjustColor:" destination="j4O-Gm-YW9" eventType="valueChanged" id="wAM-dU-x5l"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="blue" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="m2g-9c-yYJ">
                                 <rect key="frame" x="14" y="392" width="292" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="adjustColor:" destination="j4O-Gm-YW9" eventType="valueChanged" id="YUQ-MI-doV"/>
-                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDr-Ra-4Bq">
                                 <rect key="frame" x="145" y="430" width="30" height="30"/>
@@ -261,9 +252,9 @@
                         <viewLayoutGuide key="safeArea" id="nIa-at-ard"/>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="m2g-9c-yYJ" id="xsH-S5-nTO"/>
+                        <outlet property="blueSlider" destination="m2g-9c-yYJ" id="V5Q-Ko-YzR"/>
                         <outlet property="brushImage" destination="pb6-MU-hwg" id="qJd-Pw-vCr"/>
-                        <outlet property="greenSlider" destination="aBk-sG-aWo" id="1T8-8Y-Yne"/>
+                        <outlet property="greenSlider" destination="aBk-sG-aWo" id="twV-hc-57c"/>
                         <outlet property="opacityLabel" destination="MWS-J1-VQI" id="2Gz-jc-jgA"/>
                         <outlet property="opacitySlider" destination="RnU-D3-MRB" id="a7G-oW-Op4"/>
                         <outlet property="redSlider" destination="qz0-TT-b5M" id="64t-gw-t65"/>
