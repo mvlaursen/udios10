@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let settingsViewController = segue.destination as! SettingsViewController
         settingsViewController.delegate = self
-        settingsViewController.color = self.strokeColor
+        settingsViewController.strokeColor = strokeColor
         settingsViewController.strokeWidth = strokeWidth
     }
     
@@ -105,8 +105,8 @@ class ViewController: UIViewController {
 
 extension ViewController: SettingsViewControllerDelegate {
     func settingsViewControllerFinished(_ settingsViewController: SettingsViewController) {
-        self.strokeColor = settingsViewController.color
-        self.strokeWidth = settingsViewController.strokeWidth
+        strokeColor = settingsViewController.strokeColor
+        strokeWidth = settingsViewController.strokeWidth
     }
 }
 

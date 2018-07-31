@@ -27,18 +27,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var greenSlider: UISlider!
     @IBOutlet private weak var blueSlider: UISlider!
     
-    private var strokeColor = UIColor.black.cgColor
+    public var strokeColor = UIColor.black.cgColor
     public var strokeWidth = CGFloat(0.0)
     
-    var color: CGColor {
-        get {
-            return UIColor(displayP3Red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(opacitySlider.value)).cgColor
-        }
-        set(newColor) {
-            strokeColor = newColor
-         }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
