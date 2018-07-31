@@ -80,6 +80,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIButton) {
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        imageView.image?.draw(in: CGRect(x: 0, y: 0, width: imageView.frame.size.width, height: imageView.frame.size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let activity = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
     }
         
     // Utility functions
