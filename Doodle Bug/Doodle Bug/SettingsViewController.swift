@@ -40,7 +40,9 @@ class SettingsViewController: UIViewController {
         let red = 255.0 * rgbColor!.components![0]
         let green = 255.0 * rgbColor!.components![1]
         let blue = 255.0 * rgbColor!.components![2]
-        let opacity = rgbColor!.components![3]
+        var opacity = rgbColor!.components![3]
+        opacity = 10.0 * opacity
+        opacity = opacity.rounded() / 10.0
         redSlider.setValue(Float(red), animated: false)
         greenSlider.setValue(Float(green), animated: false)
         blueSlider.setValue(Float(blue), animated: false)
@@ -75,7 +77,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func adjustOpacity(_ sender: UISlider) {
-        let opacity = opacitySlider.value
+        var opacity = opacitySlider.value
+        opacity = 10.0 * opacity
+        opacity = opacity.rounded() / 10.0
         opacityLabel.text = "Opacity: \(opacity)"
         opacitySlider.setValue(Float(opacity), animated: false)
         
@@ -84,7 +88,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func adjustStrokeWidth(_ sender: UISlider) {
-        strokeWidth = CGFloat(strokeWidthSlider.value)
+        strokeWidth = CGFloat(Int(strokeWidthSlider.value))
         strokeWidthLabel.text = "Stroke Width: \(strokeWidth)"
         strokeWidthSlider.setValue(Float(strokeWidth), animated: false)
         drawBrushPreview()
