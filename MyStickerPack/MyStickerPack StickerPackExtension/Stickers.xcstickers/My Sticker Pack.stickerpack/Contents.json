@@ -1,0 +1,23 @@
+{
+  "stickers" : [
+    {
+      "filename" : "Smiley1.sticker"
+    },
+    {
+      "filename" : "Smiley2.sticker"
+    },
+    {
+      "filename" : "Smiley3.sticker"
+    },
+    {
+      "filename" : "Smiley4.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}
