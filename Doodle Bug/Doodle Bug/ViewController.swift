@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let settingsViewController = segue.destination as! SettingsViewController
+        settingsViewController.delegate = self
+        settingsViewController.color = self.strokeColor
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         swiped = false
         
@@ -95,6 +101,12 @@ class ViewController: UIViewController {
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
+    }
+}
+
+extension ViewController: SettingsViewControllerDelegate {
+    func settingsViewControllerFinished(_ settingsViewController: SettingsViewController) {
+         self.strokeColor = settingsViewController.color
     }
 }
 
