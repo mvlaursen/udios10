@@ -10,6 +10,8 @@ import AVFoundation
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var playerVolume: UISlider!
+    
     var player: AVAudioPlayer? = nil
 
     override func viewDidLoad() {
@@ -22,6 +24,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func adjustPlayerVolume(_ sender: UISlider) {
+        if player != nil {
+            player!.setVolume(Float(playerVolume.value), fadeDuration: 0.5)
+        }
+    }
+    
     @IBAction func pauseMusic(_ sender: UIButton) {
         if player != nil {
             if player!.isPlaying {

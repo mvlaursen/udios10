@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,21 +59,34 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wi6-nv-65F">
+                                <rect key="frame" x="14" y="140" width="347" height="31"/>
+                                <connections>
+                                    <action selector="adjustPlayerVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="hP0-lj-SZg"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wmU-vK-8Dy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NIB-a8-5q1"/>
-                            <constraint firstItem="wmU-vK-8Dy" firstAttribute="centerX" secondItem="3Z6-D5-Tv0" secondAttribute="centerX" id="Tza-wl-GcY"/>
-                            <constraint firstItem="wmU-vK-8Dy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vfo-hJ-Ajf"/>
-                            <constraint firstItem="Pzj-iR-gfp" firstAttribute="centerX" secondItem="3Z6-D5-Tv0" secondAttribute="centerX" id="cQi-hn-GPp"/>
-                            <constraint firstItem="Pzj-iR-gfp" firstAttribute="top" secondItem="3Z6-D5-Tv0" secondAttribute="bottom" constant="8" symbolic="YES" id="fpn-EG-cbG"/>
-                            <constraint firstItem="3Z6-D5-Tv0" firstAttribute="top" secondItem="wmU-vK-8Dy" secondAttribute="bottom" constant="8" symbolic="YES" id="jf9-xS-BAs"/>
+                            <constraint firstItem="3Z6-D5-Tv0" firstAttribute="top" secondItem="wmU-vK-8Dy" secondAttribute="bottom" constant="8" symbolic="YES" id="3mB-lG-q1o"/>
+                            <constraint firstItem="Pzj-iR-gfp" firstAttribute="top" secondItem="3Z6-D5-Tv0" secondAttribute="bottom" constant="8" symbolic="YES" id="46k-q5-VJo"/>
+                            <constraint firstItem="Pzj-iR-gfp" firstAttribute="centerX" secondItem="Wi6-nv-65F" secondAttribute="centerX" id="4zS-w3-rlb"/>
+                            <constraint firstItem="Wi6-nv-65F" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CB6-0S-Qrf"/>
+                            <constraint firstItem="wmU-vK-8Dy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VUH-vR-yev"/>
+                            <constraint firstItem="Wi6-nv-65F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aAW-5g-kSL"/>
+                            <constraint firstItem="3Z6-D5-Tv0" firstAttribute="centerX" secondItem="Pzj-iR-gfp" secondAttribute="centerX" id="fPi-c1-gcb"/>
+                            <constraint firstItem="wmU-vK-8Dy" firstAttribute="centerX" secondItem="3Z6-D5-Tv0" secondAttribute="centerX" id="gVU-sY-5Up"/>
+                            <constraint firstItem="Wi6-nv-65F" firstAttribute="top" secondItem="Pzj-iR-gfp" secondAttribute="bottom" constant="14" id="ujF-sg-ArJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playerVolume" destination="Wi6-nv-65F" id="oga-Rl-V4L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
