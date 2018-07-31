@@ -58,6 +58,8 @@ class SettingsViewController: UIViewController {
 
         strokeWidthLabel.text = "Stroke Width: \(strokeWidth)"
         strokeWidthSlider.setValue(Float(strokeWidth), animated: false)
+        
+        drawBrushPreview()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,20 +78,35 @@ class SettingsViewController: UIViewController {
     }
     */
 
+    @IBAction func adjustColor(_ sender: UISlider) {
+        strokeColor = UIColor(displayP3Red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(opacitySlider.value)).cgColor
+        drawBrushPreview()
+    }
+    
     @IBAction func adjustOpacity(_ sender: UISlider) {
         let opacity = opacitySlider.value
         opacityLabel.text = "Opacity: \(opacity)"
         opacitySlider.setValue(Float(opacity), animated: false)
+        
+        strokeColor = UIColor(displayP3Red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(opacitySlider.value)).cgColor
+        drawBrushPreview()
     }
     
     @IBAction func adjustStrokeWidth(_ sender: UISlider) {
         strokeWidth = CGFloat(strokeWidthSlider.value)
         strokeWidthLabel.text = "Stroke Width: \(strokeWidth)"
         strokeWidthSlider.setValue(Float(strokeWidth), animated: false)
+        drawBrushPreview()
     }
     
     @IBAction func exit(_ sender: UIButton) {
         self.delegate?.settingsViewControllerFinished(self)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // Utility functions
+    
+    func drawBrushPreview() {
+        brushImage.backgroundColor = UIColor(cgColor: strokeColor)
     }
 }
