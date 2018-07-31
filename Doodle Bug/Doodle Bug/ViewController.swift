@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     var previousPoint = CGPoint.zero
     var strokeColor = UIColor.black.cgColor
+    var strokeWidth = CGFloat(2.0)
     var swiped = false
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         let settingsViewController = segue.destination as! SettingsViewController
         settingsViewController.delegate = self
         settingsViewController.color = self.strokeColor
+        settingsViewController.strokeWidth = strokeWidth
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,10 +81,7 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
     }
-    
-    @IBAction func settings(_ sender: UIButton) {
-    }
-    
+        
     // Utility functions
     
     private func drawLine(_ fromPoint: CGPoint, toPoint: CGPoint) {
@@ -91,7 +90,7 @@ class ViewController: UIViewController {
         let context = UIGraphicsGetCurrentContext()
         context?.setBlendMode(.normal)
         context?.setLineCap(.round)
-        context?.setLineWidth(2)
+        context?.setLineWidth(strokeWidth)
         context?.setStrokeColor(strokeColor)
         
         imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))

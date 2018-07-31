@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var blueSlider: UISlider!
     
     private var strokeColor = UIColor.black.cgColor
+    public var strokeWidth = CGFloat(0.0)
     
     var color: CGColor {
         get {
@@ -42,11 +43,21 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         let targetColorSpace = CGColorSpace(name: CGColorSpace.sRGB)
         let rgbColor = strokeColor.converted(to: targetColorSpace!, intent: CGColorRenderingIntent.defaultIntent, options: nil)
-        redSlider.setValue(Float(255.0 * rgbColor!.components![0]), animated: true)
-        greenSlider.setValue(Float(255.0 * rgbColor!.components![1]), animated: true)
-        blueSlider.setValue(Float(255.0 * rgbColor!.components![2]), animated: true)
+        let red = rgbColor!.components![0]
+        let green = rgbColor!.components![1]
+        let blue = rgbColor!.components![2]
+        let opacity = rgbColor!.components![3]
+        redSlider.setValue(Float(red), animated: false)
+        greenSlider.setValue(Float(green), animated: false)
+        blueSlider.setValue(Float(blue), animated: false)
+        opacityLabel.text = "Opacity: \(opacity)"
+        opacitySlider.setValue(Float(opacity), animated: false)
+
+        strokeWidthLabel.text = "Stroke Width: \(strokeWidth)"
+        strokeWidthSlider.setValue(Float(strokeWidth), animated: false)
     }
 
     override func didReceiveMemoryWarning() {
