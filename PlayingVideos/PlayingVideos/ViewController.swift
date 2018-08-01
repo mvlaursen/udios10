@@ -18,13 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let path = Bundle.main.path(forResource: "Video", ofType: ".mp4")
-        
-        assert(path != nil)
-        if path != nil {
-            player = AVPlayer(url: URL(fileURLWithPath: path!))
-            playerController.player = player
-        }
+        let path = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4"
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        playerController.player = player
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +28,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction private func playVideo(_ sender: UIButton) {
-        self.present(playerController, animated: true) {
+    @IBAction private func streamVideo(_ sender: UIButton) {
+        present(playerController, animated: true) {
             self.playerController.player?.play()
         }
     }
