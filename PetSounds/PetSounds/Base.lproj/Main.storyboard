@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +19,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-3B-lx3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QsH-Dq-I44">
+                                <rect key="frame" x="16" y="-6.5" width="288" height="493"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oew-Qk-uZT" userLabel="Row 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="159"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-uJ-mEr">
+                                                <rect key="frame" x="0.0" y="9" width="140" height="141"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ttU-uJ-mEr" secondAttribute="height" multiplier="397:400" id="n6M-Tj-iJh"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Cat"/>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmk-a9-f29">
+                                                <rect key="frame" x="148" y="9" width="140" height="141"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Dmk-a9-f29" secondAttribute="height" multiplier="397:400" id="VkX-K9-FEJ"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Dog"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WlB-Rt-bBX" userLabel="Row 2">
+                                        <rect key="frame" x="0.0" y="167" width="288" height="159"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-Eh-lSf">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="159"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wUa-Eh-lSf" secondAttribute="height" multiplier="397:450" id="8XN-Du-pOj"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Frog"/>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-wd-hgR">
+                                                <rect key="frame" x="148" y="0.0" width="140" height="159"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bgs-wd-hgR" secondAttribute="height" multiplier="397:450" id="5Tq-vE-6Qt"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Horse"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-8L-Zag" userLabel="Row 3">
+                                        <rect key="frame" x="0.0" y="334" width="288" height="159"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-aF-BaY">
+                                                <rect key="frame" x="0.0" y="13.5" width="140" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f0i-aF-BaY" secondAttribute="height" multiplier="794:745" id="7lW-Hs-48j"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Pig"/>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdH-pW-2Bq">
+                                                <rect key="frame" x="148" y="13.5" width="140" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qdH-pW-2Bq" secondAttribute="height" multiplier="794:745" id="UDj-tN-3jg"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Sheep"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QsH-Dq-I44" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4gt-CZ-hfy"/>
+                            <constraint firstItem="QsH-Dq-I44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5AI-iQ-eRo"/>
+                            <constraint firstItem="qmi-3B-lx3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YGx-fg-k9l"/>
+                            <constraint firstItem="qmi-3B-lx3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d6n-VM-6u0"/>
+                            <constraint firstItem="qmi-3B-lx3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dNH-fq-TE1"/>
+                            <constraint firstItem="qmi-3B-lx3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eRQ-S6-iad"/>
+                            <constraint firstItem="QsH-Dq-I44" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gfQ-if-OR9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QsH-Dq-I44" secondAttribute="trailing" constant="16" id="nhs-A7-n20"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="22.938530734632685"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1920" height="1080"/>
+        <image name="Cat" width="507" height="800"/>
+        <image name="Dog" width="555" height="744"/>
+        <image name="Frog" width="794" height="900"/>
+        <image name="Horse" width="510" height="594"/>
+        <image name="Pig" width="667" height="745"/>
+        <image name="Sheep" width="576" height="600"/>
+    </resources>
 </document>
