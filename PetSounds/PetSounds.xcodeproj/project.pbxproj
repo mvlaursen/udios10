@@ -19,6 +19,7 @@
 		3BCAA18221123A3100184D92 /* Horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA17A211128F500184D92 /* Horse.mp3 */; };
 		3BCAA18321123A3100184D92 /* Pig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA176211128F500184D92 /* Pig.wav */; };
 		3BCAA18421123A3100184D92 /* Sheep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA178211128F500184D92 /* Sheep.wav */; };
+		3BCAA18621123B6500184D92 /* SoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA18521123B6500184D92 /* SoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3BCAA17A211128F500184D92 /* Horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Horse.mp3; sourceTree = "<group>"; };
 		3BCAA17B211128F500184D92 /* Cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cat.wav; sourceTree = "<group>"; };
 		3BCAA17D2112380F00184D92 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3BCAA18521123B6500184D92 /* SoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCAA1572111288400184D92 /* AppDelegate.swift */,
+				3BCAA18521123B6500184D92 /* SoundButton.swift */,
 				3BCAA1592111288400184D92 /* ViewController.swift */,
 				3BCAA15B2111288400184D92 /* Main.storyboard */,
 				3BCAA15E2111288400184D92 /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCAA15A2111288400184D92 /* ViewController.swift in Sources */,
+				3BCAA18621123B6500184D92 /* SoundButton.swift in Sources */,
 				3BCAA1582111288400184D92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

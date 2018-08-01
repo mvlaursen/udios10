@@ -28,20 +28,16 @@ class ViewController: UIViewController {
             player = nil
         }
         
-        let id = sender.restorationIdentifier
-        
-        assert(id != nil)
-        if (id != nil) {
-            let path = Bundle.main.path(forResource: id, ofType: nil)
+        let soundButton = sender as! SoundButton
+        let path = Bundle.main.path(forResource: soundButton.filename, ofType: soundButton.filenameExtension)
             
-            assert(path != nil)
-            if path != nil {
-                do {
-                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path!))
-                    player?.play()
-                } catch {
-                    print(error)
-                }
+        assert(path != nil)
+        if path != nil {
+            do {
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path!))
+                player?.play()
+            } catch {
+                print(error)
             }
         }
     }
