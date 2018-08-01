@@ -18,9 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let path = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4"
-        player = AVPlayer(url: URL(fileURLWithPath: path))
-        playerController.player = player
+        let path = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4"
+        let url = URL(string: path)
+        
+        if url != nil {
+            player = AVPlayer(url: url!)
+            playerController.player = player
+        }
     }
 
     override func didReceiveMemoryWarning() {
