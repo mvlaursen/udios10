@@ -12,6 +12,13 @@
 		3BCAA15D2111288400184D92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA15B2111288400184D92 /* Main.storyboard */; };
 		3BCAA15F2111288400184D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA15E2111288400184D92 /* Assets.xcassets */; };
 		3BCAA1622111288400184D92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA1602111288400184D92 /* LaunchScreen.storyboard */; };
+		3BCAA17E2112380F00184D92 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCAA17D2112380F00184D92 /* AVFoundation.framework */; };
+		3BCAA17F21123A3100184D92 /* Cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA17B211128F500184D92 /* Cat.wav */; };
+		3BCAA18021123A3100184D92 /* Dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA177211128F500184D92 /* Dog.wav */; };
+		3BCAA18121123A3100184D92 /* Frog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA179211128F500184D92 /* Frog.wav */; };
+		3BCAA18221123A3100184D92 /* Horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA17A211128F500184D92 /* Horse.mp3 */; };
+		3BCAA18321123A3100184D92 /* Pig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA176211128F500184D92 /* Pig.wav */; };
+		3BCAA18421123A3100184D92 /* Sheep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA178211128F500184D92 /* Sheep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,7 @@
 		3BCAA179211128F500184D92 /* Frog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Frog.wav; sourceTree = "<group>"; };
 		3BCAA17A211128F500184D92 /* Horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Horse.mp3; sourceTree = "<group>"; };
 		3BCAA17B211128F500184D92 /* Cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cat.wav; sourceTree = "<group>"; };
+		3BCAA17D2112380F00184D92 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCAA17E2112380F00184D92 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,7 @@
 			children = (
 				3BCAA1562111288400184D92 /* PetSounds */,
 				3BCAA1552111288400184D92 /* Products */,
+				3BCAA17C2112380E00184D92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +92,14 @@
 				3BCAA178211128F500184D92 /* Sheep.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3BCAA17C2112380E00184D92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BCAA17D2112380F00184D92 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +160,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCAA18221123A3100184D92 /* Horse.mp3 in Resources */,
 				3BCAA1622111288400184D92 /* LaunchScreen.storyboard in Resources */,
 				3BCAA15F2111288400184D92 /* Assets.xcassets in Resources */,
+				3BCAA18321123A3100184D92 /* Pig.wav in Resources */,
+				3BCAA18021123A3100184D92 /* Dog.wav in Resources */,
 				3BCAA15D2111288400184D92 /* Main.storyboard in Resources */,
+				3BCAA18121123A3100184D92 /* Frog.wav in Resources */,
+				3BCAA17F21123A3100184D92 /* Cat.wav in Resources */,
+				3BCAA18421123A3100184D92 /* Sheep.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
