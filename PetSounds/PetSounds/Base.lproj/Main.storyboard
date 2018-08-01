@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,10 +27,13 @@
                                 <rect key="frame" x="16" y="0.0" width="288" height="427.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oew-Qk-uZT" userLabel="Row 1">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="137"/>
+                                        <rect key="frame" x="3" y="0.0" width="282" height="137"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-uJ-mEr" userLabel="Cat" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ttU-uJ-mEr" secondAttribute="height" multiplier="1:1" id="bjq-cW-uvg"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Cat"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Cat"/>
@@ -39,7 +43,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmk-a9-f29" userLabel="Dog" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="148" y="0.0" width="140" height="137"/>
+                                                <rect key="frame" x="145" y="0.0" width="137" height="137"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Dmk-a9-f29" secondAttribute="height" multiplier="1:1" id="Yyz-vw-BPH"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Dog"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Dog"/>
@@ -51,10 +58,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WlB-Rt-bBX" userLabel="Row 2">
-                                        <rect key="frame" x="0.0" y="145" width="288" height="137.5"/>
+                                        <rect key="frame" x="3.5" y="145" width="281" height="137.5"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-Eh-lSf" userLabel="Frog" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="137.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="137.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wUa-Eh-lSf" secondAttribute="height" multiplier="1:1" id="EeB-Ep-gnx"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Frog"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Frog"/>
@@ -64,7 +74,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-wd-hgR" userLabel="Horse" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="148" y="0.0" width="140" height="137.5"/>
+                                                <rect key="frame" x="144.5" y="0.0" width="136.5" height="137.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bgs-wd-hgR" secondAttribute="height" multiplier="1:1" id="mV7-qw-hug"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Horse"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Horse"/>
@@ -77,10 +90,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-8L-Zag" userLabel="Row 3">
-                                        <rect key="frame" x="0.0" y="290.5" width="288" height="137"/>
+                                        <rect key="frame" x="3" y="290.5" width="282" height="137"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-aF-BaY" userLabel="Pig" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f0i-aF-BaY" secondAttribute="height" multiplier="1:1" id="t3Z-uL-D2X"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Pig"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Pig"/>
@@ -90,7 +106,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdH-pW-2Bq" userLabel="Sheep" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="148" y="0.0" width="140" height="137"/>
+                                                <rect key="frame" x="145" y="0.0" width="137" height="137"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qdH-pW-2Bq" secondAttribute="height" multiplier="1:1" id="DKQ-8v-72k"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="Sheep"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Sheep"/>
