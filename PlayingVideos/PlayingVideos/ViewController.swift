@@ -9,13 +9,17 @@
 import AVFoundation
 import AVKit
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var webView: WKWebView!
+    
     var playerController = AVPlayerViewController()
     var player: AVPlayer? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         let path = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4"
@@ -25,6 +29,9 @@ class ViewController: UIViewController {
             player = AVPlayer(url: url!)
             playerController.player = player
         }
+        
+        let embedCode = "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/VNKU4hSz3SU\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"
+        webView.loadHTMLString(embedCode, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {
