@@ -58,10 +58,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WlB-Rt-bBX" userLabel="Row 2">
-                                        <rect key="frame" x="3.5" y="145" width="281" height="137.5"/>
+                                        <rect key="frame" x="3" y="145" width="282" height="137.5"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-Eh-lSf" userLabel="Frog" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="137.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wUa-Eh-lSf" secondAttribute="height" multiplier="1:1" id="EeB-Ep-gnx"/>
                                                 </constraints>
@@ -74,7 +74,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-wd-hgR" userLabel="Horse" customClass="SoundButton" customModule="PetSounds" customModuleProvider="target">
-                                                <rect key="frame" x="144.5" y="0.0" width="136.5" height="137.5"/>
+                                                <rect key="frame" x="145" y="0.0" width="137" height="137.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bgs-wd-hgR" secondAttribute="height" multiplier="1:1" id="mV7-qw-hug"/>
                                                 </constraints>
@@ -156,6 +156,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="volumeSlider" destination="snN-X7-2Vd" id="Xz4-8Q-cH6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

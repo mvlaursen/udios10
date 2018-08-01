@@ -12,6 +12,8 @@ import UIKit
 class ViewController: UIViewController {
     var player: AVAudioPlayer? = nil
 
+    @IBOutlet private weak var volumeSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func playSound(_ sender: UIButton) {
+    @IBAction private func playSound(_ sender: UIButton) {
         if player != nil {
             player!.stop()
             player = nil
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
         if path != nil {
             do {
                 player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path!))
+                player?.volume = volumeSlider.value
                 player?.play()
             } catch {
                 print(error)
