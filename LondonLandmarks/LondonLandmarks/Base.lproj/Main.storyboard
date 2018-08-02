@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKK-Uc-mga">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="81c-RL-ZjJ">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--London Landmarks-->
         <scene sceneID="Tb0-Td-Z5b">
             <objects>
                 <tableViewController id="jKK-Uc-mga" customClass="TableViewController" customModule="LondonLandmarks" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,13 +38,13 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbC-gr-cUc">
                                                             <rect key="frame" x="0.0" y="0.0" width="136.5" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHS-ca-HdI">
                                                             <rect key="frame" x="0.0" y="28" width="136.5" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -72,8 +72,27 @@
                             <outlet property="delegate" destination="jKK-Uc-mga" id="B1K-ZS-Hzg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="London Landmarks" id="PbX-tA-YMX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4m-ww-1Xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="59"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n44-ci-z6X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="81c-RL-ZjJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aSB-cB-HCk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jKK-Uc-mga" kind="relationship" relationship="rootViewController" id="T4v-pp-Gmp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMa-al-bZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-11.25" y="58.75"/>
         </scene>

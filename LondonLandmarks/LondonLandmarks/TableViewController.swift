@@ -48,6 +48,8 @@ class TableViewController: UITableViewController {
         cell.cellDescription.text = descriptionList[indexPath.row]
         cell.imageView?.image = UIImage(named: imageList[indexPath.row])
         cell.cellTitle.text = titleList[indexPath.row]
+        cell.cellTitle.textColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+        
         return cell
     }
 
