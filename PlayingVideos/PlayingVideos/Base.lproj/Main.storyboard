@@ -25,11 +25,11 @@
                                     <action selector="streamVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vh-iL-okh"/>
                                 </connections>
                             </button>
-                            <wkWebView contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3N-Dn-1Jl">
+                            <wkWebView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3N-Dn-1Jl">
                                 <rect key="frame" x="16" y="58" width="288" height="402"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
@@ -37,7 +37,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="S3N-Dn-1Jl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="EK0-y6-T9x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S3N-Dn-1Jl" secondAttribute="bottom" constant="20" id="Ezl-KA-U86"/>
+                            <constraint firstItem="S3N-Dn-1Jl" firstAttribute="top" secondItem="21v-ce-EWF" secondAttribute="bottom" constant="8" id="JJV-IQ-QtR"/>
                             <constraint firstItem="21v-ce-EWF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dNR-76-aNA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S3N-Dn-1Jl" secondAttribute="trailing" constant="16" id="ocG-7w-gqJ"/>
                             <constraint firstItem="21v-ce-EWF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qwT-ap-hjd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
