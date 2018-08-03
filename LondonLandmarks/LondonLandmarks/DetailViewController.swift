@@ -41,6 +41,11 @@ class DetailViewController: UIViewController {
         mapView.setCenter(location, animated: false)
         mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees(0.001), longitudeDelta: CLLocationDegrees(0.001))), animated: false)
         mapView.layer.cornerRadius = 2
+        let annot = MKPointAnnotation()
+        annot.coordinate = location
+        annot.title = landmarkTitle
+        annot.subtitle = landmarkDescription
+        mapView.addAnnotation(annot)
         
         titleLabel.text = landmarkTitle
         titleLabel.textColor = CommonColors.LLBlue
@@ -63,5 +68,7 @@ class DetailViewController: UIViewController {
     */
 
     @IBAction private func directionsAction(_ sender: UIButton) {
+        
+        UIApplication.shared.open(URL(string: "http://maps.apple.com/maps?daddr=\(mapView.centerCoordinate.latitude),\(mapView.centerCoordinate.longitude)")!)
     }
 }
