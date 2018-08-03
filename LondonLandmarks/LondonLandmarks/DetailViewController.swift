@@ -37,6 +37,9 @@ class DetailViewController: UIViewController {
         
         imageView.image = UIImage(named: landmarkImageName)
         
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(51.5033), longitude: CLLocationDegrees(-0.1195))
+        mapView.setCenter(location, animated: false)
+        mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees(0.001), longitudeDelta: CLLocationDegrees(0.001))), animated: false)
         mapView.layer.cornerRadius = 2
         
         titleLabel.text = landmarkTitle
