@@ -106,9 +106,7 @@ class TableViewController: UITableViewController {
             
             let indexPath = tableView.indexPathForSelectedRow
             if indexPath != nil {
-                detailViewController.landmarkDescription = LandmarkData.data[indexPath!.row].streetAddress
-                detailViewController.landmarkImageName = LandmarkData.data[indexPath!.row].imageName
-                detailViewController.landmarkTitle = LandmarkData.data[indexPath!.row].title
+                detailViewController.landmark = LandmarkData.data[indexPath!.row]
             }
         }
     }

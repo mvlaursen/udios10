@@ -17,9 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var titleLabel: UILabel!
     
-    public var landmarkDescription:String!
-    public var landmarkImageName:String!
-    public var landmarkTitle:String!
+    public var landmark:LandmarkDataItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +26,14 @@ class DetailViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = CommonColors.LLBlue
 
-        descriptionLabel.text = landmarkDescription
+        descriptionLabel.text = landmark.streetAddress
         
         detailTextView.text = "London, the home town of the Beatles and King Arthur, is a 21st-century city with history stretching back to caveman times. At its center stands the imposing House of Wax, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of Isaac Newton's grave. Across the River Thames, the London Eye ferris wheel provides panoramic views of all kinds of stuff."
         
         directionsButton.backgroundColor = CommonColors.LLBlue
         directionsButton.layer.cornerRadius = 2
         
-        imageView.image = UIImage(named: landmarkImageName)
+        imageView.image = UIImage(named: landmark.imageName)
         
         let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(51.5033), longitude: CLLocationDegrees(-0.1195))
         mapView.setCenter(location, animated: false)
@@ -43,11 +41,11 @@ class DetailViewController: UIViewController {
         mapView.layer.cornerRadius = 2
         let annot = MKPointAnnotation()
         annot.coordinate = location
-        annot.title = landmarkTitle
-        annot.subtitle = landmarkDescription
+        annot.title = landmark.title
+        annot.subtitle = landmark.title // TODO: Put something else here.
         mapView.addAnnotation(annot)
         
-        titleLabel.text = landmarkTitle
+        titleLabel.text = landmark.title
         titleLabel.textColor = CommonColors.LLBlue
     }
 
