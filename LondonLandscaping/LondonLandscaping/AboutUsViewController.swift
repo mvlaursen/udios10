@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  LondonLandscaping
 //
 //  Created by Mike Laursen on 8/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class AboutUsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
