@@ -41,7 +41,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +70,7 @@
                             <outlet property="delegate" destination="lPk-3d-XE1" id="A2n-4B-SSF"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Services" id="BFu-hu-1FP"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="Services" id="BFu-hu-1FP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqw-xN-48T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +86,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wYM-Fg-nn7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contact Us" id="fbg-SG-gyb"/>
+                    <tabBarItem key="tabBarItem" title="Contact Us" image="Contact" id="fbg-SG-gyb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSh-Sb-W4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +123,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About Us" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="About Us" image="About" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +158,7 @@
                             <outlet property="delegate" destination="YNC-SQ-0Zs" id="GMV-rF-aHi"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Portfolio" id="62d-3j-ZRL"/>
+                    <tabBarItem key="tabBarItem" title="Portfolio" image="Portfolio" id="62d-3j-ZRL"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywB-Wt-Uck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +187,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="About" width="30" height="30"/>
+        <image name="Contact" width="30" height="30"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="Portfolio" width="30" height="30"/>
+        <image name="Services" width="30" height="30"/>
     </resources>
 </document>
