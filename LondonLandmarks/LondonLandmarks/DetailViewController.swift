@@ -30,6 +30,8 @@ class DetailViewController: UIViewController {
 
         descriptionLabel.text = landmarkDescription
         
+        detailTextView.text = "London, the home town of the Beatles and King Arthur, is a 21st-century city with history stretching back to caveman times. At its center stands the imposing House of Wax, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of Isaac Newton's grave. Across the River Thames, the London Eye ferris wheel provides panoramic views of all kinds of stuff."
+        
         directionsButton.backgroundColor = CommonColors.LLBlue
         directionsButton.layer.cornerRadius = 2
         
