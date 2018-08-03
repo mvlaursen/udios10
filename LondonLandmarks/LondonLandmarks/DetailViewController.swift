@@ -6,14 +6,26 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var detailTextView: UITextView!
+    @IBOutlet private weak var directionsButton: UIButton!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        directionsButton.backgroundColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+        directionsButton.layer.cornerRadius = 2
+        mapView.layer.cornerRadius = 2
+        titleLabel.textColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +44,6 @@ class DetailViewController: UIViewController {
     }
     */
 
+    @IBAction private func directionsAction(_ sender: UIButton) {
+    }
 }
