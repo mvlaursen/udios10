@@ -22,14 +22,14 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = CommonColors.LLBlue
 
-        directionsButton.backgroundColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+        directionsButton.backgroundColor = CommonColors.LLBlue
         directionsButton.layer.cornerRadius = 2
         
         mapView.layer.cornerRadius = 2
         
-        titleLabel.textColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+        titleLabel.textColor = CommonColors.LLBlue
     }
 
     override func didReceiveMemoryWarning() {

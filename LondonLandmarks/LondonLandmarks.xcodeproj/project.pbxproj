@@ -15,6 +15,7 @@
 		3B4940472113A23200C14365 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4940462113A23200C14365 /* TableViewCell.swift */; };
 		3B4940492113D3D200C14365 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4940482113D3D200C14365 /* DetailViewController.swift */; };
 		3B49404C2113D4E100C14365 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B49404B2113D4E100C14365 /* MapKit.framework */; };
+		3B7F91FD211409D60019CB46 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F91FC211409D60019CB46 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3B4940462113A23200C14365 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3B4940482113D3D200C14365 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3B49404B2113D4E100C14365 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B7F91FC211409D60019CB46 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4940322113A12D00C14365 /* AppDelegate.swift */,
+				3B7F91FC211409D60019CB46 /* Common.swift */,
 				3B4940482113D3D200C14365 /* DetailViewController.swift */,
 				3B4940442113A1FC00C14365 /* TableViewController.swift */,
 				3B4940462113A23200C14365 /* TableViewCell.swift */,
@@ -156,6 +159,7 @@
 				3B4940472113A23200C14365 /* TableViewCell.swift in Sources */,
 				3B4940332113A12D00C14365 /* AppDelegate.swift in Sources */,
 				3B4940452113A1FC00C14365 /* TableViewController.swift in Sources */,
+				3B7F91FD211409D60019CB46 /* Common.swift in Sources */,
 				3B4940492113D3D200C14365 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
