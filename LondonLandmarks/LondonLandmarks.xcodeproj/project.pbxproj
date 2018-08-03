@@ -13,6 +13,8 @@
 		3B49403D2113A12D00C14365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B49403B2113A12D00C14365 /* LaunchScreen.storyboard */; };
 		3B4940452113A1FC00C14365 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4940442113A1FC00C14365 /* TableViewController.swift */; };
 		3B4940472113A23200C14365 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4940462113A23200C14365 /* TableViewCell.swift */; };
+		3B4940492113D3D200C14365 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4940482113D3D200C14365 /* DetailViewController.swift */; };
+		3B49404C2113D4E100C14365 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B49404B2113D4E100C14365 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3B49403E2113A12D00C14365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B4940442113A1FC00C14365 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3B4940462113A23200C14365 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3B4940482113D3D200C14365 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3B49404B2113D4E100C14365 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B49404C2113D4E100C14365 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				3B4940312113A12D00C14365 /* LondonLandmarks */,
 				3B4940302113A12D00C14365 /* Products */,
+				3B49404A2113D4E100C14365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4940322113A12D00C14365 /* AppDelegate.swift */,
+				3B4940482113D3D200C14365 /* DetailViewController.swift */,
 				3B4940442113A1FC00C14365 /* TableViewController.swift */,
 				3B4940462113A23200C14365 /* TableViewCell.swift */,
 				3B4940362113A12D00C14365 /* Main.storyboard */,
@@ -65,6 +72,14 @@
 				3B49403E2113A12D00C14365 /* Info.plist */,
 			);
 			path = LondonLandmarks;
+			sourceTree = "<group>";
+		};
+		3B49404A2113D4E100C14365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B49404B2113D4E100C14365 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +156,7 @@
 				3B4940472113A23200C14365 /* TableViewCell.swift in Sources */,
 				3B4940332113A12D00C14365 /* AppDelegate.swift in Sources */,
 				3B4940452113A1FC00C14365 /* TableViewController.swift in Sources */,
+				3B4940492113D3D200C14365 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
