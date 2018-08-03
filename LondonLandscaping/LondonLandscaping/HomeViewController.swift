@@ -24,6 +24,17 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        if sender.accessibilityIdentifier != nil {
+            switch sender.accessibilityIdentifier! {
+            case "services": tabBarController?.selectedIndex = 1
+            case "portfolio": tabBarController?.selectedIndex = 2
+            case "contact": tabBarController?.selectedIndex = 3
+            case "about": tabBarController?.selectedIndex = 4
+            case "social": break
+            default: break
+            }
+        }
+    }
 }
 

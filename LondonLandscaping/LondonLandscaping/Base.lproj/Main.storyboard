@@ -36,6 +36,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-Ag-1DS">
                                 <rect key="frame" x="0.0" y="60.5" width="320" height="53"/>
+                                <accessibility key="accessibilityConfiguration" hint="What services do we offer?" identifier="services" label="Services"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kWs-Ag-1DS" secondAttribute="height" multiplier="6:1" id="KNE-tr-cVg"/>
                                 </constraints>
@@ -43,9 +44,13 @@
                                 <state key="normal" title="Services" backgroundImage="Button">
                                     <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wUt-ig-G4V"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2i9-hB-uMD">
                                 <rect key="frame" x="0.0" y="121.5" width="320" height="53.5"/>
+                                <accessibility key="accessibilityConfiguration" hint="See a portfolio of our work" identifier="portfolio" label="Portfolio"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2i9-hB-uMD" secondAttribute="height" multiplier="6:1" id="V2N-KC-S0W"/>
                                 </constraints>
@@ -53,9 +58,13 @@
                                 <state key="normal" title="Portfolio" backgroundImage="Button">
                                     <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9gR-xm-NC3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEP-w4-foy">
                                 <rect key="frame" x="0.0" y="183" width="320" height="53.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="contact" label="Contact Us"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YEP-w4-foy" secondAttribute="height" multiplier="6:1" id="vjb-Ga-6nA"/>
                                 </constraints>
@@ -63,9 +72,13 @@
                                 <state key="normal" title="Contact Us" backgroundImage="Button">
                                     <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="f6b-Ur-9tf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Di-rT-gNi" userLabel="About Us">
                                 <rect key="frame" x="0.0" y="244.5" width="320" height="53"/>
+                                <accessibility key="accessibilityConfiguration" identifier="about" label="About Us"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Di-rT-gNi" secondAttribute="height" multiplier="6:1" id="Ebv-Yx-ov2"/>
                                 </constraints>
@@ -73,9 +86,13 @@
                                 <state key="normal" title="About Us" backgroundImage="Button">
                                     <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HYN-Ol-DMF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scz-vy-Pmt" userLabel="Social Links">
                                 <rect key="frame" x="0.0" y="305.5" width="320" height="53.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="social" label="Social Links"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Scz-vy-Pmt" secondAttribute="height" multiplier="6:1" id="amH-DD-Cqm"/>
                                 </constraints>
@@ -83,6 +100,9 @@
                                 <state key="normal" title="Social Links" backgroundImage="Button">
                                     <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KX9-Dh-6yn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,7 +237,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A29-z3-lJb">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="A29-z3-lJb">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
