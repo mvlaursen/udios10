@@ -88,38 +88,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IId-mU-RS9">
-                                <rect key="frame" x="16" y="64" width="288" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTL-El-czm">
-                                <rect key="frame" x="74" y="172" width="144" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEc-71-gob">
-                                <rect key="frame" x="74" y="200" width="144" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-df-phq">
-                                <rect key="frame" x="40" y="228" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pZY-XC-iMM">
-                                <rect key="frame" x="40" y="364" width="240" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Er2-7h-XWt">
+                                <rect key="frame" x="16" y="64" width="288" height="400"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IId-mU-RS9">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="95.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTL-El-czm">
+                                        <rect key="frame" x="0.0" y="103.5" width="288" height="23.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23.5" id="GAJ-ej-xVQ" userLabel="20"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEc-71-gob">
+                                        <rect key="frame" x="0.0" y="135" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Mc3-Ar-4CQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-df-phq">
+                                        <rect key="frame" x="0.0" y="163" width="288" height="96"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pZY-XC-iMM">
+                                        <rect key="frame" x="0.0" y="267" width="288" height="95"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-7r-yiY">
+                                        <rect key="frame" x="0.0" y="370" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="EnI-tY-YZG"/>
+                                        </constraints>
+                                        <state key="normal" title="Directions"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uTL-El-czm" secondAttribute="trailing" id="3CJ-EI-Nkm"/>
+                                    <constraint firstItem="pZY-XC-iMM" firstAttribute="leading" secondItem="Er2-7h-XWt" secondAttribute="leading" id="7NC-4c-Ovb"/>
+                                    <constraint firstAttribute="trailing" secondItem="IId-mU-RS9" secondAttribute="trailing" id="9hh-nr-k0x"/>
+                                    <constraint firstAttribute="trailing" secondItem="KxA-df-phq" secondAttribute="trailing" id="HCo-gi-vF4"/>
+                                    <constraint firstItem="uTL-El-czm" firstAttribute="leading" secondItem="Er2-7h-XWt" secondAttribute="leading" id="KEX-Yh-09U"/>
+                                    <constraint firstItem="lEc-71-gob" firstAttribute="leading" secondItem="Er2-7h-XWt" secondAttribute="leading" id="WfW-b0-hxI"/>
+                                    <constraint firstItem="KxA-df-phq" firstAttribute="leading" secondItem="Er2-7h-XWt" secondAttribute="leading" id="X1u-or-U5z"/>
+                                    <constraint firstAttribute="trailing" secondItem="pZY-XC-iMM" secondAttribute="trailing" id="iIa-Hi-nfF"/>
+                                    <constraint firstAttribute="trailing" secondItem="lEc-71-gob" secondAttribute="trailing" id="map-p4-bds"/>
+                                    <constraint firstItem="IId-mU-RS9" firstAttribute="leading" secondItem="Er2-7h-XWt" secondAttribute="leading" id="pxI-Ul-i7Q"/>
+                                    <constraint firstItem="KxA-df-phq" firstAttribute="height" secondItem="IId-mU-RS9" secondAttribute="height" id="qZ4-GV-Zn6"/>
+                                    <constraint firstItem="pZY-XC-iMM" firstAttribute="height" secondItem="IId-mU-RS9" secondAttribute="height" id="wRc-r1-Yyt"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z5m-uL-CVd" firstAttribute="bottom" secondItem="Er2-7h-XWt" secondAttribute="bottom" constant="16" id="6YL-1J-i6e"/>
+                            <constraint firstItem="Er2-7h-XWt" firstAttribute="leading" secondItem="z5m-uL-CVd" secondAttribute="leading" constant="16" id="dqh-pv-YUQ"/>
+                            <constraint firstItem="z5m-uL-CVd" firstAttribute="trailing" secondItem="Er2-7h-XWt" secondAttribute="trailing" constant="16" id="nCK-RC-1hP"/>
+                            <constraint firstItem="Er2-7h-XWt" firstAttribute="top" secondItem="z5m-uL-CVd" secondAttribute="top" id="uKB-1D-SuJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z5m-uL-CVd"/>
                     </view>
                 </viewController>
