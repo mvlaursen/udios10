@@ -12,6 +12,7 @@ struct CommonColors {
     static let LLBlue = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
 }
 
+// TODO: Add all the other fields. Add realistic data. Left as an exercise to future me.
 struct LandmarkData {
     static let data: [LandmarkDataItem] = [
         LandmarkDataItem("Big Ben", imageName: "BigBen", streetAddress: "This is Big Ben."),
