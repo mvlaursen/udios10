@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = Colors.gardenGreen
         UINavigationBar.appearance().tintColor = UIColor.white
         
+        UITabBar.appearance().tintColor = Colors.gardenGreen
+        
         return true
     }
 
