@@ -9,9 +9,9 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    let descriptionList = ["London SW1A 00A", "London SW1A 1AA", "London SE1 7PB", "London EC4M 8AD", "London SE1 2UP", "London SW1P 3PA"]
-    let imageList = ["BigBen", "BuckinghamPalace", "LondonEye", "St-Pauls", "TowerBridge", "WestminsterAbbey"]
-    let titleList = ["Big Ben", "Buckingham Palace", "London Eye", "St. Paul's Cathedral", "Tower Bridge", "Westminster Abbey"]
+//    let descriptionList = ["London SW1A 00A", "London SW1A 1AA", "London SE1 7PB", "London EC4M 8AD", "London SE1 2UP", "London SW1P 3PA"]
+//    let imageList = ["BigBen", "BuckinghamPalace", "LondonEye", "St-Pauls", "TowerBridge", "WestminsterAbbey"]
+//    let titleList = ["Big Ben", "Buckingham Palace", "London Eye", "St. Paul's Cathedral", "Tower Bridge", "Westminster Abbey"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return titleList.count
+        return LandmarkData.data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,9 +51,9 @@ class TableViewController: UITableViewController {
 
         // Configure the cell...
 
-        cell.cellDescription.text = descriptionList[indexPath.row]
-        cell.imageView?.image = UIImage(named: imageList[indexPath.row])
-        cell.cellTitle.text = titleList[indexPath.row]
+        cell.cellDescription.text = LandmarkData.data[indexPath.row].streetAddress
+        cell.imageView?.image = UIImage(named: LandmarkData.data[indexPath.row].imageName)
+        cell.cellTitle.text = LandmarkData.data[indexPath.row].title
         cell.cellTitle.textColor = CommonColors.LLBlue
         
         return cell
@@ -106,9 +106,9 @@ class TableViewController: UITableViewController {
             
             let indexPath = tableView.indexPathForSelectedRow
             if indexPath != nil {
-                detailViewController.landmarkDescription = descriptionList[indexPath!.row]
-                detailViewController.landmarkImageName = imageList[indexPath!.row]
-                detailViewController.landmarkTitle = titleList[indexPath!.row]
+                detailViewController.landmarkDescription = LandmarkData.data[indexPath!.row].streetAddress
+                detailViewController.landmarkImageName = LandmarkData.data[indexPath!.row].imageName
+                detailViewController.landmarkTitle = LandmarkData.data[indexPath!.row].title
             }
         }
     }

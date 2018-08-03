@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B49402A2113A12C00C14365 /* Build configuration list for PBXProject "LondonLandmarks" */;
+			buildConfigurationList = 3B49402A2113A12C00C14365 /* Build configuration list for PBXProject "   " */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B49402A2113A12C00C14365 /* Build configuration list for PBXProject "LondonLandmarks" */ = {
+		3B49402A2113A12C00C14365 /* Build configuration list for PBXProject "   " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B49403F2113A12D00C14365 /* Debug */,

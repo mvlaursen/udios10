@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LondonLandmarks.xcodeproj">
+      location = "self:/Users/mlaursen/Documents/udios10/LondonLandmarks/   .xcodeproj">
    </FileRef>
 </Workspace>
