@@ -94,14 +94,22 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            
+            let indexPath = tableView.indexPathForSelectedRow
+            if indexPath != nil {
+                detailViewController.landmarkDescription = descriptionList[indexPath!.row]
+                detailViewController.landmarkImageName = imageList[indexPath!.row]
+                detailViewController.landmarkTitle = titleList[indexPath!.row]
+            }
+        }
     }
-    */
-
 }

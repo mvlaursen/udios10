@@ -17,6 +17,10 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var titleLabel: UILabel!
     
+    public var landmarkDescription:String!
+    public var landmarkImageName:String!
+    public var landmarkTitle:String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +28,16 @@ class DetailViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = CommonColors.LLBlue
 
+        descriptionLabel.text = landmarkDescription
+        
         directionsButton.backgroundColor = CommonColors.LLBlue
         directionsButton.layer.cornerRadius = 2
         
+        imageView.image = UIImage(named: landmarkImageName)
+        
         mapView.layer.cornerRadius = 2
         
+        titleLabel.text = landmarkTitle
         titleLabel.textColor = CommonColors.LLBlue
     }
 
