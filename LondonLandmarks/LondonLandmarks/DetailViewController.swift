@@ -22,9 +22,13 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
+
         directionsButton.backgroundColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
         directionsButton.layer.cornerRadius = 2
+        
         mapView.layer.cornerRadius = 2
+        
         titleLabel.textColor = UIColor(displayP3Red: 35/255, green: 90/255, blue: 141/255, alpha: 1.0)
     }
 
