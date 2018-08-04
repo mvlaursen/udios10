@@ -14,7 +14,9 @@
 		3B6C32712114E6C40031053A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32702114E6C40031053A /* Assets.xcassets */; };
 		3B6C32742114E6C40031053A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32722114E6C40031053A /* LaunchScreen.storyboard */; };
 		3B6C327E2114FD3B0031053A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327D2114FD3B0031053A /* Common.swift */; };
-		3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327F21151BE50031053A /* ServicesViewController.swift */; };
+		3B6C328021151BE50031053A /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327F21151BE50031053A /* ServicesTableViewController.swift */; };
+		3B815F1321155B6D0089109E /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */; };
+		3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1421155BA70089109E /* ServicesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		3B6C32732114E6C40031053A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B6C32752114E6C40031053A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B6C327D2114FD3B0031053A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		3B6C327F21151BE50031053A /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		3B6C327F21151BE50031053A /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
+		3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		3B815F1421155BA70089109E /* ServicesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +66,25 @@
 			children = (
 				3B6C327D2114FD3B0031053A /* Common.swift */,
 				3B6C32672114E6C30031053A /* AppDelegate.swift */,
+				3B6C328121151D0B0031053A /* Services */,
 				3B6C326B2114E6C30031053A /* AboutUsViewController.swift */,
 				3B6C32692114E6C30031053A /* HomeViewController.swift */,
-				3B6C327F21151BE50031053A /* ServicesViewController.swift */,
 				3B6C326D2114E6C30031053A /* Main.storyboard */,
 				3B6C32702114E6C40031053A /* Assets.xcassets */,
 				3B6C32722114E6C40031053A /* LaunchScreen.storyboard */,
 				3B6C32752114E6C40031053A /* Info.plist */,
 			);
 			path = LondonLandscaping;
+			sourceTree = "<group>";
+		};
+		3B6C328121151D0B0031053A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B6C327F21151BE50031053A /* ServicesTableViewController.swift */,
+				3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */,
+				3B815F1421155BA70089109E /* ServicesDetailViewController.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6C327E2114FD3B0031053A /* Common.swift in Sources */,
+				3B815F1321155B6D0089109E /* ServiceTableViewCell.swift in Sources */,
 				3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */,
 				3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */,
-				3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */,
+				3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */,
+				3B6C328021151BE50031053A /* ServicesTableViewController.swift in Sources */,
 				3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

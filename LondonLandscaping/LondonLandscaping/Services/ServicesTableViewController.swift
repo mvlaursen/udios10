@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ServicesViewController: UITableViewController {
+class ServicesTableViewController: UITableViewController {
+    var imageList = ["Lawn", "Pond", "Hedge", "Flowers"]
+    var titleList = ["Lawn Mowing", "Pond Cleaning", "Hedge Trimming", "Flower Planting"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,23 +33,20 @@ class ServicesViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return titleList.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ServiceTableViewCell
+        cell.cellImageView.image = UIImage(named: imageList[indexPath.row])
+        cell.cellTitle.text = titleList[indexPath.row]
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
