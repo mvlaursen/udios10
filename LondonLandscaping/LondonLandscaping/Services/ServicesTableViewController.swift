@@ -25,6 +25,7 @@ class ServicesTableViewController: UITableViewController {
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        tableView.separatorColor = Colors.gardenGreen
     }
 
     override func didReceiveMemoryWarning() {
