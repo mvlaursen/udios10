@@ -9,17 +9,20 @@
 import UIKit
 
 class ServicesDetailViewController: UIViewController {
-    @IBOutlet private weak var serviceText: UITextView!
+    @IBOutlet private weak var serviceDetailText: UITextView!
     @IBOutlet private weak var serviceTitleLabel: UILabel!
     @IBOutlet private weak var serviceImageView: UIImageView!
     
-    var serviceImageName: String!
-    var serviceTitle: String!
+    public var serviceDetail: String!
+    public var serviceImageName: String!
+    public var serviceTitle: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        serviceDetailText.text = serviceDetail
         serviceImageView.image = UIImage(named: serviceImageName)
+        serviceTitleLabel.textColor = Colors.gardenGreen
         serviceTitleLabel.text = serviceTitle
     }
 

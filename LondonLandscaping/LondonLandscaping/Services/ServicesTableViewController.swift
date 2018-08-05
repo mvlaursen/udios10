@@ -9,8 +9,10 @@
 import UIKit
 
 class ServicesTableViewController: UITableViewController {
-    var imageList = ["Lawn", "Pond", "Hedge", "Flowers"]
-    var titleList = ["Lawn Mowing", "Pond Cleaning", "Hedge Trimming", "Flower Planting"]
+    // TODO: This all belongs in a data structure somewhere.
+    let detailList = ["We do lawn mowing and stuff. Lawnem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We do pond cleaning and stuff. Pondem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We do hedge trimming and stuff. Hedgum impsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We also do flower planting. Florem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."]
+    let imageList = ["Lawn", "Pond", "Hedge", "Flowers"]
+    let titleList = ["Lawn Mowing", "Pond Cleaning", "Hedge Trimming", "Flower Planting"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class ServicesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +94,7 @@ class ServicesTableViewController: UITableViewController {
             let destination = segue.destination as! ServicesDetailViewController
             let indexPath = tableView.indexPathForSelectedRow
             if indexPath != nil {
+                destination.serviceDetail = detailList[indexPath!.row]
                 destination.serviceImageName = imageList[indexPath!.row]
                 destination.serviceTitle = titleList[indexPath!.row]
             }
