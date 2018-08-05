@@ -9,11 +9,18 @@
 import UIKit
 
 class ServicesDetailViewController: UIViewController {
+    @IBOutlet private weak var serviceText: UITextView!
+    @IBOutlet private weak var serviceTitleLabel: UILabel!
+    @IBOutlet private weak var serviceImageView: UIImageView!
+    
+    var serviceImageName: String!
+    var serviceTitle: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        serviceImageView.image = UIImage(named: serviceImageName)
+        serviceTitleLabel.text = serviceTitle
     }
 
     override func didReceiveMemoryWarning() {

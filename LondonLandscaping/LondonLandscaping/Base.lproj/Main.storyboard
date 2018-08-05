@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;All Your Garden Needs&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-1D-Vb4" userLabel="Slogan">
-                                <rect key="frame" x="70.5" y="30" width="179" height="22"/>
+                                <rect key="frame" x="70.5" y="30.5" width="179" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -184,10 +184,11 @@
                                         <constraint firstItem="tX8-E3-lKR" firstAttribute="top" secondItem="8m7-rc-IHk" secondAttribute="top" id="wlN-XJ-lOG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="cellImageView" destination="ffc-DD-MaA" id="NkH-fM-Xdf"/>
                                     <outlet property="cellTitle" destination="tX8-E3-lKR" id="gcu-A2-uKz"/>
-                                    <segue destination="hvm-PX-8hL" kind="show" id="NSC-i0-Zd1"/>
+                                    <segue destination="hvm-PX-8hL" kind="show" identifier="showDetail" id="NSC-i0-Zd1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -209,13 +210,51 @@
                     <view key="view" contentMode="scaleToFill" id="WZB-tf-KEQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nn2-XC-3UD">
+                                <rect key="frame" x="0.0" y="64" width="320" height="149.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BO-Wm-qWF">
+                                <rect key="frame" x="129.5" y="221.5" width="61" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Eut-7X-wie"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-5s-bd8">
+                                <rect key="frame" x="16" y="261.5" width="288" height="149.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8BO-Wm-qWF" firstAttribute="top" secondItem="nn2-XC-3UD" secondAttribute="bottom" constant="8" id="4ZO-0K-XCp"/>
+                            <constraint firstItem="8BO-Wm-qWF" firstAttribute="centerX" secondItem="WZB-tf-KEQ" secondAttribute="centerX" id="4z3-7Z-YuQ"/>
+                            <constraint firstItem="nn2-XC-3UD" firstAttribute="trailing" secondItem="b7M-wg-kUX" secondAttribute="trailing" id="Erb-dv-JZB"/>
+                            <constraint firstItem="nn2-XC-3UD" firstAttribute="top" secondItem="b7M-wg-kUX" secondAttribute="top" id="Ft8-Ot-Gmi"/>
+                            <constraint firstItem="NOY-5s-bd8" firstAttribute="top" secondItem="8BO-Wm-qWF" secondAttribute="bottom" constant="8" id="PKg-Zn-PlT"/>
+                            <constraint firstItem="nn2-XC-3UD" firstAttribute="leading" secondItem="b7M-wg-kUX" secondAttribute="leading" id="Seu-DG-IN7"/>
+                            <constraint firstItem="NOY-5s-bd8" firstAttribute="height" secondItem="nn2-XC-3UD" secondAttribute="height" id="Ul9-Wv-AAF"/>
+                            <constraint firstItem="b7M-wg-kUX" firstAttribute="bottom" secondItem="NOY-5s-bd8" secondAttribute="bottom" constant="20" id="cEa-W5-JBX"/>
+                            <constraint firstItem="b7M-wg-kUX" firstAttribute="trailing" secondItem="NOY-5s-bd8" secondAttribute="trailing" constant="16" id="kWS-ls-ouX"/>
+                            <constraint firstItem="NOY-5s-bd8" firstAttribute="leading" secondItem="b7M-wg-kUX" secondAttribute="leading" constant="16" id="xce-99-FPw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b7M-wg-kUX"/>
                     </view>
+                    <connections>
+                        <outlet property="serviceImageView" destination="nn2-XC-3UD" id="yVx-mr-8a4"/>
+                        <outlet property="serviceText" destination="NOY-5s-bd8" id="Cjh-MF-j2F"/>
+                        <outlet property="serviceTitleLabel" destination="8BO-Wm-qWF" id="1ER-yM-QVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4d-5O-Uoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3819" y="-705"/>
+            <point key="canvasLocation" x="3817.5" y="-705"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="CLY-Jx-IfC">
