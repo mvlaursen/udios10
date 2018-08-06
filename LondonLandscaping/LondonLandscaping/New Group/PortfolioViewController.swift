@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PortfolioViewController: UICollectionViewController {
+class PortfolioViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let imageList = ["Portfolio1", "Portfolio2", "Portfolio3", "Portfolio4", "Portfolio5", "Portfolio6"]
 
     override func viewDidLoad() {
@@ -61,6 +61,34 @@ class PortfolioViewController: UICollectionViewController {
         cell.layer.borderWidth = 5
         cell.cellImageView.image = UIImage(named: imageList[indexPath.row])
         return cell
+    }
+    
+    internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        var cellWidth = 0
+        var cellHeight = 0
+        
+        if screenWidth == 375 { // iPhone 6, 6s, 7, 8, X
+            cellWidth =  160
+            cellHeight = 160
+        } else if screenWidth == 414 { // iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus
+            cellWidth = 180
+            cellHeight = 180
+        } else if screenWidth == 768 { // iPad Mini, Air
+            cellWidth = 350
+            cellHeight = 350
+        } else if screenWidth == 834 { // iPad Pro 10.5
+            cellWidth = 390
+            cellHeight = 390
+        } else if screenWidth == 1024 { // iPad Pro 9.7, 12.9
+            cellWidth = 480
+            cellHeight = 480
+        } else {
+            cellWidth = 135
+            cellHeight = 135
+        }
+        
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 
     // MARK: UICollectionViewDelegate
