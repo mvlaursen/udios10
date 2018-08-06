@@ -279,6 +279,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jMg-AG-NRe"/>
+                                    <action selector="directionsAction:" destination="2T0-1f-Y6M" eventType="touchUpInside" id="KWD-IN-ZO2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-KB-XLW">
@@ -293,6 +294,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="sip-6w-7nd"/>
+                                    <action selector="callUsAction:" destination="2T0-1f-Y6M" eventType="touchUpInside" id="07y-m0-g1c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E73-XN-Jkj" userLabel="About Us">
@@ -364,6 +366,9 @@
                         <viewLayoutGuide key="safeArea" id="wYM-Fg-nn7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Us" id="l0f-bt-2Gr"/>
+                    <connections>
+                        <outlet property="mapView" destination="AWE-ES-xje" id="l6G-xS-zLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSh-Sb-W4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,16 +6,28 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class ContactViewController: UIViewController {
-
+    @IBOutlet private weak var mapView: MKMapView!
+    
+    let LOCATION = CLLocationCoordinate2D(latitude: 51.5081, longitude: -0.0759)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        let span = MKCoordinateSpanMake(0.001, 0.001)
+        let region = MKCoordinateRegion(center: LOCATION, span: span)
+        mapView.setRegion(region, animated: false)
+        
+        let pin = MKPointAnnotation()
+        pin.coordinate = LOCATION
+        pin.title = "London Landscaping"
+        pin.subtitle = "Hire us or we will torture you!"
+        mapView.addAnnotation(pin)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,4 +46,10 @@ class ContactViewController: UIViewController {
     }
     */
 
+    @IBAction func callUsAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func directionsAction(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "http://maps.apple.com/maps?daddr=\(LOCATION.latitude),\(LOCATION.longitude)")!)
+    }
 }

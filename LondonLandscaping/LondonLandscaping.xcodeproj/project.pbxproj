@@ -10,6 +10,7 @@
 		3B4324A52118F1D900A53B89 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324A42118F1D900A53B89 /* PortfolioCell.swift */; };
 		3B4324A72118F1EE00A53B89 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324A62118F1EE00A53B89 /* PortfolioViewController.swift */; };
 		3B4324AB2119045E00A53B89 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324AA2119045E00A53B89 /* ContactViewController.swift */; };
+		3B4324AE2119095100A53B89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4324AD2119095100A53B89 /* MapKit.framework */; };
 		3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32672114E6C30031053A /* AppDelegate.swift */; };
 		3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32692114E6C30031053A /* HomeViewController.swift */; };
 		3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C326B2114E6C30031053A /* AboutUsViewController.swift */; };
@@ -26,6 +27,7 @@
 		3B4324A42118F1D900A53B89 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
 		3B4324A62118F1EE00A53B89 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		3B4324AA2119045E00A53B89 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		3B4324AD2119095100A53B89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3B6C32642114E6C30031053A /* LondonLandscaping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonLandscaping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C32672114E6C30031053A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6C32692114E6C30031053A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4324AE2119095100A53B89 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,11 +64,20 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		3B4324AC2119095100A53B89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B4324AD2119095100A53B89 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B6C325B2114E6C30031053A = {
 			isa = PBXGroup;
 			children = (
 				3B6C32662114E6C30031053A /* LondonLandscaping */,
 				3B6C32652114E6C30031053A /* Products */,
+				3B4324AC2119095100A53B89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
