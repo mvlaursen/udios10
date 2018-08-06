@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B4324A52118F1D900A53B89 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324A42118F1D900A53B89 /* PortfolioCell.swift */; };
 		3B4324A72118F1EE00A53B89 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324A62118F1EE00A53B89 /* PortfolioViewController.swift */; };
+		3B4324AB2119045E00A53B89 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324AA2119045E00A53B89 /* ContactViewController.swift */; };
 		3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32672114E6C30031053A /* AppDelegate.swift */; };
 		3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32692114E6C30031053A /* HomeViewController.swift */; };
 		3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C326B2114E6C30031053A /* AboutUsViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3B4324A42118F1D900A53B89 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
 		3B4324A62118F1EE00A53B89 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		3B4324AA2119045E00A53B89 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		3B6C32642114E6C30031053A /* LondonLandscaping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonLandscaping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C32672114E6C30031053A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6C32692114E6C30031053A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				3B6C32672114E6C30031053A /* AppDelegate.swift */,
 				3B6C328121151D0B0031053A /* Services */,
 				3B4324A32118F1A900A53B89 /* Portfolio */,
+				3B4324AA2119045E00A53B89 /* ContactViewController.swift */,
 				3B6C326B2114E6C30031053A /* AboutUsViewController.swift */,
 				3B6C32692114E6C30031053A /* HomeViewController.swift */,
 				3B6C326D2114E6C30031053A /* Main.storyboard */,
@@ -182,6 +185,7 @@
 				3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */,
 				3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */,
 				3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */,
+				3B4324AB2119045E00A53B89 /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
