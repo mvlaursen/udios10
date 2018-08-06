@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PortfolioViewController: UICollectionViewController {
-    let imageList = ["Portfolio1", "Portfolio2", "Portfolio3", "Portfolio4", "Portfolio5", "Portfolio6", ]
+    let imageList = ["Portfolio1", "Portfolio2", "Portfolio3", "Portfolio4", "Portfolio5", "Portfolio6"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,8 @@ class PortfolioViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Portfolio Cell", for: indexPath) as! PortfolioCell
+        cell.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        cell.layer.borderWidth = 5
         cell.cellImageView.image = UIImage(named: imageList[indexPath.row])
         return cell
     }

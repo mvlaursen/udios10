@@ -143,13 +143,13 @@
         <!--Services-->
         <scene sceneID="Voz-hN-SAf">
             <objects>
-                <tableViewController id="lPk-3d-XE1" customClass="ServicesTableViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lPk-3d-XE1" customClass="ServicesViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="M4A-DD-SKx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.47843137254901957" green="0.50196078431372548" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Services Cell" rowHeight="100" id="umo-EY-nM6" customClass="ServiceTableViewCell" customModule="LondonLandscaping" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Services Cell" rowHeight="100" id="umo-EY-nM6" customClass="ServicesCell" customModule="LondonLandscaping" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="umo-EY-nM6" id="8m7-rc-IHk">

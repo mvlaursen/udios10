@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServiceTableViewCell: UITableViewCell {
+class ServicesCell: UITableViewCell {
     @IBOutlet public weak var cellImageView: UIImageView!
     @IBOutlet public weak var cellTitle: UILabel!
     

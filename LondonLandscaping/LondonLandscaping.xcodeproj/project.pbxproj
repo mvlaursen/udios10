@@ -16,8 +16,8 @@
 		3B6C32712114E6C40031053A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32702114E6C40031053A /* Assets.xcassets */; };
 		3B6C32742114E6C40031053A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32722114E6C40031053A /* LaunchScreen.storyboard */; };
 		3B6C327E2114FD3B0031053A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327D2114FD3B0031053A /* Common.swift */; };
-		3B6C328021151BE50031053A /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327F21151BE50031053A /* ServicesTableViewController.swift */; };
-		3B815F1321155B6D0089109E /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */; };
+		3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327F21151BE50031053A /* ServicesViewController.swift */; };
+		3B815F1321155B6D0089109E /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1221155B6D0089109E /* ServicesCell.swift */; };
 		3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1421155BA70089109E /* ServicesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +33,8 @@
 		3B6C32732114E6C40031053A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B6C32752114E6C40031053A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B6C327D2114FD3B0031053A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		3B6C327F21151BE50031053A /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
-		3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		3B6C327F21151BE50031053A /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		3B815F1221155B6D0089109E /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
 		3B815F1421155BA70089109E /* ServicesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,8 +52,8 @@
 		3B4324A32118F1A900A53B89 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				3B4324A42118F1D900A53B89 /* PortfolioCell.swift */,
 				3B4324A62118F1EE00A53B89 /* PortfolioViewController.swift */,
+				3B4324A42118F1D900A53B89 /* PortfolioCell.swift */,
 			);
 			name = Portfolio;
 			path = "New Group";
@@ -95,8 +95,8 @@
 		3B6C328121151D0B0031053A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3B6C327F21151BE50031053A /* ServicesTableViewController.swift */,
-				3B815F1221155B6D0089109E /* ServiceTableViewCell.swift */,
+				3B6C327F21151BE50031053A /* ServicesViewController.swift */,
+				3B815F1221155B6D0089109E /* ServicesCell.swift */,
 				3B815F1421155BA70089109E /* ServicesDetailViewController.swift */,
 			);
 			path = Services;
@@ -175,12 +175,12 @@
 			files = (
 				3B6C327E2114FD3B0031053A /* Common.swift in Sources */,
 				3B4324A72118F1EE00A53B89 /* PortfolioViewController.swift in Sources */,
-				3B815F1321155B6D0089109E /* ServiceTableViewCell.swift in Sources */,
+				3B815F1321155B6D0089109E /* ServicesCell.swift in Sources */,
 				3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */,
 				3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */,
 				3B4324A52118F1D900A53B89 /* PortfolioCell.swift in Sources */,
 				3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */,
-				3B6C328021151BE50031053A /* ServicesTableViewController.swift in Sources */,
+				3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */,
 				3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
