@@ -46,7 +46,7 @@ class ServicesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ServiceTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Services Cell", for: indexPath) as! ServiceTableViewCell
         cell.cellImageView.image = UIImage(named: imageList[indexPath.row])
         cell.cellTitle.text = titleList[indexPath.row]
         return cell
