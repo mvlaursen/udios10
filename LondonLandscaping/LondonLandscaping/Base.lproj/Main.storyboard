@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -751,21 +752,52 @@ Follow us on social media for more news.</string>
             </objects>
             <point key="canvasLocation" x="3038" y="835"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Social View Controller-->
         <scene sceneID="G35-Qy-EvB">
             <objects>
-                <tableViewController id="zRi-sw-FxV" sceneMemberID="viewController">
+                <tableViewController id="zRi-sw-FxV" customClass="SocialViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tLg-vs-iDc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ICC-r5-tYB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Social Cell" id="ICC-r5-tYB" customClass="SocialCell" customModule="LondonLandscaping" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICC-r5-tYB" id="l4J-Af-J6k">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qGm-uv-dLd" userLabel="Row Stack">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QlP-hD-585">
+                                                    <rect key="frame" x="0.0" y="8" width="27.5" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="QlP-hD-585" secondAttribute="height" multiplier="1:1" id="o7M-In-Qw6"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="rKE-Of-eIA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-AH-CKD">
+                                                    <rect key="frame" x="35.5" y="9.5" width="284.5" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QlP-hD-585" firstAttribute="top" secondItem="qGm-uv-dLd" secondAttribute="top" constant="8" id="26c-Tg-53e"/>
+                                                <constraint firstAttribute="bottom" secondItem="QlP-hD-585" secondAttribute="bottom" constant="-8" id="TQG-wd-7Xk"/>
+                                                <constraint firstItem="QlP-hD-585" firstAttribute="leading" secondItem="qGm-uv-dLd" secondAttribute="leading" constant="16" id="n54-q6-jy6"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qGm-uv-dLd" firstAttribute="top" secondItem="l4J-Af-J6k" secondAttribute="top" id="9wS-RG-oxC"/>
+                                        <constraint firstAttribute="trailing" secondItem="qGm-uv-dLd" secondAttribute="trailing" id="DNU-nC-dtW"/>
+                                        <constraint firstAttribute="bottom" secondItem="qGm-uv-dLd" secondAttribute="bottom" id="hrj-db-Zq8"/>
+                                        <constraint firstItem="qGm-uv-dLd" firstAttribute="leading" secondItem="l4J-Af-J6k" secondAttribute="leading" id="uwp-ZX-69p"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -778,6 +810,21 @@ Follow us on social media for more news.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1G-vt-s8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2423" y="2026"/>
+        </scene>
+        <!--Social Detail View Controller-->
+        <scene sceneID="XJR-kF-qfM">
+            <objects>
+                <viewController id="RHU-76-qCc" customClass="SocialDetailViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="se4-tJ-1jH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1v0-dJ-bRr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4z-G4-ZDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3176" y="2025"/>
         </scene>
     </scenes>
     <resources>

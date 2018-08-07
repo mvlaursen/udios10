@@ -13,6 +13,9 @@
 		3B4324AE2119095100A53B89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4324AD2119095100A53B89 /* MapKit.framework */; };
 		3B4324B021191FC800A53B89 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324AF21191FC800A53B89 /* EmailViewController.swift */; };
 		3B4324B3211A48F000A53B89 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4324B2211A48F000A53B89 /* MessageUI.framework */; };
+		3B4324B6211A55CE00A53B89 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324B5211A55CE00A53B89 /* SocialViewController.swift */; };
+		3B4324B8211A55E000A53B89 /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324B7211A55E000A53B89 /* SocialCell.swift */; };
+		3B4324BC211A5C1000A53B89 /* SocialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324BB211A5C1000A53B89 /* SocialDetailViewController.swift */; };
 		3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32672114E6C30031053A /* AppDelegate.swift */; };
 		3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32692114E6C30031053A /* HomeViewController.swift */; };
 		3B6C326C2114E6C30031053A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C326B2114E6C30031053A /* AboutViewController.swift */; };
@@ -32,6 +35,9 @@
 		3B4324AD2119095100A53B89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3B4324AF21191FC800A53B89 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		3B4324B2211A48F000A53B89 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3B4324B5211A55CE00A53B89 /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		3B4324B7211A55E000A53B89 /* SocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
+		3B4324BB211A5C1000A53B89 /* SocialDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialDetailViewController.swift; sourceTree = "<group>"; };
 		3B6C32642114E6C30031053A /* LondonLandscaping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonLandscaping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C32672114E6C30031053A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6C32692114E6C30031053A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,16 @@
 			path = Contact;
 			sourceTree = "<group>";
 		};
+		3B4324B4211A55AB00A53B89 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				3B4324B5211A55CE00A53B89 /* SocialViewController.swift */,
+				3B4324B7211A55E000A53B89 /* SocialCell.swift */,
+				3B4324BB211A5C1000A53B89 /* SocialDetailViewController.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
 		3B6C325B2114E6C30031053A = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 				3B4324A32118F1A900A53B89 /* Portfolio */,
 				3B4324B1211A3AD400A53B89 /* Contact */,
 				3B6C326B2114E6C30031053A /* AboutViewController.swift */,
+				3B4324B4211A55AB00A53B89 /* Social */,
 				3B6C326D2114E6C30031053A /* Main.storyboard */,
 				3B6C32702114E6C40031053A /* Assets.xcassets */,
 				3B6C32722114E6C40031053A /* LaunchScreen.storyboard */,
@@ -203,9 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4324BC211A5C1000A53B89 /* SocialDetailViewController.swift in Sources */,
 				3B6C327E2114FD3B0031053A /* Common.swift in Sources */,
 				3B4324A72118F1EE00A53B89 /* PortfolioViewController.swift in Sources */,
 				3B815F1321155B6D0089109E /* ServicesCell.swift in Sources */,
+				3B4324B6211A55CE00A53B89 /* SocialViewController.swift in Sources */,
 				3B6C326C2114E6C30031053A /* AboutViewController.swift in Sources */,
 				3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */,
 				3B4324A52118F1D900A53B89 /* PortfolioCell.swift in Sources */,
@@ -213,6 +232,7 @@
 				3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */,
 				3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */,
 				3B4324B021191FC800A53B89 /* EmailViewController.swift in Sources */,
+				3B4324B8211A55E000A53B89 /* SocialCell.swift in Sources */,
 				3B4324AB2119045E00A53B89 /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
