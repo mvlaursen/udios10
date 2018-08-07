@@ -375,10 +375,10 @@
             </objects>
             <point key="canvasLocation" x="2734.7826086956525" y="834.78260869565224"/>
         </scene>
-        <!--View Controller-->
+        <!--Email View Controller-->
         <scene sceneID="9lv-mC-Ze3">
             <objects>
-                <viewController id="D52-vM-W25" sceneMemberID="viewController">
+                <viewController id="D52-vM-W25" customClass="EmailViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qFB-YJ-7Aj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,6 +454,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="mz2-UT-8Gy"/>
+                                    <action selector="send:" destination="D52-vM-W25" eventType="touchUpInside" id="fC6-8X-X2I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -488,6 +489,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wqu-e7-RDJ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailAddressField" destination="E91-nI-SvW" id="YxS-7Y-yT1"/>
+                        <outlet property="messageField" destination="92u-J3-SYy" id="6fv-18-GTF"/>
+                        <outlet property="nameField" destination="pzT-Kz-vLS" id="rQu-QV-Zjk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBd-Gn-EQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
