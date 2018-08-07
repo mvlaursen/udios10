@@ -775,7 +775,7 @@ Follow us on social media for more news.</string>
                                                     <rect key="frame" x="0.0" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="QlP-hD-585" secondAttribute="height" multiplier="1:1" id="o7M-In-Qw6"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="rKE-Of-eIA"/>
+                                                        <constraint firstAttribute="width" constant="32" id="rKE-Of-eIA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-AH-CKD">
@@ -799,6 +799,10 @@ Follow us on social media for more news.</string>
                                         <constraint firstItem="qGm-uv-dLd" firstAttribute="leading" secondItem="l4J-Af-J6k" secondAttribute="leading" id="uwp-ZX-69p"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImageView" destination="QlP-hD-585" id="NWN-PO-HmR"/>
+                                    <outlet property="cellLabel" destination="ahO-AH-CKD" id="xqN-8m-CMb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

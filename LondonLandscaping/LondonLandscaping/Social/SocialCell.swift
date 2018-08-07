@@ -9,7 +9,9 @@
 import UIKit
 
 class SocialCell: UITableViewCell {
-
+    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
