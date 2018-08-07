@@ -29,7 +29,11 @@ class EmailViewController: UIViewController, UITextViewDelegate, MFMailComposeVi
         if replacementString == "\n" {
             messageField.resignFirstResponder()
             return false
-       }
+        } else if replacementString == "\t" {
+            messageField.resignFirstResponder()
+            nameField.becomeFirstResponder()
+            return false
+        }
         
         return true
     }
