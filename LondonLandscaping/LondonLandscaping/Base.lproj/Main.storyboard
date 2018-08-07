@@ -102,6 +102,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KX9-Dh-6yn"/>
+                                    <segue destination="zRi-sw-FxV" kind="show" id="zrP-ZJ-nsf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -324,6 +325,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Mja-ew-GQ8"/>
+                                    <segue destination="zRi-sw-FxV" kind="show" id="jXP-dL-GVl"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-ES-xje">
@@ -373,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSh-Sb-W4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734.7826086956525" y="834.78260869565224"/>
+            <point key="canvasLocation" x="3896" y="835"/>
         </scene>
         <!--Email Us-->
         <scene sceneID="9lv-mC-Ze3">
@@ -500,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBd-Gn-EQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3517.5" y="833.75"/>
+            <point key="canvasLocation" x="4727" y="835"/>
         </scene>
         <!--About Us-->
         <scene sceneID="wg7-f3-ORb">
@@ -542,6 +544,7 @@ Follow us on social media for more news.</string>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="xZq-14-B1a"/>
+                                    <segue destination="zRi-sw-FxV" kind="show" id="emG-ad-Dr8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -625,7 +628,7 @@ Follow us on social media for more news.</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywB-Wt-Uck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422.5" y="0.0"/>
+            <point key="canvasLocation" x="3591" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -726,7 +729,7 @@ Follow us on social media for more news.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeU-O8-pKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1627.5" y="0.0"/>
+            <point key="canvasLocation" x="2783" y="0.0"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="wTZ-FP-hxJ">
@@ -746,7 +749,35 @@ Follow us on social media for more news.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1F-ke-nDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.875" y="835"/>
+            <point key="canvasLocation" x="3038" y="835"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="G35-Qy-EvB">
+            <objects>
+                <tableViewController id="zRi-sw-FxV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tLg-vs-iDc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ICC-r5-tYB">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICC-r5-tYB" id="l4J-Af-J6k">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zRi-sw-FxV" id="IHc-ew-EDH"/>
+                            <outlet property="delegate" destination="zRi-sw-FxV" id="8To-PA-ARI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1G-vt-s8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="2026"/>
         </scene>
     </scenes>
     <resources>
@@ -760,4 +791,7 @@ Follow us on social media for more news.</string>
         <image name="Portfolio1" width="4320" height="3240"/>
         <image name="Services" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jXP-dL-GVl"/>
+    </inferredMetricsTieBreakers>
 </document>
