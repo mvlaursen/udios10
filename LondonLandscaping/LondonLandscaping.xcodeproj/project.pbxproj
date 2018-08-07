@@ -14,7 +14,7 @@
 		3B4324B021191FC800A53B89 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4324AF21191FC800A53B89 /* EmailViewController.swift */; };
 		3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32672114E6C30031053A /* AppDelegate.swift */; };
 		3B6C326A2114E6C30031053A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C32692114E6C30031053A /* HomeViewController.swift */; };
-		3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C326B2114E6C30031053A /* AboutUsViewController.swift */; };
+		3B6C326C2114E6C30031053A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C326B2114E6C30031053A /* AboutViewController.swift */; };
 		3B6C326F2114E6C30031053A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C326D2114E6C30031053A /* Main.storyboard */; };
 		3B6C32712114E6C40031053A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32702114E6C40031053A /* Assets.xcassets */; };
 		3B6C32742114E6C40031053A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32722114E6C40031053A /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		3B6C32642114E6C30031053A /* LondonLandscaping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonLandscaping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C32672114E6C30031053A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6C32692114E6C30031053A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3B6C326B2114E6C30031053A /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		3B6C326B2114E6C30031053A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3B6C326E2114E6C30031053A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B6C32702114E6C40031053A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6C32732114E6C40031053A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +74,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3B4324B1211A3AD400A53B89 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				3B4324AA2119045E00A53B89 /* ContactViewController.swift */,
+				3B4324AF21191FC800A53B89 /* EmailViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		3B6C325B2114E6C30031053A = {
 			isa = PBXGroup;
 			children = (
@@ -96,16 +105,15 @@
 			children = (
 				3B6C327D2114FD3B0031053A /* Common.swift */,
 				3B6C32672114E6C30031053A /* AppDelegate.swift */,
+				3B6C32692114E6C30031053A /* HomeViewController.swift */,
 				3B6C328121151D0B0031053A /* Services */,
 				3B4324A32118F1A900A53B89 /* Portfolio */,
-				3B4324AA2119045E00A53B89 /* ContactViewController.swift */,
-				3B6C326B2114E6C30031053A /* AboutUsViewController.swift */,
-				3B6C32692114E6C30031053A /* HomeViewController.swift */,
+				3B4324B1211A3AD400A53B89 /* Contact */,
+				3B6C326B2114E6C30031053A /* AboutViewController.swift */,
 				3B6C326D2114E6C30031053A /* Main.storyboard */,
 				3B6C32702114E6C40031053A /* Assets.xcassets */,
 				3B6C32722114E6C40031053A /* LaunchScreen.storyboard */,
 				3B6C32752114E6C40031053A /* Info.plist */,
-				3B4324AF21191FC800A53B89 /* EmailViewController.swift */,
 			);
 			path = LondonLandscaping;
 			sourceTree = "<group>";
@@ -194,7 +202,7 @@
 				3B6C327E2114FD3B0031053A /* Common.swift in Sources */,
 				3B4324A72118F1EE00A53B89 /* PortfolioViewController.swift in Sources */,
 				3B815F1321155B6D0089109E /* ServicesCell.swift in Sources */,
-				3B6C326C2114E6C30031053A /* AboutUsViewController.swift in Sources */,
+				3B6C326C2114E6C30031053A /* AboutViewController.swift in Sources */,
 				3B6C32682114E6C30031053A /* AppDelegate.swift in Sources */,
 				3B4324A52118F1D900A53B89 /* PortfolioCell.swift in Sources */,
 				3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */,
