@@ -47,6 +47,7 @@ class ContactViewController: UIViewController {
     */
 
     @IBAction func callUsAction(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "tel://555-555-1212")!)
     }
     
     @IBAction func directionsAction(_ sender: UIButton) {
