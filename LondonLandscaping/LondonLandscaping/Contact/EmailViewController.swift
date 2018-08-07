@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmailViewController: UIViewController {
+class EmailViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var nameField: UITextField!
@@ -24,6 +24,14 @@ class EmailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn affectedCharRange: NSRange, replacementText replacementString: String) -> Bool {
+        if replacementString == "\n" {
+            messageField.resignFirstResponder()
+            return false
+       }
+        
+        return true
+    }
 
     /*
     // MARK: - Navigation
@@ -34,7 +42,7 @@ class EmailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     @IBAction func send(_ sender: UIButton) {
     }
 }

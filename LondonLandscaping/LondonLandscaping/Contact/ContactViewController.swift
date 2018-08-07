@@ -17,6 +17,7 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         let span = MKCoordinateSpanMake(0.001, 0.001)
