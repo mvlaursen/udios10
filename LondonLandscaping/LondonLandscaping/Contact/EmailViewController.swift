@@ -45,13 +45,15 @@ class EmailViewController: UIViewController, UITextViewDelegate, MFMailComposeVi
     */
     
     @IBAction func send(_ sender: UIButton) {
-        let recipients = ["abc@123.com"]
-        let mc = MFMailComposeViewController(rootViewController: self)
-        mc.setToRecipients(recipients)
-        mc.setSubject(nameField.text! + " -- My App")
-        mc.setMessageBody("Name: \(String(describing: nameField.text)) \n\nEmail:\(String(describing: emailAddressField.text))\n\nMessage:\(messageField.text)", isHTML: false)
-        mc.navigationBar.tintColor = UIColor.white
-        present(mc, animated: true, completion: nil)
+        // It isn't possible to send mail on Simulator.
+        if MFMailComposeViewController.canSendMail() {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            composeVC.setToRecipients(["feedback@londonlandscaping.co.uk"])
+            composeVC.setSubject("\(nameField.text ?? "No Name") -- My App")
+            composeVC.setMessageBody("Name: \(nameField.text ?? "No Name") \n\nEmail:\(emailAddressField.text ?? "no@email")\n\nMessage:\(messageField.text)", isHTML: false)
+            present(composeVC, animated: true, completion: nil)
+        }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
