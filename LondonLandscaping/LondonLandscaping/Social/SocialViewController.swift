@@ -11,6 +11,7 @@ import UIKit
 class SocialViewController: UITableViewController {
     let imageList = ["SocialIcon1", "SocialIcon2", "SocialIcon3", "SocialIcon4", "SocialIcon5", "SocialIcon6", ]
     let titleList = ["Like us on Facebook", "Follow us on Twitter", "Add us on Google Plus", "Connect to us on LinkedIn", "Subscribe to us on YouTube", "Check out our website"]
+    let urlList = ["http://facebook.com", "http://twitter.com", "http://google.com", "http://linkedin.com", "http://youtube.com", "http://londonlandscaping.co.uk"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,8 @@ class SocialViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         let detailVC = segue.destination as! SocialDetailViewController
-        detailVC.socialMediaUrl = URL(string: "http://google.com")
-        
+        let indexPath = tableView.indexPathForSelectedRow
+        detailVC.socialMediaTitle = titleList[indexPath!.row]
+        detailVC.socialMediaUrl = URL(string: urlList[indexPath!.row])
     }
 }

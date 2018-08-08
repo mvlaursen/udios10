@@ -13,11 +13,14 @@ class SocialDetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var webView: WKWebView!
     
+    public var socialMediaTitle: String!
     public var socialMediaUrl: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationItem.title = socialMediaTitle
         webView.load(URLRequest(url: socialMediaUrl))
     }
 
