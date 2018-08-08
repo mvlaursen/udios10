@@ -14,7 +14,8 @@ class SocialCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        cellLabel.textColor = Colors.gardenGreen
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
