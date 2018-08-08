@@ -256,7 +256,7 @@
                         <viewLayoutGuide key="safeArea" id="b7M-wg-kUX"/>
                     </view>
                     <connections>
-                        <outlet property="serviceDetailText" destination="NOY-5s-bd8" id="Cjh-MF-j2F"/>
+                        <outlet property="serviceBlurbText" destination="NOY-5s-bd8" id="0sZ-gW-Agd"/>
                         <outlet property="serviceImageView" destination="nn2-XC-3UD" id="yVx-mr-8a4"/>
                         <outlet property="serviceTitleLabel" destination="8BO-Wm-qWF" id="1ER-yM-QVQ"/>
                     </connections>

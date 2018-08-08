@@ -8,11 +8,18 @@
 
 import UIKit
 
+struct ServiceData {
+    public var blurb: String!
+    public var imageName: String!
+    public var title: String!
+}
+
 class ServicesViewController: UITableViewController {
-    // TODO: This all belongs in a data structure somewhere.
-    let detailList = ["We do lawn mowing and stuff. Lawnem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We do pond cleaning and stuff. Pondem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We do hedge trimming and stuff. Hedgum impsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", "We also do flower planting. Florem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."]
-    let imageList = ["Lawn", "Pond", "Hedge", "Flowers"]
-    let titleList = ["Lawn Mowing", "Pond Cleaning", "Hedge Trimming", "Flower Planting"]
+    let serviceList: [ServiceData] = [
+        ServiceData(blurb: "We do lawn mowing and stuff. Lawnem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", imageName: "Lawn", title: "Lawn Mowing"),
+        ServiceData(blurb: "We do pond cleaning and stuff. Pondem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", imageName: "Pond", title: "Pond Cleaning"),
+        ServiceData(blurb: "We do hedge trimming and stuff. Hedgem ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", imageName: "Hedge", title: "Hedge Trimming"),
+        ServiceData(blurb: "We do flower planting and stuff. Florum ipsum dolem sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", imageName: "Flowers", title: "Flower Planting"),]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +49,13 @@ class ServicesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return titleList.count
+        return serviceList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Services Cell", for: indexPath) as! ServicesCell
-        cell.cellImageView.image = UIImage(named: imageList[indexPath.row])
-        cell.cellTitle.text = titleList[indexPath.row]
+        cell.cellImageView.image = UIImage(named: serviceList[indexPath.row].imageName)
+        cell.cellTitle.text = serviceList[indexPath.row].title
         return cell
     }
 
@@ -95,9 +102,9 @@ class ServicesViewController: UITableViewController {
             let destination = segue.destination as! ServicesDetailViewController
             let indexPath = tableView.indexPathForSelectedRow
             if indexPath != nil {
-                destination.serviceDetail = detailList[indexPath!.row]
-                destination.serviceImageName = imageList[indexPath!.row]
-                destination.serviceTitle = titleList[indexPath!.row]
+                destination.serviceBlurb = serviceList[indexPath!.row].blurb
+                destination.serviceImageName = serviceList[indexPath!.row].imageName
+                destination.serviceTitle = serviceList[indexPath!.row].title
             }
         }
     }
