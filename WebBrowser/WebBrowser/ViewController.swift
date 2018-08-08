@@ -82,7 +82,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegat
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         activityIndicator.startAnimating()
     }
-    
+        
     // Utility methods
     
     func loadUrl(text: String) {

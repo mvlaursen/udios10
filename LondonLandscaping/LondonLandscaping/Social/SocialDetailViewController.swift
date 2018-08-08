@@ -18,6 +18,8 @@ class SocialDetailViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webView.navigationDelegate = self
 
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         title = socialMediaTitle
@@ -59,5 +61,31 @@ class SocialDetailViewController: UIViewController, WKNavigationDelegate {
     
     @IBAction func stopAction(_ sender: UIBarButtonItem) {
         webView.stopLoading()
+    }
+    
+    // WKWebView delegate methods
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+        
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+        
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
     }
 }
