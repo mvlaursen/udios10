@@ -24,6 +24,7 @@
 		3B6C32742114E6C40031053A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C32722114E6C40031053A /* LaunchScreen.storyboard */; };
 		3B6C327E2114FD3B0031053A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327D2114FD3B0031053A /* Common.swift */; };
 		3B6C328021151BE50031053A /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C327F21151BE50031053A /* ServicesViewController.swift */; };
+		3B775301211B6AD6005511AE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B775300211B6AD6005511AE /* WebKit.framework */; };
 		3B815F1321155B6D0089109E /* ServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1221155B6D0089109E /* ServicesCell.swift */; };
 		3B815F1521155BA70089109E /* ServicesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B815F1421155BA70089109E /* ServicesDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		3B6C32752114E6C40031053A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B6C327D2114FD3B0031053A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		3B6C327F21151BE50031053A /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		3B775300211B6AD6005511AE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3B815F1221155B6D0089109E /* ServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCell.swift; sourceTree = "<group>"; };
 		3B815F1421155BA70089109E /* ServicesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 			files = (
 				3B4324AE2119095100A53B89 /* MapKit.framework in Frameworks */,
 				3B4324B3211A48F000A53B89 /* MessageUI.framework in Frameworks */,
+				3B775301211B6AD6005511AE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 		3B4324AC2119095100A53B89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B775300211B6AD6005511AE /* WebKit.framework */,
 				3B4324B2211A48F000A53B89 /* MessageUI.framework */,
 				3B4324AD2119095100A53B89 /* MapKit.framework */,
 			);

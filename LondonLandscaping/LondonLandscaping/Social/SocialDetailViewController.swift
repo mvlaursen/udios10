@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
-class SocialDetailViewController: UIViewController {
-
+class SocialDetailViewController: UIViewController, WKNavigationDelegate {
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var webView: WKWebView!
+    
+    public var socialMediaUrl: URL!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        webView.load(URLRequest(url: socialMediaUrl))
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +37,23 @@ class SocialDetailViewController: UIViewController {
     }
     */
 
+    @IBAction func backAction(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @IBAction func forwardAction(_ sender: UIBarButtonItem) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
+    @IBAction func refreshAction(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    
+    @IBAction func stopAction(_ sender: UIBarButtonItem) {
+        webView.stopLoading()
+    }
 }
