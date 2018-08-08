@@ -797,7 +797,7 @@ Follow us on social media for more news.</string>
                                 <connections>
                                     <outlet property="cellImageView" destination="QlP-hD-585" id="NWN-PO-HmR"/>
                                     <outlet property="cellLabel" destination="ahO-AH-CKD" id="xqN-8m-CMb"/>
-                                    <segue destination="RHU-76-qCc" kind="showDetail" identifier="" id="POX-EL-0Ml"/>
+                                    <segue destination="RHU-76-qCc" kind="show" identifier="" id="POX-EL-0Ml"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -816,17 +816,11 @@ Follow us on social media for more news.</string>
             <objects>
                 <viewController id="RHU-76-qCc" customClass="SocialDetailViewController" customModule="LondonLandscaping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="se4-tJ-1jH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUF-mP-Ufp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="4hh-2H-61B"/>
-                                </items>
-                            </navigationBar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6P-0f-uNa">
-                                <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="323"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -834,11 +828,11 @@ Follow us on social media for more news.</string>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uSU-oD-bnd">
-                                <rect key="frame" x="142" y="221.5" width="37" height="37"/>
+                                <rect key="frame" x="142" y="143" width="37" height="37"/>
                                 <color key="color" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cse-7s-xlg">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="323" width="320" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="refresh" id="f07-hl-l9Q">
                                         <color key="tintColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -870,20 +864,15 @@ Follow us on social media for more news.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="l6P-0f-uNa" firstAttribute="trailing" secondItem="1v0-dJ-bRr" secondAttribute="trailing" id="D9Z-i9-Z5W"/>
-                            <constraint firstItem="l6P-0f-uNa" firstAttribute="top" secondItem="gUF-mP-Ufp" secondAttribute="bottom" id="DMR-xb-68z"/>
-                            <constraint firstItem="Cse-7s-xlg" firstAttribute="leading" secondItem="1v0-dJ-bRr" secondAttribute="leading" id="E0H-fn-0yE"/>
-                            <constraint firstItem="Cse-7s-xlg" firstAttribute="trailing" secondItem="1v0-dJ-bRr" secondAttribute="trailing" id="Emc-cU-VJR"/>
-                            <constraint firstItem="gUF-mP-Ufp" firstAttribute="top" secondItem="se4-tJ-1jH" secondAttribute="top" id="GPA-YA-O3d"/>
-                            <constraint firstItem="Cse-7s-xlg" firstAttribute="top" secondItem="l6P-0f-uNa" secondAttribute="bottom" id="KY6-A9-b4V"/>
-                            <constraint firstItem="Cse-7s-xlg" firstAttribute="bottom" secondItem="1v0-dJ-bRr" secondAttribute="bottom" id="bQZ-mH-2aC"/>
-                            <constraint firstItem="l6P-0f-uNa" firstAttribute="top" secondItem="gUF-mP-Ufp" secondAttribute="bottom" id="d4I-IS-iMp"/>
+                            <constraint firstItem="Cse-7s-xlg" firstAttribute="top" secondItem="l6P-0f-uNa" secondAttribute="bottom" id="2ot-Vj-nAu"/>
+                            <constraint firstItem="l6P-0f-uNa" firstAttribute="trailing" secondItem="1v0-dJ-bRr" secondAttribute="trailing" id="9ZL-X2-T6A"/>
+                            <constraint firstItem="Cse-7s-xlg" firstAttribute="trailing" secondItem="1v0-dJ-bRr" secondAttribute="trailing" id="LgA-cg-H1N"/>
+                            <constraint firstItem="l6P-0f-uNa" firstAttribute="leading" secondItem="1v0-dJ-bRr" secondAttribute="leading" id="R2s-mh-nKE"/>
+                            <constraint firstItem="l6P-0f-uNa" firstAttribute="top" secondItem="1v0-dJ-bRr" secondAttribute="top" id="YbX-19-cWB"/>
                             <constraint firstItem="uSU-oD-bnd" firstAttribute="centerX" secondItem="l6P-0f-uNa" secondAttribute="centerX" id="ds6-EV-l2g"/>
                             <constraint firstItem="uSU-oD-bnd" firstAttribute="centerY" secondItem="l6P-0f-uNa" secondAttribute="centerY" id="fJ0-m2-Nsf"/>
-                            <constraint firstItem="gUF-mP-Ufp" firstAttribute="leading" secondItem="1v0-dJ-bRr" secondAttribute="leading" id="hDP-wm-Zz7"/>
-                            <constraint firstItem="Cse-7s-xlg" firstAttribute="top" secondItem="l6P-0f-uNa" secondAttribute="bottom" id="hjc-hT-LiQ"/>
-                            <constraint firstItem="l6P-0f-uNa" firstAttribute="leading" secondItem="1v0-dJ-bRr" secondAttribute="leading" id="oyA-kR-8ee"/>
-                            <constraint firstItem="gUF-mP-Ufp" firstAttribute="trailing" secondItem="1v0-dJ-bRr" secondAttribute="trailing" id="piw-ye-LFC"/>
+                            <constraint firstItem="Cse-7s-xlg" firstAttribute="leading" secondItem="1v0-dJ-bRr" secondAttribute="leading" id="leB-Vq-FO2"/>
+                            <constraint firstItem="Cse-7s-xlg" firstAttribute="bottom" secondItem="1v0-dJ-bRr" secondAttribute="bottom" id="uVk-SE-PfK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1v0-dJ-bRr"/>
                     </view>

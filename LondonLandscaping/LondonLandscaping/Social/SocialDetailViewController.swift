@@ -20,7 +20,8 @@ class SocialDetailViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
 
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationItem.title = socialMediaTitle
+        title = socialMediaTitle
+ 
         webView.load(URLRequest(url: socialMediaUrl))
     }
 
