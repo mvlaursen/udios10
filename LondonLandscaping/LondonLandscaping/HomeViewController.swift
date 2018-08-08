@@ -9,14 +9,23 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet private weak var aboutButton: UIButton!
+    @IBOutlet private weak var contactButton: UIButton!
+    @IBOutlet private weak var portfolioButton: UIButton!
+    @IBOutlet private weak var servicesButton: UIButton!
+    @IBOutlet private weak var socialButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 
-        // TODO: Set buttons text color to gardenGreen programmatically.
+        aboutButton.setTitleColor(Colors.gardenGreen, for: .normal)
+        contactButton.setTitleColor(Colors.gardenGreen, for: .normal)
+        portfolioButton.setTitleColor(Colors.gardenGreen, for: .normal)
+        servicesButton.setTitleColor(Colors.gardenGreen, for: .normal)
+        socialButton.setTitleColor(Colors.gardenGreen, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

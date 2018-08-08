@@ -43,7 +43,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Services" backgroundImage="Button">
-                                    <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wUt-ig-G4V"/>
@@ -57,7 +57,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Portfolio" backgroundImage="Button">
-                                    <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9gR-xm-NC3"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Contact Us" backgroundImage="Button">
-                                    <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="f6b-Ur-9tf"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="About Us" backgroundImage="Button">
-                                    <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HYN-Ol-DMF"/>
@@ -99,7 +99,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Social Links" backgroundImage="Button">
-                                    <color key="titleColor" red="0.25098039215686274" green="0.50196078431372548" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KX9-Dh-6yn"/>
@@ -137,6 +137,13 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="London Landscaping" id="uSR-n2-8fP"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="7Di-rT-gNi" id="wiV-Mc-4cI"/>
+                        <outlet property="contactButton" destination="YEP-w4-foy" id="Pbv-eG-A0e"/>
+                        <outlet property="portfolioButton" destination="2i9-hB-uMD" id="006-yQ-2xU"/>
+                        <outlet property="servicesButton" destination="kWs-Ag-1DS" id="wKB-1o-zfG"/>
+                        <outlet property="socialButton" destination="Scz-vy-Pmt" id="abb-Rp-lhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -898,6 +905,6 @@ Follow us on social media for more news.</string>
         <image name="Services" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jXP-dL-GVl"/>
+        <segue reference="zrP-ZJ-nsf"/>
     </inferredMetricsTieBreakers>
 </document>
