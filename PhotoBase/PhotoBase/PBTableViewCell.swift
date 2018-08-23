@@ -9,9 +9,9 @@
 import UIKit
 
 class PBTableViewCell: UITableViewCell {
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var photoView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet public weak var descriptionLabel: UILabel!
+    @IBOutlet public weak var photoView: UIImageView!
+    @IBOutlet public weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

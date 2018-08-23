@@ -49,6 +49,9 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PBTableViewCell
         let item = frc.object(at: indexPath) as! Entity
+        cell.descriptionLabel.text = item.descr
+        cell.photoView.image = UIImage(data: (item.image)! as Data)
+        cell.titleLabel.text = item.title
         return cell
     }
 
