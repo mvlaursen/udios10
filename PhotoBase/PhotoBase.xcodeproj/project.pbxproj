@@ -12,6 +12,8 @@
 		3BFB485E212E09ED0081C21E /* PhotoBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB485C212E09ED0081C21E /* PhotoBase.xcdatamodeld */; };
 		3BFB4860212E09EE0081C21E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BFB485F212E09EE0081C21E /* Assets.xcassets */; };
 		3BFB4863212E09EE0081C21E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BFB4861212E09EE0081C21E /* LaunchScreen.storyboard */; };
+		3BFB4870212E20680081C21E /* PBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB486F212E20680081C21E /* PBTableViewCell.swift */; };
+		3BFB4872212E20860081C21E /* PBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB4871212E20860081C21E /* PBTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3BFB485F212E09EE0081C21E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BFB4862212E09EE0081C21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BFB4864212E09EE0081C21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BFB486F212E20680081C21E /* PBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBTableViewCell.swift; sourceTree = "<group>"; };
+		3BFB4871212E20860081C21E /* PBTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				3BFB4855212E09ED0081C21E /* AppDelegate.swift */,
+				3BFB486F212E20680081C21E /* PBTableViewCell.swift */,
+				3BFB4871212E20860081C21E /* PBTableViewController.swift */,
 				3BFB4859212E09ED0081C21E /* Main.storyboard */,
 				3BFB485F212E09EE0081C21E /* Assets.xcassets */,
 				3BFB4861212E09EE0081C21E /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			files = (
 				3BFB485E212E09ED0081C21E /* PhotoBase.xcdatamodeld in Sources */,
 				3BFB4856212E09ED0081C21E /* AppDelegate.swift in Sources */,
+				3BFB4870212E20680081C21E /* PBTableViewCell.swift in Sources */,
+				3BFB4872212E20860081C21E /* PBTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
