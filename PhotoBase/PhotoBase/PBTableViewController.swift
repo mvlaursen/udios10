@@ -6,6 +6,7 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class PBTableViewController: UITableViewController {
