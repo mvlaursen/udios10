@@ -9,7 +9,10 @@
 import UIKit
 
 class PBTableViewCell: UITableViewCell {
-
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var photoView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
