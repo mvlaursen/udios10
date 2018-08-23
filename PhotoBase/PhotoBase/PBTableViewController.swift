@@ -9,8 +9,10 @@
 import CoreData
 import UIKit
 
-class PBTableViewController: UITableViewController {
-
+class PBTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var frc = NSFetchedResultsController<NSFetchRequestResult>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,12 @@ class PBTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        fetchTableData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchTableData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,23 +38,19 @@ class PBTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return frc.sections != nil ? frc.sections!.count : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (frc.sections?[section].numberOfObjects)!
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PBTableViewCell
+        let item = frc.object(at: indexPath) as! Entity
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,5 +96,33 @@ class PBTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Utility Methods
+    
+    func fetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+        let sorter = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sorter]
+        return fetchRequest
+    }
+    
+    private func fetchTableData() {
+        frc = getFRC()
+        frc.delegate = self
+        
+        do {
+            try frc.performFetch()
+        }
+        catch {
+            print(error)
+            return
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func getFRC() -> NSFetchedResultsController<NSFetchRequestResult> {
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: pc, sectionNameKeyPath: nil, cacheName: nil)
+        return frc
+    }
 }
