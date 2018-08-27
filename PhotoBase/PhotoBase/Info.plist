@@ -45,5 +45,7 @@
 	<string>Take Photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select Photo</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

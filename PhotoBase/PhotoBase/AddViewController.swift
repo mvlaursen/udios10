@@ -25,6 +25,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             descriptionTextField.text = item?.descr
             imageView.image = UIImage(data: (item?.image)! as Data)
             titleTextField.text = item?.title
+            navigationItem.title = item?.title
+        } else {
+            navigationItem.title = "Add Photo"
         }
     }
 
