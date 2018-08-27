@@ -114,7 +114,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="dismissKeyboard:" destination="eg7-M6-1SJ" eventType="editingDidEndOnExit" id="eX0-MC-bG3"/>
                                 </connections>
@@ -135,7 +135,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="dismissKeyboard:" destination="eg7-M6-1SJ" eventType="editingDidEndOnExit" id="wgE-kr-qh6"/>
                                 </connections>

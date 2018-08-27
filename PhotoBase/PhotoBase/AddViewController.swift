@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet private weak var descriptionTextField: UITextField!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleTextField: UITextField!
@@ -38,14 +38,37 @@ class AddViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func dismissKeyboard(_ sender: UITextField) {
+        self.resignFirstResponder()
     }
     
     @IBAction private func onCameraTapped(_ sender: UIButton) {
+        let pickerController = UIImagePickerController()
+        pickerController.allowsEditing = true
+        pickerController.delegate = self
+        pickerController.sourceType = .camera
+        
+        self.present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction private func onLibraryTapped(_ sender: UIButton) {
+        let pickerController = UIImagePickerController()
+        pickerController.allowsEditing = true
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
+        
+        self.present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction private func savePhoto(_ sender: UIButton) {
+    }
+    
+    // MARK: - ImagePickerController methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
