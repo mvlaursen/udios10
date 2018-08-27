@@ -17,6 +17,7 @@
 		3BFB4885212F34820081C21E /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB4883212F34820081C21E /* Entity+CoreDataClass.swift */; };
 		3BFB4886212F34820081C21E /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB4884212F34820081C21E /* Entity+CoreDataProperties.swift */; };
 		3BFB4889212F36170081C21E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFB4888212F36170081C21E /* CoreData.framework */; };
+		3BFB488B212F52770081C21E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB488A212F52770081C21E /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3BFB4883212F34820081C21E /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3BFB4884212F34820081C21E /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3BFB4888212F36170081C21E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3BFB488A212F52770081C21E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				3BFB4855212E09ED0081C21E /* AppDelegate.swift */,
+				3BFB488A212F52770081C21E /* AddViewController.swift */,
 				3BFB486F212E20680081C21E /* PBTableViewCell.swift */,
 				3BFB4871212E20860081C21E /* PBTableViewController.swift */,
 				3BFB4859212E09ED0081C21E /* Main.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				3BFB4886212F34820081C21E /* Entity+CoreDataProperties.swift in Sources */,
 				3BFB485E212E09ED0081C21E /* PhotoBase.xcdatamodeld in Sources */,
+				3BFB488B212F52770081C21E /* AddViewController.swift in Sources */,
 				3BFB4856212E09ED0081C21E /* AppDelegate.swift in Sources */,
 				3BFB4870212E20680081C21E /* PBTableViewCell.swift in Sources */,
 				3BFB4885212F34820081C21E /* Entity+CoreDataClass.swift in Sources */,
