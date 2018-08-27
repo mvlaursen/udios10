@@ -70,6 +70,7 @@
                                     <outlet property="descriptionLabel" destination="PZF-38-P0e" id="Mvz-e6-cmL"/>
                                     <outlet property="photoView" destination="Y4k-qS-HGz" id="ItS-c8-rcB"/>
                                     <outlet property="titleLabel" destination="yqD-tf-VZm" id="Jii-EU-koA"/>
+                                    <segue destination="eg7-M6-1SJ" kind="show" identifier="Edit" id="DAU-25-BKA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,7 +82,7 @@
                     <navigationItem key="navigationItem" title="PhotoBase" id="YfW-UX-1Sc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C3P-YI-aXO">
                             <connections>
-                                <segue destination="eg7-M6-1SJ" kind="show" id="lyT-fy-f7g"/>
+                                <segue destination="eg7-M6-1SJ" kind="show" identifier="Add" id="lyT-fy-f7g"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -253,4 +254,7 @@
     <resources>
         <image name="Placeholder" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DAU-25-BKA"/>
+    </inferredMetricsTieBreakers>
 </document>

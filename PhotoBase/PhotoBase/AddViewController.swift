@@ -16,10 +16,16 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var item: Entity? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if item != nil {
+            descriptionTextField.text = item?.descr
+            imageView.image = UIImage(data: (item?.image)! as Data)
+            titleTextField.text = item?.title
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,11 +69,17 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction private func savePhoto(_ sender: UIButton) {
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Entity", in: pc)
-        let item = Entity(entity: entityDescription!, insertInto: pc)
-        item.descr = descriptionTextField.text
-        item.image = UIImagePNGRepresentation(imageView.image!) as NSData?
-        item.title = titleTextField.text
+        if item != nil {
+            item?.descr = descriptionTextField.text
+            item?.image = UIImagePNGRepresentation(imageView.image!) as NSData?
+            item?.title = titleTextField.text
+        } else {
+            let entityDescription = NSEntityDescription.entity(forEntityName: "Entity", in: pc)
+            item = Entity(entity: entityDescription!, insertInto: pc)
+            item?.descr = descriptionTextField.text
+            item?.image = UIImagePNGRepresentation(imageView.image!) as NSData?
+            item?.title = titleTextField.text
+        }
         
         do {
             try pc.save()
