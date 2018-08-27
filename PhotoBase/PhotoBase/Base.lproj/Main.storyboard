@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -153,56 +154,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G71-H9-GqA">
                                 <rect key="frame" x="16" y="174" width="288" height="146"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HAh-mO-C5u">
-                                <rect key="frame" x="96.5" y="328" width="127" height="30"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-eP-OjH">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-hE-VEB">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="C1y-ad-7fm"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Camera">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="onCameraTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="XDb-2j-zXb"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-x8-Eus">
-                                                <rect key="frame" x="70" y="0.0" width="57" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="OkA-sv-PzD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Library">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="onLibraryTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="T3o-bt-GZu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY8-uN-ign">
-                                <rect key="frame" x="16" y="366" width="288" height="30"/>
+                                <rect key="frame" x="53" y="366" width="214" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9sV-dd-WzR"/>
@@ -220,33 +173,80 @@
                                     <action selector="savePhoto:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="JGv-4E-AjY"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-eP-OjH">
+                                <rect key="frame" x="53" y="328" width="214" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-hE-VEB">
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="C1y-ad-7fm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCameraTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="XDb-2j-zXb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-x8-Eus">
+                                        <rect key="frame" x="111" y="0.0" width="103" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="OkA-sv-PzD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Library">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onLibraryTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="T3o-bt-GZu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="CxD-Ma-y26" secondAttribute="trailing" constant="16" id="2JM-hf-QP0"/>
                             <constraint firstItem="CxD-Ma-y26" firstAttribute="top" secondItem="LX5-b2-J1u" secondAttribute="bottom" constant="8" id="6pm-xf-b3p"/>
                             <constraint firstItem="LX5-b2-J1u" firstAttribute="top" secondItem="9sE-MJ-B89" secondAttribute="bottom" constant="8" id="7mL-eJ-JHP"/>
-                            <constraint firstItem="tY8-uN-ign" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="Chc-eJ-sCP"/>
+                            <constraint firstItem="G71-H9-GqA" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="8Ia-TY-jZK"/>
                             <constraint firstItem="9sE-MJ-B89" firstAttribute="top" secondItem="Tun-zd-oV7" secondAttribute="top" constant="11" id="DmQ-3V-QPi"/>
+                            <constraint firstItem="G71-H9-GqA" firstAttribute="top" secondItem="XrZ-Eg-3po" secondAttribute="bottom" constant="8" id="FJX-c7-ONG"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="G71-H9-GqA" secondAttribute="trailing" constant="16" id="FZO-Io-ESU"/>
                             <constraint firstItem="XrZ-Eg-3po" firstAttribute="top" secondItem="h4l-IA-x0h" secondAttribute="bottom" constant="8" id="Nev-IE-fA6"/>
                             <constraint firstItem="h4l-IA-x0h" firstAttribute="top" secondItem="CxD-Ma-y26" secondAttribute="bottom" constant="8" id="Qzq-TU-Gw0"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="XrZ-Eg-3po" secondAttribute="trailing" constant="16" id="VUe-BX-ZSI"/>
+                            <constraint firstItem="qT9-eP-OjH" firstAttribute="top" secondItem="G71-H9-GqA" secondAttribute="bottom" constant="8" id="W4Q-GY-EgA"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="LX5-b2-J1u" secondAttribute="trailing" constant="16" id="Ycg-xQ-xGq"/>
-                            <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="tY8-uN-ign" secondAttribute="trailing" constant="16" id="a3a-9a-0pk"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="9sE-MJ-B89" secondAttribute="trailing" constant="16" id="bTm-e3-meE"/>
                             <constraint firstItem="CxD-Ma-y26" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="d3v-Ts-cCr"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="bottom" secondItem="tY8-uN-ign" secondAttribute="bottom" constant="20" id="eha-eA-zTc"/>
+                            <constraint firstItem="qT9-eP-OjH" firstAttribute="width" secondItem="tY8-uN-ign" secondAttribute="width" id="h9i-jU-b3P"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="h4l-IA-x0h" secondAttribute="trailing" constant="16" id="i0N-Wh-j52"/>
-                            <constraint firstItem="HAh-mO-C5u" firstAttribute="top" secondItem="G71-H9-GqA" secondAttribute="bottom" constant="8" id="oke-Jt-10b"/>
+                            <constraint firstItem="qT9-eP-OjH" firstAttribute="centerX" secondItem="ySS-JE-MES" secondAttribute="centerX" id="mI9-d9-oPE"/>
+                            <constraint firstItem="tY8-uN-ign" firstAttribute="top" secondItem="qT9-eP-OjH" secondAttribute="bottom" constant="8" id="peq-Lu-RqW"/>
                             <constraint firstItem="XrZ-Eg-3po" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="qjQ-uX-SSd"/>
                             <constraint firstItem="LX5-b2-J1u" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="r6b-Bg-rix"/>
-                            <constraint firstItem="tY8-uN-ign" firstAttribute="top" secondItem="HAh-mO-C5u" secondAttribute="bottom" constant="8" id="rJW-DM-sFo"/>
+                            <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="G71-H9-GqA" secondAttribute="trailing" constant="16" id="rRH-Wq-Kfn"/>
                             <constraint firstItem="G71-H9-GqA" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="ryH-sA-7aR"/>
                             <constraint firstItem="h4l-IA-x0h" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="tPe-Z4-1Dg"/>
+                            <constraint firstItem="tY8-uN-ign" firstAttribute="centerX" secondItem="ySS-JE-MES" secondAttribute="centerX" id="umL-E1-yMT"/>
+                            <constraint firstItem="tY8-uN-ign" firstAttribute="width" secondItem="Tun-zd-oV7" secondAttribute="width" multiplier="0.67" id="vY4-a8-EJU"/>
                             <constraint firstItem="9sE-MJ-B89" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="xhf-MA-WD2"/>
                             <constraint firstItem="G71-H9-GqA" firstAttribute="top" secondItem="XrZ-Eg-3po" secondAttribute="bottom" constant="8" id="xzu-Yh-lw3"/>
-                            <constraint firstItem="HAh-mO-C5u" firstAttribute="centerX" secondItem="ySS-JE-MES" secondAttribute="centerX" id="yya-Ym-qCH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tun-zd-oV7"/>
                     </view>
