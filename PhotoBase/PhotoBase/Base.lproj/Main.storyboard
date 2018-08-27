@@ -40,8 +40,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="BaX-0e-Siw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-38-P0e">
@@ -49,8 +49,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="HbG-t2-blu"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -104,8 +104,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vB0-ir-Q1h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LX5-b2-J1u" userLabel="Title Text Field">
@@ -125,8 +125,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="x7u-FG-AhS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h4l-IA-x0h" userLabel="Description Text Field">
@@ -146,35 +146,53 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uYB-Ko-XWf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G71-H9-GqA">
                                 <rect key="frame" x="16" y="174" width="288" height="146"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HAh-mO-C5u">
-                                <rect key="frame" x="105" y="328" width="110" height="30"/>
+                                <rect key="frame" x="96.5" y="328" width="127" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-eP-OjH">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-hE-VEB">
-                                                <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="C1y-ad-7fm"/>
                                                 </constraints>
-                                                <state key="normal" title="Camera"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Camera">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onCameraTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="XDb-2j-zXb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-x8-Eus">
-                                                <rect key="frame" x="62" y="0.0" width="48" height="30"/>
+                                                <rect key="frame" x="70" y="0.0" width="57" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="OkA-sv-PzD"/>
                                                 </constraints>
-                                                <state key="normal" title="Library"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Library">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onLibraryTapped:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="T3o-bt-GZu"/>
                                                 </connections>
@@ -184,11 +202,20 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY8-uN-ign">
-                                <rect key="frame" x="121" y="366" width="78" height="30"/>
+                                <rect key="frame" x="16" y="366" width="288" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9sV-dd-WzR"/>
                                 </constraints>
-                                <state key="normal" title="Save Photo"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Save Photo">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePhoto:" destination="eg7-M6-1SJ" eventType="touchUpInside" id="JGv-4E-AjY"/>
                                 </connections>
@@ -199,13 +226,14 @@
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="CxD-Ma-y26" secondAttribute="trailing" constant="16" id="2JM-hf-QP0"/>
                             <constraint firstItem="CxD-Ma-y26" firstAttribute="top" secondItem="LX5-b2-J1u" secondAttribute="bottom" constant="8" id="6pm-xf-b3p"/>
                             <constraint firstItem="LX5-b2-J1u" firstAttribute="top" secondItem="9sE-MJ-B89" secondAttribute="bottom" constant="8" id="7mL-eJ-JHP"/>
+                            <constraint firstItem="tY8-uN-ign" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="Chc-eJ-sCP"/>
                             <constraint firstItem="9sE-MJ-B89" firstAttribute="top" secondItem="Tun-zd-oV7" secondAttribute="top" constant="11" id="DmQ-3V-QPi"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="G71-H9-GqA" secondAttribute="trailing" constant="16" id="FZO-Io-ESU"/>
                             <constraint firstItem="XrZ-Eg-3po" firstAttribute="top" secondItem="h4l-IA-x0h" secondAttribute="bottom" constant="8" id="Nev-IE-fA6"/>
                             <constraint firstItem="h4l-IA-x0h" firstAttribute="top" secondItem="CxD-Ma-y26" secondAttribute="bottom" constant="8" id="Qzq-TU-Gw0"/>
-                            <constraint firstItem="tY8-uN-ign" firstAttribute="centerX" secondItem="ySS-JE-MES" secondAttribute="centerX" id="Rw8-WN-lNE"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="XrZ-Eg-3po" secondAttribute="trailing" constant="16" id="VUe-BX-ZSI"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="LX5-b2-J1u" secondAttribute="trailing" constant="16" id="Ycg-xQ-xGq"/>
+                            <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="tY8-uN-ign" secondAttribute="trailing" constant="16" id="a3a-9a-0pk"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="trailing" secondItem="9sE-MJ-B89" secondAttribute="trailing" constant="16" id="bTm-e3-meE"/>
                             <constraint firstItem="CxD-Ma-y26" firstAttribute="leading" secondItem="Tun-zd-oV7" secondAttribute="leading" constant="16" id="d3v-Ts-cCr"/>
                             <constraint firstItem="Tun-zd-oV7" firstAttribute="bottom" secondItem="tY8-uN-ign" secondAttribute="bottom" constant="20" id="eha-eA-zTc"/>
