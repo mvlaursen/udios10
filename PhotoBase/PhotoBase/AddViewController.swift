@@ -6,12 +6,15 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet private weak var descriptionTextField: UITextField!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleTextField: UITextField!
+    
+    let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,20 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction private func savePhoto(_ sender: UIButton) {
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Entity", in: pc)
+        let item = Entity(entity: entityDescription!, insertInto: pc)
+        item.descr = descriptionTextField.text
+        item.image = UIImagePNGRepresentation(imageView.image!) as NSData?
+        item.title = titleTextField.text
+        
+        do {
+            try pc.save()
+        } catch {
+            print(error)
+            return
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - ImagePickerController methods
