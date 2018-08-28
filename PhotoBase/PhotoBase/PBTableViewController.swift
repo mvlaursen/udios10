@@ -15,6 +15,8 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = max(120.0, UIScreen.main.bounds.size.width / 3.0)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
