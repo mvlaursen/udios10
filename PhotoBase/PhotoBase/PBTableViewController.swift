@@ -11,7 +11,7 @@ import UIKit
 
 class PBTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var frc = NSFetchedResultsController<NSFetchRequestResult>()
+    var frc:NSFetchedResultsController<NSFetchRequestResult>? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +41,16 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return frc.sections != nil ? frc.sections!.count : 0
+        return frc != nil && frc!.sections != nil ? frc!.sections!.count : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (frc.sections?[section].numberOfObjects)!
+        return frc != nil && frc!.sections != nil ? frc!.sections![section].numberOfObjects: 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PBTableViewCell
-        let item = frc.object(at: indexPath) as! Entity
+        let item = frc?.object(at: indexPath) as! Entity
         cell.descriptionLabel.text = item.descr
         cell.photoView.image = UIImage(data: (item.image)! as Data)
         cell.titleLabel.text = item.title
@@ -70,7 +68,7 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        let managedObject = frc.object(at: indexPath) as! NSManagedObject
+        let managedObject = frc?.object(at: indexPath) as! NSManagedObject
         pc.delete(managedObject)
         
         do {
@@ -107,7 +105,7 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
             let cell = sender as! PBTableViewCell
             let indexPath = tableView.indexPath(for: cell)
             let itemController = segue.destination as! AddViewController
-            let item = frc.object(at: indexPath!) as! Entity
+            let item = frc?.object(at: indexPath!) as! Entity
             itemController.item = item
         }
     }
@@ -128,22 +126,16 @@ class PBTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     
     private func fetchTableData() {
-        frc = getFRC()
-        frc.delegate = self
+        if frc == nil {
+            frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: pc, sectionNameKeyPath: nil, cacheName: nil)
+            frc!.delegate = self
+        }
         
         do {
-            try frc.performFetch()
+            try frc!.performFetch()
         }
         catch {
             print(error)
-            return
         }
-        
-        tableView.reloadData()
-    }
-    
-    func getFRC() -> NSFetchedResultsController<NSFetchRequestResult> {
-        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: pc, sectionNameKeyPath: nil, cacheName: nil)
-        return frc
     }
 }
