@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction private func share(_ sender: UIButton) {
         let activityViewController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 
