@@ -6,6 +6,7 @@
 //  Copyright © 2018 Laursen.org. All rights reserved.
 //
 
+import MessageUI
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,6 +21,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction private func sendMessage(_ sender: UIButton) {
+        if MFMessageComposeViewController.canSendText() {
+            let messageSheet = MFMessageComposeViewController()
+            let imageData = UIImageJPEGRepresentation(imageView.image!, 1.0)
+            messageSheet.addAttachmentData(imageData!, typeIdentifier: "image/jpg", filename: "image.jpg")
+            messageSheet.body = label.text
+            present(messageSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "Device cannot send messages.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction private func share(_ sender: UIButton) {
