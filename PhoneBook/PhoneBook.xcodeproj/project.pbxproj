@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3BE64D4C21373AB2003B6E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D4B21373AB2003B6E11 /* AppDelegate.swift */; };
-		3BE64D4E21373AB2003B6E11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D4D21373AB2003B6E11 /* ViewController.swift */; };
 		3BE64D5121373AB2003B6E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE64D4F21373AB2003B6E11 /* Main.storyboard */; };
 		3BE64D5421373AB2003B6E11 /* PhoneBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D5221373AB2003B6E11 /* PhoneBook.xcdatamodeld */; };
 		3BE64D5621373AB2003B6E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE64D5521373AB2003B6E11 /* Assets.xcassets */; };
 		3BE64D5921373AB2003B6E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE64D5721373AB2003B6E11 /* LaunchScreen.storyboard */; };
+		3BE64D6121373D70003B6E11 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6021373D70003B6E11 /* TableViewCell.swift */; };
+		3BE64D6321373D82003B6E11 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6221373D82003B6E11 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BE64D4821373AB1003B6E11 /* PhoneBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE64D4B21373AB2003B6E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BE64D4D21373AB2003B6E11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3BE64D5021373AB2003B6E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BE64D5321373AB2003B6E11 /* PhoneBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhoneBook.xcdatamodel; sourceTree = "<group>"; };
 		3BE64D5521373AB2003B6E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BE64D5821373AB2003B6E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BE64D5A21373AB2003B6E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE64D6021373D70003B6E11 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3BE64D6221373D82003B6E11 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				3BE64D4B21373AB2003B6E11 /* AppDelegate.swift */,
-				3BE64D4D21373AB2003B6E11 /* ViewController.swift */,
+				3BE64D6221373D82003B6E11 /* TableViewController.swift */,
+				3BE64D6021373D70003B6E11 /* TableViewCell.swift */,
 				3BE64D4F21373AB2003B6E11 /* Main.storyboard */,
 				3BE64D5521373AB2003B6E11 /* Assets.xcassets */,
 				3BE64D5721373AB2003B6E11 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BE64D4E21373AB2003B6E11 /* ViewController.swift in Sources */,
+				3BE64D6121373D70003B6E11 /* TableViewCell.swift in Sources */,
 				3BE64D5421373AB2003B6E11 /* PhoneBook.xcdatamodeld in Sources */,
 				3BE64D4C21373AB2003B6E11 /* AppDelegate.swift in Sources */,
+				3BE64D6321373D82003B6E11 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
