@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  PhoneCalls
+//  PhoneBook
 //
 //  Created by Mike Laursen on 8/29/18.
 //  Copyright © 2018 Appamajigger. All rights reserved.
@@ -20,8 +20,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction private func call(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "tel://555-5555")!, options: [:], completionHandler: nil)
-    }
+
 }
 
