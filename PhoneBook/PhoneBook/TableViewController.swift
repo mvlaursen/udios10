@@ -10,8 +10,6 @@ import CoreData
 import UIKit
 
 class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
     var frc:NSFetchedResultsController<NSFetchRequestResult>? = nil
 
     override func viewDidLoad() {
@@ -83,9 +81,10 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         if editingStyle == .delete {
             // Delete the row from the data source
             let managedObject:NSManagedObject = frc!.object(at: indexPath) as! NSManagedObject
-            pc.delete(managedObject)
-            
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(managedObject)
+            appDelegate.saveContext()
         }
     }
     
@@ -137,7 +136,9 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     func getFRC() -> NSFetchedResultsController<NSFetchRequestResult> {
-        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: pc, sectionNameKeyPath: nil, cacheName: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         return frc!
     }
 }

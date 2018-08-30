@@ -14,8 +14,6 @@ class AddViewController: UIViewController, MFMessageComposeViewControllerDelegat
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var phoneNumberField: UITextField!
     
-    let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     public var selectedContact: Contact? = nil
     
     override func viewDidLoad() {
@@ -74,17 +72,20 @@ class AddViewController: UIViewController, MFMessageComposeViewControllerDelegat
     }
 
     @IBAction private func save(_ sender: UIButton) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         if selectedContact != nil {
-            selectedContact?.name = nameField.text
-            selectedContact?.phoneNumber = phoneNumberField.text
+            selectedContact!.name = nameField.text
+            selectedContact!.phoneNumber = phoneNumberField.text
         } else {
-            let contactDescription = NSEntityDescription.entity(forEntityName: "Contact", in: pc)
-            let contact = Contact(entity: contactDescription!, insertInto: pc)
+            let context = appDelegate.persistentContainer.viewContext
+            let contactDescription = NSEntityDescription.entity(forEntityName: "Contact", in: context)
+            let contact = Contact(entity: contactDescription!, insertInto: context)
             contact.name = nameField.text
             contact.phoneNumber = phoneNumberField.text
         }
                 
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        appDelegate.saveContext()
         
         navigationController?.popViewController(animated: true)
     }
