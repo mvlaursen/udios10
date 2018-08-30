@@ -21,27 +21,11 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        frc = getFRC()
-        frc?.delegate = self
-        
-        do {
-            try frc?.performFetch()
-        } catch {
-            print(error)
-        }
+        fetchContacts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // TODO: This code should not be repeated.
-        
-        frc = getFRC()
-        frc?.delegate = self
-        
-        do {
-            try frc?.performFetch()
-        } catch {
-            print(error)
-        }
+        fetchContacts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,17 +112,28 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     
     // MARK: - Utility Methods
     
+    func fetchContacts() {
+        if frc == nil {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            frc?.delegate = self
+        }
+        
+        do {
+            try frc?.performFetch()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+
     func fetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
         let sorter = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sorter]
         return fetchRequest
-    }
-    
-    func getFRC() -> NSFetchedResultsController<NSFetchRequestResult> {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return frc!
-    }
+    }    
 }
