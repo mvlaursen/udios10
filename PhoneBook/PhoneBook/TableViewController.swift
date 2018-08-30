@@ -44,6 +44,8 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         } catch {
             print(error)
         }
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

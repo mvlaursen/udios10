@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,12 +54,106 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Phone Book" id="KoB-Yb-3K2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bKY-gq-orD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bKY-gq-orD">
+                            <connections>
+                                <segue destination="KmX-DT-WPx" kind="show" id="Fpi-WJ-zAJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPz-9r-mCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="-217.5"/>
+            <point key="canvasLocation" x="514" y="-218"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="nUx-7Q-zZx">
+            <objects>
+                <viewController id="KmX-DT-WPx" customClass="AddViewController" customModule="PhoneBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l4A-0V-jot">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWq-HA-BsA">
+                                <rect key="frame" x="16" y="71" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="l92-ue-ymb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8uF-4z-bcQ">
+                                <rect key="frame" x="16" y="100" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qe2-Py-1Mv"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="KmX-DT-WPx" eventType="editingDidEndOnExit" id="4Nt-cg-JJ6"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz7-cb-Dbk">
+                                <rect key="frame" x="16" y="138" width="288" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4xg-Of-xZM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-4Q-way">
+                                <rect key="frame" x="16" y="171" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CNi-mz-5ga"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="KmX-DT-WPx" eventType="editingDidEndOnExit" id="7G8-fP-HhF"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogo-AD-JrI">
+                                <rect key="frame" x="16" y="209" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8RN-hT-LZ2"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="KmX-DT-WPx" eventType="touchUpInside" id="hAR-5B-2mN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="ogo-AD-JrI" secondAttribute="trailing" constant="16" id="6Wj-kq-iCv"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="8uF-4z-bcQ" secondAttribute="trailing" constant="16" id="7Y0-3p-sbD"/>
+                            <constraint firstItem="hWq-HA-BsA" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="JY4-Zp-7ja"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="3eA-4Q-way" secondAttribute="trailing" constant="16" id="Kke-1U-LJM"/>
+                            <constraint firstItem="ogo-AD-JrI" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="M5h-Rr-PuD"/>
+                            <constraint firstItem="8uF-4z-bcQ" firstAttribute="top" secondItem="hWq-HA-BsA" secondAttribute="bottom" constant="8" id="QJE-9I-IlQ"/>
+                            <constraint firstItem="hWq-HA-BsA" firstAttribute="top" secondItem="uQB-Tc-ixH" secondAttribute="top" constant="7" id="bYh-0C-wXc"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="Xz7-cb-Dbk" secondAttribute="trailing" constant="16" id="dxd-kU-K6d"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="hWq-HA-BsA" secondAttribute="trailing" constant="16" id="i0U-ee-wLu"/>
+                            <constraint firstItem="Xz7-cb-Dbk" firstAttribute="top" secondItem="8uF-4z-bcQ" secondAttribute="bottom" constant="8" id="jr0-or-GOt"/>
+                            <constraint firstItem="3eA-4Q-way" firstAttribute="top" secondItem="Xz7-cb-Dbk" secondAttribute="bottom" constant="8" id="nBR-oR-HM6"/>
+                            <constraint firstItem="ogo-AD-JrI" firstAttribute="top" secondItem="3eA-4Q-way" secondAttribute="bottom" constant="8" id="nyT-jv-oBI"/>
+                            <constraint firstItem="Xz7-cb-Dbk" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="q9j-G1-i2i"/>
+                            <constraint firstItem="3eA-4Q-way" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="ruF-Ur-nDN"/>
+                            <constraint firstItem="8uF-4z-bcQ" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="sBO-Ft-6sa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uQB-Tc-ixH"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="8uF-4z-bcQ" id="8MX-DR-mUg"/>
+                        <outlet property="phoneNumberField" destination="3eA-4Q-way" id="ong-a0-KXr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnG-AO-Gdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297.5" y="-218.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JW1-Ug-IVK">

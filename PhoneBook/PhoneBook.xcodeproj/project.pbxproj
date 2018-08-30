@@ -17,6 +17,7 @@
 		3BE64D6621373EA4003B6E11 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE64D6521373EA4003B6E11 /* CoreData.framework */; };
 		3BE64D71213741D2003B6E11 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */; };
 		3BE64D72213741D2003B6E11 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */; };
+		3BE64D7421386824003B6E11 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D7321386824003B6E11 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3BE64D6521373EA4003B6E11 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3BE64D7321386824003B6E11 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3BE64D4B21373AB2003B6E11 /* AppDelegate.swift */,
 				3BE64D6221373D82003B6E11 /* TableViewController.swift */,
 				3BE64D6021373D70003B6E11 /* TableViewCell.swift */,
+				3BE64D7321386824003B6E11 /* AddViewController.swift */,
 				3BE64D4F21373AB2003B6E11 /* Main.storyboard */,
 				3BE64D5521373AB2003B6E11 /* Assets.xcassets */,
 				3BE64D5721373AB2003B6E11 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				3BE64D72213741D2003B6E11 /* Contact+CoreDataProperties.swift in Sources */,
 				3BE64D6121373D70003B6E11 /* TableViewCell.swift in Sources */,
+				3BE64D7421386824003B6E11 /* AddViewController.swift in Sources */,
 				3BE64D5421373AB2003B6E11 /* PhoneBook.xcdatamodeld in Sources */,
 				3BE64D4C21373AB2003B6E11 /* AppDelegate.swift in Sources */,
 				3BE64D6321373D82003B6E11 /* TableViewController.swift in Sources */,
