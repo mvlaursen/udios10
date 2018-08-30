@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet private weak var contactNameLabel: UILabel!
+    @IBOutlet public weak var contactNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

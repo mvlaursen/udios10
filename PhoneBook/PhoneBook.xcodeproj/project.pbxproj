@@ -14,6 +14,9 @@
 		3BE64D5921373AB2003B6E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE64D5721373AB2003B6E11 /* LaunchScreen.storyboard */; };
 		3BE64D6121373D70003B6E11 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6021373D70003B6E11 /* TableViewCell.swift */; };
 		3BE64D6321373D82003B6E11 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6221373D82003B6E11 /* TableViewController.swift */; };
+		3BE64D6621373EA4003B6E11 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE64D6521373EA4003B6E11 /* CoreData.framework */; };
+		3BE64D71213741D2003B6E11 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */; };
+		3BE64D72213741D2003B6E11 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		3BE64D5A21373AB2003B6E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BE64D6021373D70003B6E11 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3BE64D6221373D82003B6E11 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3BE64D6521373EA4003B6E11 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE64D6621373EA4003B6E11 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,7 @@
 			children = (
 				3BE64D4A21373AB1003B6E11 /* PhoneBook */,
 				3BE64D4921373AB1003B6E11 /* Products */,
+				3BE64D6421373EA4003B6E11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +74,18 @@
 				3BE64D5721373AB2003B6E11 /* LaunchScreen.storyboard */,
 				3BE64D5A21373AB2003B6E11 /* Info.plist */,
 				3BE64D5221373AB2003B6E11 /* PhoneBook.xcdatamodeld */,
+				3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */,
+				3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */,
 			);
 			path = PhoneBook;
+			sourceTree = "<group>";
+		};
+		3BE64D6421373EA4003B6E11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BE64D6521373EA4003B6E11 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE64D72213741D2003B6E11 /* Contact+CoreDataProperties.swift in Sources */,
 				3BE64D6121373D70003B6E11 /* TableViewCell.swift in Sources */,
 				3BE64D5421373AB2003B6E11 /* PhoneBook.xcdatamodeld in Sources */,
 				3BE64D4C21373AB2003B6E11 /* AppDelegate.swift in Sources */,
 				3BE64D6321373D82003B6E11 /* TableViewController.swift in Sources */,
+				3BE64D71213741D2003B6E11 /* Contact+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

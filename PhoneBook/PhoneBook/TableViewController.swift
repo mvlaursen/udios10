@@ -6,9 +6,14 @@
 //  Copyright © 2018 Appamajigger. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
-class TableViewController: UITableViewController {    
+class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var frc:NSFetchedResultsController<NSFetchRequestResult>? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +22,28 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        frc = getFRC()
+        frc?.delegate = self
+        
+        do {
+            try frc?.performFetch()
+        } catch {
+            print(error)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // TODO: This code should not be repeated.
+        
+        frc = getFRC()
+        frc?.delegate = self
+        
+        do {
+            try frc?.performFetch()
+        } catch {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,23 +55,20 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return frc?.sections?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return frc?.sections?[section].numberOfObjects ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Contact Cell", for: indexPath) as! TableViewCell
+        let item = frc!.object(at: indexPath) as! Contact
+        cell.contactNameLabel.text = item.name
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -90,5 +114,18 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Utility Methods
+    
+    func fetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
+        let sorter = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sorter]
+        return fetchRequest
+    }
+    
+    func getFRC() -> NSFetchedResultsController<NSFetchRequestResult> {
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: pc, sectionNameKeyPath: nil, cacheName: nil)
+        return frc!
+    }
 }
