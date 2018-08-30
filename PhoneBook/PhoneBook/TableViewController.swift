@@ -46,10 +46,27 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO: Is this first line needed?
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact Cell", for: indexPath) as! TableViewCell
         let contact = frc!.object(at: indexPath) as! Contact
         cell.contactNameLabel.text = contact.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction] {
+        let callAction = UITableViewRowAction(style: .normal, title: "Call") {(action, indexPath) in
+            let contact = self.frc!.object(at: indexPath) as! Contact
+            let url = URL(string: "tel://" + contact.phoneNumber!)
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") {(action, indexPath) in
+            let managedObject:NSManagedObject = self.frc!.object(at: indexPath) as! NSManagedObject
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(managedObject)
+            appDelegate.saveContext()
+        }
+        return [deleteAction, callAction]
     }
 
     /*
@@ -60,17 +77,17 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     */
 
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            let managedObject:NSManagedObject = frc!.object(at: indexPath) as! NSManagedObject
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            context.delete(managedObject)
-            appDelegate.saveContext()
-        }
-    }
+    /*
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
