@@ -83,13 +83,9 @@ class AddViewController: UIViewController, MFMessageComposeViewControllerDelegat
             contact.name = nameField.text
             contact.phoneNumber = phoneNumberField.text
         }
+                
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        do {
-            try pc.save()
-        } catch {
-            print(error)
-            return
-        }
         navigationController?.popViewController(animated: true)
     }
     

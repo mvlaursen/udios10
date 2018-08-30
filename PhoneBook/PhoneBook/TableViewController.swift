@@ -85,11 +85,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
             let managedObject:NSManagedObject = frc!.object(at: indexPath) as! NSManagedObject
             pc.delete(managedObject)
             
-            do {
-                try pc.save()
-            } catch {
-                print(error)
-            }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
     
