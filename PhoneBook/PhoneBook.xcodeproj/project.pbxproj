@@ -18,6 +18,7 @@
 		3BE64D71213741D2003B6E11 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */; };
 		3BE64D72213741D2003B6E11 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */; };
 		3BE64D7421386824003B6E11 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE64D7321386824003B6E11 /* AddViewController.swift */; };
+		3BE64D7621387A28003B6E11 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE64D7521387A28003B6E11 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3BE64D6F213741D2003B6E11 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3BE64D70213741D2003B6E11 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3BE64D7321386824003B6E11 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		3BE64D7521387A28003B6E11 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE64D7621387A28003B6E11 /* MessageUI.framework in Frameworks */,
 				3BE64D6621373EA4003B6E11 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +89,7 @@
 		3BE64D6421373EA4003B6E11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BE64D7521387A28003B6E11 /* MessageUI.framework */,
 				3BE64D6521373EA4003B6E11 /* CoreData.framework */,
 			);
 			name = Frameworks;

@@ -126,17 +126,42 @@
                                     <action selector="save:" destination="KmX-DT-WPx" eventType="touchUpInside" id="hAR-5B-2mN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssl-rN-SAg">
+                                <rect key="frame" x="16" y="247" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uep-8D-bh4"/>
+                                </constraints>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="call:" destination="KmX-DT-WPx" eventType="touchUpInside" id="QiC-Fs-oBb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-Kk-ruA">
+                                <rect key="frame" x="16" y="285" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="grD-Pq-Le0"/>
+                                </constraints>
+                                <state key="normal" title="Message"/>
+                                <connections>
+                                    <action selector="message:" destination="KmX-DT-WPx" eventType="touchUpInside" id="fhX-HJ-QDV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Mre-Kk-ruA" firstAttribute="top" secondItem="Ssl-rN-SAg" secondAttribute="bottom" constant="8" id="124-4M-2t5"/>
                             <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="ogo-AD-JrI" secondAttribute="trailing" constant="16" id="6Wj-kq-iCv"/>
                             <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="8uF-4z-bcQ" secondAttribute="trailing" constant="16" id="7Y0-3p-sbD"/>
+                            <constraint firstItem="Mre-Kk-ruA" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="HdJ-wh-cq4"/>
                             <constraint firstItem="hWq-HA-BsA" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="JY4-Zp-7ja"/>
                             <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="3eA-4Q-way" secondAttribute="trailing" constant="16" id="Kke-1U-LJM"/>
                             <constraint firstItem="ogo-AD-JrI" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="M5h-Rr-PuD"/>
                             <constraint firstItem="8uF-4z-bcQ" firstAttribute="top" secondItem="hWq-HA-BsA" secondAttribute="bottom" constant="8" id="QJE-9I-IlQ"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="Mre-Kk-ruA" secondAttribute="trailing" constant="16" id="UEQ-uk-C8R"/>
+                            <constraint firstItem="Ssl-rN-SAg" firstAttribute="top" secondItem="ogo-AD-JrI" secondAttribute="bottom" constant="8" id="Y0F-mn-QVC"/>
                             <constraint firstItem="hWq-HA-BsA" firstAttribute="top" secondItem="uQB-Tc-ixH" secondAttribute="top" constant="7" id="bYh-0C-wXc"/>
                             <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="Xz7-cb-Dbk" secondAttribute="trailing" constant="16" id="dxd-kU-K6d"/>
+                            <constraint firstItem="Ssl-rN-SAg" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="hxA-uW-qE5"/>
                             <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="hWq-HA-BsA" secondAttribute="trailing" constant="16" id="i0U-ee-wLu"/>
                             <constraint firstItem="Xz7-cb-Dbk" firstAttribute="top" secondItem="8uF-4z-bcQ" secondAttribute="bottom" constant="8" id="jr0-or-GOt"/>
                             <constraint firstItem="3eA-4Q-way" firstAttribute="top" secondItem="Xz7-cb-Dbk" secondAttribute="bottom" constant="8" id="nBR-oR-HM6"/>
@@ -144,6 +169,7 @@
                             <constraint firstItem="Xz7-cb-Dbk" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="q9j-G1-i2i"/>
                             <constraint firstItem="3eA-4Q-way" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="ruF-Ur-nDN"/>
                             <constraint firstItem="8uF-4z-bcQ" firstAttribute="leading" secondItem="uQB-Tc-ixH" secondAttribute="leading" constant="16" id="sBO-Ft-6sa"/>
+                            <constraint firstItem="uQB-Tc-ixH" firstAttribute="trailing" secondItem="Ssl-rN-SAg" secondAttribute="trailing" constant="16" id="syx-sg-W8u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uQB-Tc-ixH"/>
                     </view>

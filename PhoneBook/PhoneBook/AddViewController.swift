@@ -7,25 +7,26 @@
 //
 
 import CoreData
+import MessageUI
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var phoneNumberField: UITextField!
     
     let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    public var contactToEdit: Contact? = nil
+    public var selectedContact: Contact? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        if contactToEdit != nil {
-            nameField.text = contactToEdit?.name
-            phoneNumberField.text = contactToEdit?.phoneNumber
-            navigationItem.title = contactToEdit?.name
+        if selectedContact != nil {
+            nameField.text = selectedContact?.name
+            phoneNumberField.text = selectedContact?.phoneNumber
+            navigationItem.title = selectedContact?.name
         } else {
             navigationItem.title = "Add Contact"
         }
@@ -51,10 +52,31 @@ class AddViewController: UIViewController {
         self.resignFirstResponder()
     }
 
+    @IBAction private func call(_ sender: UIButton) {
+        if selectedContact != nil {
+            let url = URL(string: "tel://" + (selectedContact?.phoneNumber)!)
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func message(_ sender: UIButton) {
+        if selectedContact != nil && MFMessageComposeViewController.canSendText() {
+            let messageSheet = MFMessageComposeViewController()
+            messageSheet.recipients = ["\(String(selectedContact!.phoneNumber!))"]
+            messageSheet.body = "Hi, there!"
+            messageSheet.messageComposeDelegate = self
+            present(messageSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "No Can Message", message: "I can't send messages.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true)
+        }
+    }
+
     @IBAction private func save(_ sender: UIButton) {
-        if contactToEdit != nil {
-            contactToEdit?.name = nameField.text
-            contactToEdit?.phoneNumber = phoneNumberField.text
+        if selectedContact != nil {
+            selectedContact?.name = nameField.text
+            selectedContact?.phoneNumber = phoneNumberField.text
         } else {
             let contactDescription = NSEntityDescription.entity(forEntityName: "Contact", in: pc)
             let contact = Contact(entity: contactDescription!, insertInto: pc)
@@ -70,4 +92,12 @@ class AddViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - MFMessageComposeViewControllerDelegate methods
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+
 }

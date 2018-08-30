@@ -44,8 +44,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         } catch {
             print(error)
         }
-        
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,17 +78,24 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let managedObject:NSManagedObject = frc!.object(at: indexPath) as! NSManagedObject
+            pc.delete(managedObject)
+            
+            do {
+                try pc.save()
+            } catch {
+                print(error)
+            }
+        }
     }
-    */
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -120,9 +125,9 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
             let selectedCell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: selectedCell)
             let contact = frc!.object(at: indexPath!) as! Contact
-            addViewController.contactToEdit = contact
+            addViewController.selectedContact = contact
         } else {
-            addViewController.contactToEdit = nil
+            addViewController.selectedContact = nil
         }
     }
     
