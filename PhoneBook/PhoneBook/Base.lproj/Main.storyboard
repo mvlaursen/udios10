@@ -45,6 +45,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contactNameLabel" destination="PJh-gu-gmq" id="aVw-aB-vbu"/>
+                                    <segue destination="KmX-DT-WPx" kind="show" identifier="Edit Contact" id="hqm-Hy-r73"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +57,7 @@
                     <navigationItem key="navigationItem" title="Phone Book" id="KoB-Yb-3K2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bKY-gq-orD">
                             <connections>
-                                <segue destination="KmX-DT-WPx" kind="show" id="Fpi-WJ-zAJ"/>
+                                <segue destination="KmX-DT-WPx" kind="show" identifier="Add Contact" id="Fpi-WJ-zAJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -174,4 +175,7 @@
             <point key="canvasLocation" x="-232.5" y="-217.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hqm-Hy-r73"/>
+    </inferredMetricsTieBreakers>
 </document>

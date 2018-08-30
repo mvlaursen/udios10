@@ -15,10 +15,20 @@ class AddViewController: UIViewController {
     
     let pc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    public var contactToEdit: Contact? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if contactToEdit != nil {
+            nameField.text = contactToEdit?.name
+            phoneNumberField.text = contactToEdit?.phoneNumber
+            navigationItem.title = contactToEdit?.name
+        } else {
+            navigationItem.title = "Add Contact"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,10 +52,15 @@ class AddViewController: UIViewController {
     }
 
     @IBAction private func save(_ sender: UIButton) {
-        let contactDescription = NSEntityDescription.entity(forEntityName: "Contact", in: pc)
-        let contact = Contact(entity: contactDescription!, insertInto: pc)
-        contact.name = nameField.text
-        contact.phoneNumber = phoneNumberField.text
+        if contactToEdit != nil {
+            contactToEdit?.name = nameField.text
+            contactToEdit?.phoneNumber = phoneNumberField.text
+        } else {
+            let contactDescription = NSEntityDescription.entity(forEntityName: "Contact", in: pc)
+            let contact = Contact(entity: contactDescription!, insertInto: pc)
+            contact.name = nameField.text
+            contact.phoneNumber = phoneNumberField.text
+        }
         
         do {
             try pc.save()
@@ -53,7 +68,6 @@ class AddViewController: UIViewController {
             print(error)
             return
         }
-        
         navigationController?.popViewController(animated: true)
     }
 }

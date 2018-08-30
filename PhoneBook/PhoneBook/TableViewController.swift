@@ -107,15 +107,24 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let addViewController = segue.destination as! AddViewController
+
+        if segue.identifier == "Edit Contact" {
+            let selectedCell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: selectedCell)
+            let contact = frc!.object(at: indexPath!) as! Contact
+            addViewController.contactToEdit = contact
+        } else {
+            addViewController.contactToEdit = nil
+        }
     }
-    */
     
     // MARK: - Utility Methods
     
