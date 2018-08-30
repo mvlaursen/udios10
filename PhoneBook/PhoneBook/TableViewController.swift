@@ -46,7 +46,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Is this first line needed?
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact Cell", for: indexPath) as! TableViewCell
         let contact = frc!.object(at: indexPath) as! Contact
         cell.contactNameLabel.text = contact.name
