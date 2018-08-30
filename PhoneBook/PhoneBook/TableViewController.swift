@@ -47,8 +47,8 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact Cell", for: indexPath) as! TableViewCell
-        let item = frc!.object(at: indexPath) as! Contact
-        cell.contactNameLabel.text = item.name
+        let contact = frc!.object(at: indexPath) as! Contact
+        cell.contactNameLabel.text = contact.name
         return cell
     }
 
@@ -135,5 +135,5 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         let sorter = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sorter]
         return fetchRequest
-    }    
+    }
 }
