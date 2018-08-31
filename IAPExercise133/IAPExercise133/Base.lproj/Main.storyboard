@@ -77,20 +77,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="T9F-EA-QXW"/>
+                    <connections>
+                        <outlet property="playLevel2Button" destination="DHe-r7-e6Y" id="Swy-AT-KdR"/>
+                        <outlet property="purchaseLevel2Button" destination="T6s-oW-sck" id="lnx-3r-OKq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="236.25" y="-981.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Purchase View Controller-->
         <scene sceneID="HEx-Ld-Vv7">
             <objects>
-                <viewController id="EjY-y5-gAT" sceneMemberID="viewController">
+                <viewController id="EjY-y5-gAT" customClass="PurchaseViewController" customModule="IAPExercise133" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Jy-cG-vd7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-DS-FKf" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-DS-FKf">
                                 <rect key="frame" x="16" y="72" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hey-dr-qAT"/>
@@ -99,7 +103,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Product Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-wi-cgZ" userLabel="Description">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Product Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-wi-cgZ" userLabel="Product Description">
                                 <rect key="frame" x="16" y="101" width="288" height="321"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -111,6 +115,9 @@
                                     <constraint firstAttribute="height" constant="30" id="4LK-9g-OIv"/>
                                 </constraints>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buy:" destination="EjY-y5-gAT" eventType="touchUpInside" id="Djx-4t-gCA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,6 +135,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rSq-q2-ECN"/>
                     </view>
+                    <connections>
+                        <outlet property="buyButton" destination="zjB-DD-BfZ" id="9dr-cC-lOP"/>
+                        <outlet property="productDescription" destination="C9W-wi-cgZ" id="hjw-fT-57f"/>
+                        <outlet property="productTitle" destination="wuG-DS-FKf" id="cSE-0D-KS8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHO-eA-Yrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
