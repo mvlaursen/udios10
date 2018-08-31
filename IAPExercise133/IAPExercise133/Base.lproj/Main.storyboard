@@ -104,7 +104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Product Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-wi-cgZ" userLabel="Product Description">
-                                <rect key="frame" x="16" y="101" width="288" height="321"/>
+                                <rect key="frame" x="16" y="101" width="288" height="213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -114,31 +114,46 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4LK-9g-OIv"/>
                                 </constraints>
-                                <state key="normal" title="Buy"/>
+                                <state key="normal" title="Purchase"/>
                                 <connections>
                                     <action selector="buy:" destination="EjY-y5-gAT" eventType="touchUpInside" id="Djx-4t-gCA"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Purchase Messages" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adm-jt-nAn" userLabel="Purchase Messages">
+                                <rect key="frame" x="16" y="322" width="288" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BKg-Aa-dH9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="C9W-wi-cgZ" firstAttribute="leading" secondItem="rSq-q2-ECN" secondAttribute="leading" constant="16" id="0NH-aV-kX4"/>
                             <constraint firstItem="wuG-DS-FKf" firstAttribute="leading" secondItem="rSq-q2-ECN" secondAttribute="leading" constant="16" id="5ca-33-DnX"/>
                             <constraint firstItem="rSq-q2-ECN" firstAttribute="trailing" secondItem="wuG-DS-FKf" secondAttribute="trailing" constant="16" id="5rQ-sy-bYR"/>
+                            <constraint firstItem="zjB-DD-BfZ" firstAttribute="top" secondItem="adm-jt-nAn" secondAttribute="bottom" constant="8" id="BQl-dv-4jz"/>
                             <constraint firstItem="zjB-DD-BfZ" firstAttribute="leading" secondItem="rSq-q2-ECN" secondAttribute="leading" constant="16" id="Bpx-SX-rkb"/>
+                            <constraint firstItem="rSq-q2-ECN" firstAttribute="trailing" secondItem="adm-jt-nAn" secondAttribute="trailing" constant="16" id="H36-GR-nc9"/>
                             <constraint firstItem="wuG-DS-FKf" firstAttribute="top" secondItem="rSq-q2-ECN" secondAttribute="top" constant="8" id="Pde-gs-8fo"/>
                             <constraint firstItem="rSq-q2-ECN" firstAttribute="bottom" secondItem="zjB-DD-BfZ" secondAttribute="bottom" constant="20" id="atE-XB-fYl"/>
+                            <constraint firstItem="adm-jt-nAn" firstAttribute="top" secondItem="C9W-wi-cgZ" secondAttribute="bottom" constant="8" id="foc-a5-EKL"/>
+                            <constraint firstItem="adm-jt-nAn" firstAttribute="leading" secondItem="rSq-q2-ECN" secondAttribute="leading" constant="16" id="kaA-9N-NHr"/>
                             <constraint firstItem="rSq-q2-ECN" firstAttribute="trailing" secondItem="C9W-wi-cgZ" secondAttribute="trailing" constant="16" id="lNp-mn-8Gj"/>
+                            <constraint firstItem="rSq-q2-ECN" firstAttribute="trailing" secondItem="adm-jt-nAn" secondAttribute="trailing" constant="16" id="lm0-LB-l3C"/>
                             <constraint firstItem="rSq-q2-ECN" firstAttribute="trailing" secondItem="zjB-DD-BfZ" secondAttribute="trailing" constant="16" id="tnU-xO-K63"/>
-                            <constraint firstItem="zjB-DD-BfZ" firstAttribute="top" secondItem="C9W-wi-cgZ" secondAttribute="bottom" constant="8" id="vmR-Rw-5Sy"/>
+                            <constraint firstItem="adm-jt-nAn" firstAttribute="leading" secondItem="rSq-q2-ECN" secondAttribute="leading" constant="16" id="wKi-5h-kVg"/>
                             <constraint firstItem="C9W-wi-cgZ" firstAttribute="top" secondItem="wuG-DS-FKf" secondAttribute="bottom" constant="8" id="wsb-aX-3E6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rSq-q2-ECN"/>
                     </view>
                     <connections>
-                        <outlet property="buyButton" destination="zjB-DD-BfZ" id="9dr-cC-lOP"/>
                         <outlet property="productDescription" destination="C9W-wi-cgZ" id="hjw-fT-57f"/>
                         <outlet property="productTitle" destination="wuG-DS-FKf" id="cSE-0D-KS8"/>
+                        <outlet property="purchaseButton" destination="zjB-DD-BfZ" id="9dr-cC-lOP"/>
+                        <outlet property="purchaseMessages" destination="adm-jt-nAn" id="Hgz-jQ-Tww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHO-eA-Yrj" userLabel="First Responder" sceneMemberID="firstResponder"/>

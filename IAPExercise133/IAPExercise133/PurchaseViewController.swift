@@ -10,17 +10,18 @@ import StoreKit
 import UIKit
 
 class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
-    @IBOutlet private weak var buyButton: UIButton!
     @IBOutlet private weak var productTitle: UILabel!
     @IBOutlet private weak var productDescription: UITextView!
+    @IBOutlet private weak var purchaseButton: UIButton!
+    @IBOutlet private weak var purchaseMessages: UITextView!
     
     let productID = "com.appamajigger.IAPExercise133.Level2"
-    var product: SKProduct? = nil
+    var product: SKProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        buyButton.isEnabled = false
+        purchaseButton.isEnabled = false
         SKPaymentQueue.default().add(self)
         makeProductsRequest()
     }
@@ -42,10 +43,10 @@ class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SK
     */
 
     @IBAction private func buy(_ sender: UIButton) {
+        let payment = SKPayment(product: product!) // TODO: Doesn't "product" need to be initialized?
+        SKPaymentQueue.default().add(payment)
     }
-    
-    // MARK: - StoreKit
-    
+        
     func makeProductsRequest() {
         if SKPaymentQueue.canMakePayments() {
             let productIdentifiers: Set<String> = [self.productID]
@@ -53,23 +54,36 @@ class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SK
             productsRequest.delegate = self
             productsRequest.start()
         } else {
-            buyButton.isEnabled = false
+            purchaseButton.isEnabled = false
             productTitle.text = "Level 2 Not Allowed"
             productDescription.text = "In-App Purchases are restricted on this device."
         }
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        // TODO: Implement this.
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = false
+                makeProductsRequest()
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            default:
+                break
+            }
+        }
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count > 0 {
-            buyButton.isEnabled = true
+            (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = false
+            purchaseButton.isEnabled = true
             productTitle.text = response.products[0].localizedTitle
             productDescription.text = response.products[0].localizedDescription
         } else {
-            buyButton.isEnabled = false
+            (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = true
+            purchaseButton.isEnabled = false
             productTitle.text = "Level 2 Not Available"
             productDescription.text = "No In-App Purchases are available for this app at this time."
         }

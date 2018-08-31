@@ -14,7 +14,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        enableLevel2()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        enableLevel2()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +27,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func enableLevel2() {
+        let locked = (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked
+        playLevel2Button.isEnabled = !locked
+        purchaseLevel2Button.isEnabled = locked
+        purchaseLevel2Button.isHidden = !locked
+    }
 }
 
