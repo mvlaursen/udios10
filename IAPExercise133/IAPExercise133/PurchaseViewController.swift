@@ -6,17 +6,23 @@
 //  Copyright © 2018 Appamajigger. All rights reserved.
 //
 
+import StoreKit
 import UIKit
 
-class PurchaseViewController: UIViewController {
+class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     @IBOutlet private weak var buyButton: UIButton!
     @IBOutlet private weak var productTitle: UILabel!
     @IBOutlet private weak var productDescription: UITextView!
     
+    let productID = "com.appamajigger.IAPExercise133.Level2"
+    var product: SKProduct? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        buyButton.isEnabled = false
+        SKPaymentQueue.default().add(self)
+        makeProductsRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,5 +42,40 @@ class PurchaseViewController: UIViewController {
     */
 
     @IBAction private func buy(_ sender: UIButton) {
+    }
+    
+    // MARK: - StoreKit
+    
+    func makeProductsRequest() {
+        if SKPaymentQueue.canMakePayments() {
+            let productIdentifiers: Set<String> = [self.productID]
+            let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+            productsRequest.delegate = self
+            productsRequest.start()
+        } else {
+            buyButton.isEnabled = false
+            productTitle.text = "Level 2 Not Allowed"
+            productDescription.text = "In-App Purchases are restricted on this device."
+        }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        // TODO: Implement this.
+    }
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if response.products.count > 0 {
+            buyButton.isEnabled = true
+            productTitle.text = response.products[0].localizedTitle
+            productDescription.text = response.products[0].localizedDescription
+        } else {
+            buyButton.isEnabled = false
+            productTitle.text = "Level 2 Not Available"
+            productDescription.text = "No In-App Purchases are available for this app at this time."
+        }
+        
+        for product in response.invalidProductIdentifiers {
+            print("Product not found: \(product)")
+        }
     }
 }
