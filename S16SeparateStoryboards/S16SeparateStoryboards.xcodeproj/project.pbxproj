@@ -12,6 +12,7 @@
 		3B36ED06213F46E80037AF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B36ED04213F46E80037AF73 /* Main.storyboard */; };
 		3B36ED08213F46E90037AF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B36ED07213F46E90037AF73 /* Assets.xcassets */; };
 		3B36ED0B213F46E90037AF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B36ED09213F46E90037AF73 /* LaunchScreen.storyboard */; };
+		3B36ED13213F48E50037AF73 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B36ED12213F48E50037AF73 /* iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3B36ED07213F46E90037AF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B36ED0A213F46E90037AF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B36ED0C213F46E90037AF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B36ED12213F48E50037AF73 /* iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				3B36ED00213F46E80037AF73 /* AppDelegate.swift */,
 				3B36ED02213F46E80037AF73 /* ViewController.swift */,
 				3B36ED04213F46E80037AF73 /* Main.storyboard */,
+				3B36ED12213F48E50037AF73 /* iPad.storyboard */,
 				3B36ED07213F46E90037AF73 /* Assets.xcassets */,
 				3B36ED09213F46E90037AF73 /* LaunchScreen.storyboard */,
 				3B36ED0C213F46E90037AF73 /* Info.plist */,
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B36ED13213F48E50037AF73 /* iPad.storyboard in Resources */,
 				3B36ED0B213F46E90037AF73 /* LaunchScreen.storyboard in Resources */,
 				3B36ED08213F46E90037AF73 /* Assets.xcassets in Resources */,
 				3B36ED06213F46E80037AF73 /* Main.storyboard in Resources */,
