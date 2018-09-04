@@ -9,21 +9,17 @@
 import StoreKit
 import UIKit
 
-class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+class PurchaseViewController: UIViewController, SKPaymentTransactionObserver {
     @IBOutlet private weak var productTitle: UILabel!
     @IBOutlet private weak var productDescription: UITextView!
     @IBOutlet private weak var purchaseButton: UIButton!
     @IBOutlet private weak var purchaseMessages: UITextView!
     
-    let productID = "com.appamajigger.IAPExercise133.Level2"
-    var product: SKProduct?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        purchaseButton.isEnabled = false
+        updateView()
         SKPaymentQueue.default().add(self)
-        makeProductsRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,55 +37,61 @@ class PurchaseViewController: UIViewController, SKPaymentTransactionObserver, SK
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - StoreKit
 
     @IBAction private func buy(_ sender: UIButton) {
-        let payment = SKPayment(product: product!) // TODO: Doesn't "product" need to be initialized?
-        SKPaymentQueue.default().add(payment)
-    }
+        let product = (UIApplication.shared.delegate as! AppDelegate).level2Product
         
-    func makeProductsRequest() {
-        if SKPaymentQueue.canMakePayments() {
-            let productIdentifiers: Set<String> = [self.productID]
-            let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-            productsRequest.delegate = self
-            productsRequest.start()
-        } else {
-            purchaseButton.isEnabled = false
-            productTitle.text = "Level 2 Not Allowed"
-            productDescription.text = "In-App Purchases are restricted on this device."
+        if product != nil {
+            let payment = SKPayment(product: product!)
+            SKPaymentQueue.default().add(payment)
         }
     }
-    
+
+    // TODO: Can we make this private?
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
+            case .deferred:
+                purchaseMessages.text = purchaseMessages.text + "\nPurchase deferred."
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                purchaseMessages.text = purchaseMessages.text + "\nPurchase failed."
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = false
-                makeProductsRequest()
-            case .failed:
-                SKPaymentQueue.default().finishTransaction(transaction)
-            default:
-                break
+                purchaseMessages.text = purchaseMessages.text + "\nPurchase successful!"
+            case .purchasing:
+                purchaseMessages.text = purchaseMessages.text + "\nPurchasing..."
+            case .restored:
+                purchaseMessages.text = purchaseMessages.text + "\nPurchase restored."
             }
         }
+        
+        updateView()
     }
     
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count > 0 {
-            (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = false
-            purchaseButton.isEnabled = true
-            productTitle.text = response.products[0].localizedTitle
-            productDescription.text = response.products[0].localizedDescription
+    // MARK: - Utility
+    
+    private func updateView() {
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.makeProductsRequest()
+        
+        if appDelegate.level2Product != nil {
+            productTitle.text = appDelegate.level2Product!.localizedTitle
+            productDescription.text = appDelegate.level2Product!.localizedDescription
         } else {
-            (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = true
-            purchaseButton.isEnabled = false
-            productTitle.text = "Level 2 Not Available"
-            productDescription.text = "No In-App Purchases are available for this app at this time."
+            productTitle.text = "Level 2 (Not Found)"
+            productDescription.text = "Could not find product information."
         }
         
-        for product in response.invalidProductIdentifiers {
-            print("Product not found: \(product)")
+        let canMakePayments = SKPaymentQueue.canMakePayments()
+        
+        if !canMakePayments {
+            purchaseMessages.text = purchaseMessages.text + "\nIn-App purchases are restricted on this device."
         }
+        
+        purchaseButton.isEnabled = (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked && canMakePayments
     }
 }

@@ -14,24 +14,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        enableLevel2()
+        updateView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        enableLevel2()
+        updateView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Utility
 
-    func enableLevel2() {
-        let locked = (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked
-        playLevel2Button.isEnabled = !locked
-        purchaseLevel2Button.isEnabled = locked
-        purchaseLevel2Button.isHidden = !locked
+    private func updateView() {
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.makeProductsRequest()
+        playLevel2Button.isEnabled = !appDelegate.isLevel2Locked
+        purchaseLevel2Button.isEnabled = appDelegate.isLevel2Locked
+        purchaseLevel2Button.isHidden = !appDelegate.isLevel2Locked
     }
 }
 

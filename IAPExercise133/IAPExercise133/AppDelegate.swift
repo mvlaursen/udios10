@@ -6,13 +6,16 @@
 //  Copyright © 2018 Appamajigger. All rights reserved.
 //
 
+import StoreKit
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SKProductsRequestDelegate {
     var window: UIWindow?
 
+    private let productID = "com.appamajigger.IAPExercise133.Level2"
     public var isLevel2Locked = true
+    public var level2Product: SKProduct?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,6 +44,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: - StoreKit
+    
+    public func makeProductsRequest() {
+        if level2Product == nil {
+            let productIdentifiers: Set<String> = [self.productID]
+            let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+            productsRequest.delegate = self
+            productsRequest.start()
+        }
+    }
+    
+    internal func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if response.products.count > 0 {
+            level2Product = response.products[0]
+        }
+        
+        for product in response.invalidProductIdentifiers {
+            print("Product not found: \(product)")
+        }
+    }
 }
 
