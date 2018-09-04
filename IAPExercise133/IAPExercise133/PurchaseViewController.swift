@@ -61,6 +61,9 @@ class PurchaseViewController: UIViewController, SKPaymentTransactionObserver {
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 (UIApplication.shared.delegate as! AppDelegate).isLevel2Locked = false
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(false, forKey: "Level2Locked")
+                userDefaults.synchronize()
                 purchaseMessages.text = purchaseMessages.text + "\nPurchase successful!"
             case .purchasing:
                 purchaseMessages.text = purchaseMessages.text + "\nPurchasing..."

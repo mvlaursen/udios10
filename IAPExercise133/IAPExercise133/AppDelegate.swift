@@ -18,7 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SKProductsRequestDelegate
     public var level2Product: SKProduct?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let userDefaults = UserDefaults.standard
+        if userDefaults.value(forKey: "Level2Locked") != nil {
+            isLevel2Locked = userDefaults.bool(forKey: "Level2Locked")
+        }
+
         return true
     }
 

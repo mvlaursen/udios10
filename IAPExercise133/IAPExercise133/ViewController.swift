@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func reset(_ sender: UIButton) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "Level2Locked")
+        userDefaults.synchronize()
+    }
+    
     // MARK: - Utility
 
     private func updateView() {
