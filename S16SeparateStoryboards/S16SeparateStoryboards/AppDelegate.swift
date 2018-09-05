@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let mainView = UIStoryboard(name: "iPad", bundle: nil)
+            let vc = mainView.instantiateViewController(withIdentifier: "iPadStoryboard")
+            window?.rootViewController = vc
+        } else if UIDevice.current.userInterfaceIdiom == .phone {
+            let mainView = UIStoryboard(name: "Main", bundle: nil)
+            let vc = mainView.instantiateViewController(withIdentifier: "iPhoneStoryboard")
+            window?.rootViewController = vc
+        }
+
         return true
     }
 

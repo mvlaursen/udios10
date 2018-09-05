@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="1Ra-TC-TnA">
             <objects>
-                <viewController id="pqr-kY-OUs" customClass="ViewController" customModule="S16SeparateStoryboards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="iPadStoryboard" id="pqr-kY-OUs" customClass="ViewController" customModule="S16SeparateStoryboards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ep1-hR-pRS">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
