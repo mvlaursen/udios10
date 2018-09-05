@@ -32,5 +32,19 @@
     self.label.text = @"Hello";
     self.textView.text = [[self.textView.text stringByAppendingString:self.textField.text] stringByAppendingString:@"\n"];
 }
+- (IBAction)setText2:(UITextField *)sender {
+    [self resignFirstResponder];
+    self.label.text = @"Hello";
+    self.textView.text = [[self.textView.text stringByAppendingString:self.textField.text] stringByAppendingString:@"\n"];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound) {
+        return YES;
+    }
+    
+    [textView resignFirstResponder];
+    return NO;
+}
 
 @end
